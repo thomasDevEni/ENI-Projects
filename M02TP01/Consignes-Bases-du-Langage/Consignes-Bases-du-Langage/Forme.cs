@@ -3,9 +3,10 @@
         public abstract class Forme
         {
             public abstract double CalculerSurface();
+            public abstract double CalculerPerimetre();
             public override string ToString()
             {
-                return $"Surface: {CalculerSurface()} unités carrées";
+                return $"Périmètre: {CalculerPerimetre()} unités\n Surface: {CalculerSurface()} unités carrées";
             }
         }
  

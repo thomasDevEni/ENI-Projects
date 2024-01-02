@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 namespace Consignes_Bases_du_Langage.BO
 {
     // Classe représentant un carré
-    public class Carre : Rectangle
+    public class Carre : Forme
     {
         public double Longueur { get; set; }
+
+        public override double CalculerPerimetre()
+        {
+            return 4 * (Longueur );
+        }
 
         public override double CalculerSurface()
         {

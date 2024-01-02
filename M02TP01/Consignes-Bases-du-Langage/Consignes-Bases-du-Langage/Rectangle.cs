@@ -12,6 +12,11 @@ namespace Consignes_Bases_du_Langage.BO
         public double Longueur { get; set; }
         public double Largeur { get; set; }
 
+        public override double CalculerPerimetre()
+        {
+            return 2 * (Longueur + Largeur);
+        }
+
         public override double CalculerSurface()
         {
             return Longueur * Largeur;

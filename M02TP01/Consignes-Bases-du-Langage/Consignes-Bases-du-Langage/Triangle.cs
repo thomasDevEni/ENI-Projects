@@ -7,6 +7,11 @@
         public double B { get; set; }
         public double C { get; set; }
 
+        public override double CalculerPerimetre()
+        {
+            return A + B + C;
+        }
+
         public override double CalculerSurface()
         {
             // Utilisation de la formule de Heron pour calculer la surface d'un triangle à partir des longueurs des côtés

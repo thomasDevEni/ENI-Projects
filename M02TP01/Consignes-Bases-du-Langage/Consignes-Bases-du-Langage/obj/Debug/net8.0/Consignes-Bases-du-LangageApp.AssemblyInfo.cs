@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Consignes-Bases-du-LangageApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fbc02d9fc48d490681a5f96ff5d06cc6da3b0ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddca576072b18197612a8d6cf64165ba64f51cc5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Consignes-Bases-du-LangageApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Consignes-Bases-du-LangageApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,6 +5,11 @@
     {
         public double Rayon { get; set; }
 
+        public override double CalculerPerimetre()
+        {
+            return 2 * Math.PI * Rayon;
+        }
+
         public override double CalculerSurface()
         {
             return Math.PI * Rayon * Rayon;
