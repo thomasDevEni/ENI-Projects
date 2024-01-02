@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return $"Cercle - {base.ToString()}";
+            return $"Cercle de Rayon {Rayon} Unités {Environment.NewLine} {base.ToString()}";
         }
     }
 }

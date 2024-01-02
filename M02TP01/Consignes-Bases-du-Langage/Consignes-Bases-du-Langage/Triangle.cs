@@ -21,7 +21,7 @@
 
         public override string ToString()
         {
-            return $"Triangle - {base.ToString()}";
+            return $"Triangle de coté A={A}, B={B} et C={C} Unités {Environment.NewLine} {base.ToString()}";
         }
     }
 }

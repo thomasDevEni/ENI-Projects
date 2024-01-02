@@ -24,7 +24,7 @@ namespace Consignes_Bases_du_Langage.BO
 
         public override string ToString()
         {
-            return $"Rectangle - {base.ToString()}";
+            return $"Rectangle de largeur {Largeur} et longueur {Longueur} Unités {Environment.NewLine} {base.ToString()}";
         }
     }
 }
