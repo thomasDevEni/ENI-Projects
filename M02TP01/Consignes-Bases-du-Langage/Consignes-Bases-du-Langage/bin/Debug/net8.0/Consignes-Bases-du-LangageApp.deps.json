@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Consignes-Bases-du-LangageApp/1.0.0": {
+        "runtime": {
+          "Consignes-Bases-du-LangageApp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Consignes-Bases-du-LangageApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

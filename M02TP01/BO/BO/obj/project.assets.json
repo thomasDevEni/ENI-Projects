@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\Consignes-Bases-du-LangageApp.csproj",
-      "projectName": "Consignes-Bases-du-LangageApp",
-      "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\Consignes-Bases-du-LangageApp.csproj",
+      "projectUniqueName": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\BO\\BO\\BO.csproj",
+      "projectName": "BO",
+      "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\BO\\BO\\BO.csproj",
       "packagesPath": "C:\\Users\\trequier2023\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\obj\\",
+      "outputPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\BO\\BO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\trequier2023\\AppData\\Roaming\\NuGet\\NuGet.Config",

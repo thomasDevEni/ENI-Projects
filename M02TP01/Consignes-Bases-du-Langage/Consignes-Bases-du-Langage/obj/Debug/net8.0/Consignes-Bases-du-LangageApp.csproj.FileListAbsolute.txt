@@ -1,0 +1,15 @@
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\bin\Debug\net8.0\Consignes-Bases-du-LangageApp.exe
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\bin\Debug\net8.0\Consignes-Bases-du-LangageApp.deps.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\bin\Debug\net8.0\Consignes-Bases-du-LangageApp.runtimeconfig.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\bin\Debug\net8.0\Consignes-Bases-du-LangageApp.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\bin\Debug\net8.0\Consignes-Bases-du-LangageApp.pdb
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.AssemblyInfoInputs.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.AssemblyInfo.cs
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.csproj.CoreCompileInputs.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.sourcelink.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\refint\Consignes-Bases-du-LangageApp.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.pdb
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\Consignes-Bases-du-LangageApp.genruntimeconfig.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M02TP01\Consignes-Bases-du-Langage\Consignes-Bases-du-Langage\obj\Debug\net8.0\ref\Consignes-Bases-du-LangageApp.dll
