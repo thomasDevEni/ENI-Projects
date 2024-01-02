@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trequier2023\\Source\\Repos\\ENI-Projects\\ProjetTestHelloW\\ProjetTestHelloW\\ProjetTestHelloW.csproj": {}
+    "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trequier2023\\Source\\Repos\\ENI-Projects\\ProjetTestHelloW\\ProjetTestHelloW\\ProjetTestHelloW.csproj": {
+    "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trequier2023\\Source\\Repos\\ENI-Projects\\ProjetTestHelloW\\ProjetTestHelloW\\ProjetTestHelloW.csproj",
-        "projectName": "ProjetTestHelloW",
-        "projectPath": "C:\\Users\\trequier2023\\Source\\Repos\\ENI-Projects\\ProjetTestHelloW\\ProjetTestHelloW\\ProjetTestHelloW.csproj",
+        "projectUniqueName": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage.csproj",
+        "projectName": "Consignes-Bases-du-Langage",
+        "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage.csproj",
         "packagesPath": "C:\\Users\\trequier2023\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trequier2023\\Source\\Repos\\ENI-Projects\\ProjetTestHelloW\\ProjetTestHelloW\\obj\\",
+        "outputPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M02TP01\\Consignes-Bases-du-Langage\\Consignes-Bases-du-Langage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\trequier2023\\AppData\\Roaming\\NuGet\\NuGet.Config",
