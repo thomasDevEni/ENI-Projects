@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BatailleCorseApp
 {
-    public class ListeChainee
+    public class Anneau
     {
-        public Noeud Premier { get; set; }
-        public Noeud Dernier { get; set; }
+        public Maillon Premier { get; set; }
+        public Maillon Dernier { get; set; }
 
-        public ListeChainee()
+        public Anneau()
         {
             Premier = null;
             Dernier = null;
@@ -19,7 +19,7 @@ namespace BatailleCorseApp
 
         public void AjouterEnFin(Carte carte)
         {
-            var nouveauNoeud = new Noeud(carte);
+            var nouveauNoeud = new Maillon(carte);
 
             if (Dernier == null)
             {

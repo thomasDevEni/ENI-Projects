@@ -6,8 +6,8 @@ namespace BatailleCorseApp
     {
         static void Main(string[] args)
         {
-            var jeuJoueur1 = new ListeChainee();
-            var jeuJoueur2 = new ListeChainee();
+            var jeuJoueur1 = new Anneau();
+            var jeuJoueur2 = new Anneau();
 
             // Initialisation du jeu de 32 cartes
             for (int valeur = 7; valeur <= 14; valeur++)

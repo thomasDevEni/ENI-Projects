@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BatailleCorseApp
 {
-    public class Noeud
+    public class Maillon
     {
         public Carte Carte { get; set; }
-        public Noeud Prochain { get; set; }
+        public Maillon Prochain { get; set; }
 
-        public Noeud(Carte carte)
+        public Maillon(Carte carte)
         {
             Carte = carte;
             Prochain = null;
