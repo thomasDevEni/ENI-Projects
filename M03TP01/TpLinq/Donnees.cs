@@ -145,12 +145,75 @@ namespace TpLinq {
 
             // 9 - Afficher le nombre moyen de pages des livres par auteur
 
+
+            Console.WriteLine("9 - Afficher le nombre moyen de pages des livres par auteur");
+            //Calcul de la moyenne des pages
+            foreach (var auteurGroup in livresParAuteur)
+            {
+                double moyennePagesAuteur = auteurGroup.Average(livre => livre.NbPages);
+            }
+
+            var moyennePagesParAuteur = ListeLivres
+            .GroupBy(livre => livre.Auteur) // Regroupe les livres par auteur
+            .Select(group => new
+            {
+                Auteur = group.Key,
+                MoyennePages = group.Average(livre => livre.NbPages) // Calcule la moyenne des pages par auteur
+            });
+
+            foreach (var item in moyennePagesParAuteur)
+            {
+                Console.WriteLine($"Auteur : {item.Auteur.Nom} {item.Auteur.Prenom}, Moyenne de pages : {item.MoyennePages}");
+            }
+
             // 10 - Afficher l’auteur ayant écrit le plus de livres
+            Console.WriteLine("10 - Afficher l’auteur ayant écrit le plus de livres");
+            var auteurPlusDeLivres = ListeLivres
+            .GroupBy(livre => livre.Auteur) // Regroupe les livres par auteur
+            .OrderByDescending(group => group.Count()) // Trie les groupes par nombre de livres décroissant
+            .FirstOrDefault(); // Récupère le premier groupe (l'auteur avec le plus de livres)
+
+            if (auteurPlusDeLivres != null)
+            {
+                Console.WriteLine($"L'auteur ayant écrit le plus de livres est : {auteurPlusDeLivres.Key.Nom} {auteurPlusDeLivres.Key.Prenom}");
+            }
+            else
+            {
+                Console.WriteLine("Aucun livre trouvé !");
+            }
 
             // 11 - Afficher le montant moyen d'une facture
+            Console.WriteLine("11 - Afficher le montant moyen d'une facture");
+            //Calcul de la moyenne des pages
+            var ListFactures = ListeAuteurs
+                .SelectMany(fact => fact.Factures)
+                .ToList();
+            var moyenneFactures = ListFactures.Average(facture => facture.Montant);
+
+            // Affichage de la liste des factures
+            foreach (var facture in ListFactures)
+            {
+                
+                Console.WriteLine($"Facture : {facture.Montant}");
+            }
+            // Affichage de la moyenne des factures
+            Console.WriteLine($"Moyenne des Factures : {moyenneFactures}");
 
             // 12 - Afficher l'auteur ayant écrit le moins de livres
+            Console.WriteLine("12 - Afficher l'auteur ayant écrit le moins de livres");
+            var auteurMoinsDeLivres = ListeLivres
+            .GroupBy(livre => livre.Auteur) // Regroupe les livres par auteur
+            .OrderBy(group => group.Count()) // Trie les groupes par nombre de livres croissant
+            .FirstOrDefault(); // Récupère le premier groupe (l'auteur avec le plus de livres)
 
+            if (auteurPlusDeLivres != null)
+            {
+                Console.WriteLine($"L'auteur ayant écrit le plus de livres est : {auteurMoinsDeLivres.Key.Nom} {auteurMoinsDeLivres.Key.Prenom}");
+            }
+            else
+            {
+                Console.WriteLine("Aucun livre trouvé !");
+            }
         }
     }
 }
