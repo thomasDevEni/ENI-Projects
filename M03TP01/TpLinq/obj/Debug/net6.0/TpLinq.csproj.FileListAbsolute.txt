@@ -43,3 +43,18 @@ C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 3\TP01\Fi
 C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 3\TP01\Fichiers à fournir\TpLinq\obj\Debug\net6.0\TpLinq.pdb
 C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 3\TP01\Fichiers à fournir\TpLinq\obj\Debug\net6.0\TpLinq.genruntimeconfig.cache
 C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 3\TP01\Fichiers à fournir\TpLinq\obj\Debug\net6.0\ref\TpLinq.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\bin\Debug\net6.0\TpLinq.exe
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\bin\Debug\net6.0\TpLinq.deps.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\bin\Debug\net6.0\TpLinq.runtimeconfig.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\bin\Debug\net6.0\TpLinq.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\bin\Debug\net6.0\TpLinq.pdb
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.AssemblyInfoInputs.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.AssemblyInfo.cs
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.csproj.CoreCompileInputs.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.sourcelink.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\refint\TpLinq.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.pdb
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\TpLinq.genruntimeconfig.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M03TP01\TpLinq\obj\Debug\net6.0\ref\TpLinq.dll
