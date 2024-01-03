@@ -37,7 +37,15 @@ namespace TpLinq {
 
         public void Requetes() {
             // 1 - Afficher les livres écrits par Thierry RICHARD
+            // Print Titre <livre> where auteur.nom == "RICHARD" && auteur.prenom == "Thierry"
+            // Utilisation de LINQ pour filtrer les livres écrits par Thierry Richard
+            var livresThierryRichard = ListeLivres.Where(livre => livre.Auteur.Nom == "RICHARD" && livre.Auteur.Prenom == "Thierry");
 
+            // Affichage des livres écrits par Thierry Richard
+            foreach (var livre in livresThierryRichard)
+            {
+                Console.WriteLine($"Titre : {livre.Titre}, Auteur : {livre.Auteur.Nom} {livre.Auteur.Prenom}");
+            }
             // 2 - Afficher la liste des noms des auteurs dont le prénom se termine par "y"
 
             // 3 - Afficher les titres de tous les livres triés par ordre alphabétique
