@@ -12,14 +12,14 @@ namespace BatailleCorseApp
             // Initialisation du jeu de 32 cartes
             for (int valeur = 7; valeur <= 14; valeur++)
             {
-                jeuJoueur1.AjouterEnFin(new Carte(valeur));
-                jeuJoueur2.AjouterEnFin(new Carte(valeur));
+                jeuJoueur1.AjouterAlaFin(new Carte(valeur));
+                jeuJoueur2.AjouterAlaFin(new Carte(valeur));
             }
 
             while (!jeuJoueur1.EstVide() && !jeuJoueur2.EstVide())
             {
-                var carteJoueur1 = jeuJoueur1.RetirerDuDebut();
-                var carteJoueur2 = jeuJoueur2.RetirerDuDebut();
+                var carteJoueur1 = jeuJoueur1.RetirerPremier();
+                var carteJoueur2 = jeuJoueur2.RetirerPremier();
 
                 if (carteJoueur1.Valeur > carteJoueur2.Valeur)
                 {

@@ -17,7 +17,7 @@ namespace BatailleCorseApp
             Dernier = null;
         }
 
-        public void AjouterEnFin(Carte carte)
+        public void AjouterAlaFin(Carte carte)
         {
             var nouveauNoeud = new Maillon(carte);
 
@@ -33,7 +33,7 @@ namespace BatailleCorseApp
             }
         }
 
-        public Carte RetirerDuDebut()
+        public Carte RetirerPremier()
         {
             if (Premier == null)
             {
