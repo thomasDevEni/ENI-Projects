@@ -37,7 +37,7 @@ namespace TpLinq {
 
         public void Requetes() {
             // 1 - Afficher les livres écrits par Thierry RICHARD
-            // Print Titre <livre> where auteur.nom == "RICHARD" && auteur.prenom == "Thierry"
+            Console.WriteLine("1- Afficher les livres écrits par Thierry RICHARD");
             // Utilisation de LINQ pour filtrer les livres écrits par Thierry Richard
             var livresThierryRichard = ListeLivres.Where(livre => livre.Auteur.Nom == "RICHARD" && livre.Auteur.Prenom == "Thierry");
 
@@ -48,9 +48,39 @@ namespace TpLinq {
             }
             // 2 - Afficher la liste des noms des auteurs dont le prénom se termine par "y"
 
+            var auteursPrenomY = ListeAuteurs
+            .Select(auteur => auteur.Prenom) // Récupère le prénom de l'auteur
+            .Where(prenom => prenom.EndsWith("y")); // Filtrer les prénoms se terminant par "y"
+            Console.WriteLine("2- Liste des auteurs dont le prénom se termine par y");
+            foreach (var auteur in auteursPrenomY)
+            {
+                Console.WriteLine(auteur);
+            }
             // 3 - Afficher les titres de tous les livres triés par ordre alphabétique
 
+            Console.WriteLine("3- Afficher les titres de tout les livres triés par ordre alphabétique:");
+            var titresTries = ListeLivres
+            .Select(livre => livre.Titre) // Sélectionne uniquement les titres
+            .OrderBy(titre => titre); // Trie les titres par ordre alphabétique
+
+            foreach (var titre in titresTries)
+            {
+                Console.WriteLine(titre);
+            }
+
             // 4 - Les auteurs ayant écrit des livres de plus de 400 pages
+
+            Console.WriteLine("4- Les auteurs ayant écrit des livres de plus de 400 pages");
+            var auteursPlus400Pages = ListeLivres
+            .Where(livre => livre.NbPages > 400) // Filtrer les livres de plus de 400 pages
+            .Select(livre => livre.Auteur) // Sélectionne les auteurs correspondants
+            // Si tu veux afficher les auteurs sans répétition
+            .Distinct();
+
+            foreach (var auteur in auteursPlus400Pages)
+            {
+                Console.WriteLine(auteur.Prenom +" "+ auteur.Nom);
+            }
 
             // 5 - Afficher la liste des livres dont le nombre de pages est supérieur à la moyenne
 
