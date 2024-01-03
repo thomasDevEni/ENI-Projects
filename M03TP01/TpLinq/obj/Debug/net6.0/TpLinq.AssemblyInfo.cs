@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TpLinq")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1d9777433ce477e07816ff58543fab201156d04")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a4849ebe73f80489c9f9729c96f35317f73b8d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TpLinq")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TpLinq")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
