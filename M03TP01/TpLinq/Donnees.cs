@@ -49,8 +49,10 @@ namespace TpLinq {
             // 2 - Afficher la liste des noms des auteurs dont le prénom se termine par "y"
 
             var auteursPrenomY = ListeAuteurs
-            .Select(auteur => auteur.Prenom) // Récupère le prénom de l'auteur
-            .Where(prenom => prenom.EndsWith("y")); // Filtrer les prénoms se terminant par "y"
+            .Select(auteur => auteur.Nom) // Récupère le prénom de l'auteur
+            .Where(prenom => prenom.EndsWith("y"))
+            .ToList(); // Filtrer les prénoms se terminant par "y"
+            
             Console.WriteLine("2- Liste des auteurs dont le prénom se termine par y");
             foreach (var auteur in auteursPrenomY)
             {
