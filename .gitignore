@@ -14,3 +14,10 @@
 /M03TP01/.vs/M03TP01/v17/.wsuo
 /M03TP01/.vs/TpLinq/FileContentIndex
 /M03TP01/.vs/TpLinq/DesignTimeBuild/.dtbcache.v2
+/MyFirstMVC/WebApplication1/.vs/WebApplication1
+/MyFirstMVC/WebApplication1/WebApplication1/bin/Debug/net8.0
+*.vsidx
+*.suo
+/MyFirstMVC/MyFirstMVC/.vs/ProjectEvaluation/myfirstmvc.metadata.v7.bin
+/MyFirstMVC/MyFirstMVC/.vs/ProjectEvaluation/myfirstmvc.projects.v7.bin
+*.v2
