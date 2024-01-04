@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hboisgontier\\Documents\\Hervé\\Cours\\22-ASP.Net\\2022\\TP\\Module 4\\TP1\\EscapeGame (Solution)\\EscapeGame\\EscapeGame.csproj": {}
+    "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M04TP01\\EscapeGame\\EscapeGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hboisgontier\\Documents\\Hervé\\Cours\\22-ASP.Net\\2022\\TP\\Module 4\\TP1\\EscapeGame (Solution)\\EscapeGame\\EscapeGame.csproj": {
+    "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M04TP01\\EscapeGame\\EscapeGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hboisgontier\\Documents\\Hervé\\Cours\\22-ASP.Net\\2022\\TP\\Module 4\\TP1\\EscapeGame (Solution)\\EscapeGame\\EscapeGame.csproj",
+        "projectUniqueName": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M04TP01\\EscapeGame\\EscapeGame.csproj",
         "projectName": "EscapeGame",
-        "projectPath": "C:\\Users\\hboisgontier\\Documents\\Hervé\\Cours\\22-ASP.Net\\2022\\TP\\Module 4\\TP1\\EscapeGame (Solution)\\EscapeGame\\EscapeGame.csproj",
-        "packagesPath": "C:\\Users\\hboisgontier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hboisgontier\\Documents\\Hervé\\Cours\\22-ASP.Net\\2022\\TP\\Module 4\\TP1\\EscapeGame (Solution)\\EscapeGame\\obj\\",
+        "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M04TP01\\EscapeGame\\EscapeGame.csproj",
+        "packagesPath": "C:\\Users\\trequier2023\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M04TP01\\EscapeGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hboisgontier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\trequier2023\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -57,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
