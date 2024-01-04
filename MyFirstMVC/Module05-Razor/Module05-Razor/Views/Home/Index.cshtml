@@ -1,8 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@* Commentaire évalué coté serveur*@
 
+<!-- Commentaire évalué coté client-->
+
+@{
+    int i = 1357;
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+    <p>Valeur de la variable : @(i+100)</p>
+    @if (i == 5)
+    {
+        <p>Elle vaut 5</p>
+    }
+    else
+    {
+        <p>Elle vaut pas 5</p>
+    }
+
+    @for (int x=0;x<10; x++)
+    {
+        <p>Bonjour @(x)!</p>
+    }
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
