@@ -50,3 +50,34 @@ C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 4\TP1\Esc
 C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 4\TP1\EscapeGame (Solution)\EscapeGame\obj\Debug\net6.0\EscapeGame.pdb
 C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 4\TP1\EscapeGame (Solution)\EscapeGame\obj\Debug\net6.0\EscapeGame.genruntimeconfig.cache
 C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 4\TP1\EscapeGame (Solution)\EscapeGame\obj\Debug\net6.0\ref\EscapeGame.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\appsettings.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\EscapeGame.staticwebassets.runtime.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\EscapeGame.exe
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\EscapeGame.deps.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\EscapeGame.runtimeconfig.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\EscapeGame.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\bin\Debug\net6.0\EscapeGame.pdb
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.AssemblyInfoInputs.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.AssemblyInfo.cs
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.csproj.CoreCompileInputs.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.RazorAssemblyInfo.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.RazorAssemblyInfo.cs
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.sourcelink.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\staticwebassets\msbuild.EscapeGame.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\staticwebassets\msbuild.build.EscapeGame.props
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.EscapeGame.props
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.EscapeGame.props
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\scopedcss\bundle\EscapeGame.styles.css
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\scopedcss\projectbundle\EscapeGame.bundle.scp.css
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\refint\EscapeGame.dll
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.pdb
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\EscapeGame.genruntimeconfig.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\obj\Debug\net6.0\ref\EscapeGame.dll

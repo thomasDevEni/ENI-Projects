@@ -35,8 +35,8 @@ namespace EscapeGame.Controllers
             return View();
         }
 
-        [Route("/A/21/B/23/C")]
-        public IActionResult Fin(int v1=161, int v2=3)
+        [Route("/A/{v1}/B/{v2}/C")]
+        public IActionResult Fin(int v1, int v2)
         {
             ViewBag.Valeur = v1 * v2;
             return View();

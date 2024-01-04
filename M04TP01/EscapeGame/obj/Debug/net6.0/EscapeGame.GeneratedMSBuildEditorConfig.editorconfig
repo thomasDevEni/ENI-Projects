@@ -5,60 +5,63 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EscapeGame
 build_property.RootNamespace = EscapeGame
-build_property.ProjectDir = C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 4\TP1\EscapeGame (Solution)\EscapeGame\
+build_property.ProjectDir = C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\hboisgontier\Documents\Hervé\Cours\22-ASP.Net\2022\TP\Module 4\TP1\EscapeGame (Solution)\EscapeGame
+build_property.MSBuildProjectDirectory = C:\Users\trequier2023\source\repos\ENI-Projects\M04TP01\EscapeGame
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Home/Index.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Home/Suite.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Home/Suite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWl0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Machin/Bidule.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Machin/Bidule.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluXEJpZHVsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Machin/Index.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Machin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Machin/Jo.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Machin/Jo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluXEpvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Machin/Truc.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Machin/Truc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluXFRydWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Shared/Error.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Shared/Fin.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Shared/Fin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/_ViewImports.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/_ViewStart.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hboisgontier/Documents/Hervé/Cours/22-ASP.Net/2022/TP/Module 4/TP1/EscapeGame (Solution)/EscapeGame/Views/Shared/_Layout.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/M04TP01/EscapeGame/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ls3sy8t58s

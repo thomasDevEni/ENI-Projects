@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EscapeGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+432c8c9f99d6556bcf9a504e66caed852d245a1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("EscapeGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EscapeGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
