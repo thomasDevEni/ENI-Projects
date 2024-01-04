@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TpChat.Models;
+using TPChats.Models;
 
 namespace TpChat.Controllers
 {
@@ -8,7 +10,8 @@ namespace TpChat.Controllers
         // GET: ChatController
         public ActionResult Index()
         {
-            return View();
+            var chatList = Chat.GetMeuteDeChats();
+            return View(chatList);
         }
 
         // GET: ChatController/Details/5

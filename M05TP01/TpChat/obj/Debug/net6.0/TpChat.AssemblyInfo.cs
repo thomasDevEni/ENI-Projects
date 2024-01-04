@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TpChat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f96e044015e6b28ece3ccd47bc36186624b0e88")]
 [assembly: System.Reflection.AssemblyProductAttribute("TpChat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TpChat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

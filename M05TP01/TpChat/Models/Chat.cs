@@ -1,4 +1,5 @@
-﻿namespace TPChats.Models {
+﻿namespace TPChats.Models 
+{
     public class Chat {
         public int Id { get; set; }
         public string Nom { get; set; }
