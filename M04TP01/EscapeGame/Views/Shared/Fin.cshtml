@@ -1,0 +1,15 @@
+﻿@{
+    TempData["lettre"] = "t";
+    string mot = "";
+    for (var i = 1; i <= 7; i++)
+    {
+        mot += TempData["" + i];
+    }
+    if(ViewBag.Valeur == 483 && mot == "ASP.Net") {
+        <h1>Well done!</h1>
+        <p>Vous avez réussi ! Félicitations !</p>
+    } else {
+        <h1>:-(</h1>
+        <p>Dommage ! C'est une fausse route !</p>
+    }
+}

@@ -1,0 +1,15 @@
+﻿@using System.Security.Cryptography
+@using System.Text
+
+@{
+    Byte[] hash = ASCIIEncoding.ASCII.GetBytes(ViewBag.Id.ToString().ToCharArray());
+    if(hash[0]==52 && hash[1]==50 && hash[2]==54 && hash[3]==56 && hash[4]==55) {
+        var lien = "&#"+(hash[0]+hash[2]-32)+";&#"+(hash[4]+hash[3])+";";
+        <h1>Very good !</h1>
+        <p> C'est par <a href="/Machin/@Html.Raw(@lien)">ici</a> pour continuer !</p>
+        TempData["lettre"]='N';
+    } else {
+        <h1>Et non !</h1>
+        <p>Vous faites fausse route...</p>
+    }
+}
