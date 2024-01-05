@@ -80,7 +80,13 @@ namespace TpPizza.Controllers
         // GET: PizzaController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Pizza? pizza = _pizzasRepository.FirstOrDefault(x => x.Id == id);
+            if (pizza == null)
+            {
+                return NotFound();
+
+            }
+            return View(pizza);
         }
 
         // POST: PizzaController/Delete/5
@@ -90,6 +96,14 @@ namespace TpPizza.Controllers
         {
             try
             {
+                Pizza? pizza = _pizzasRepository.FirstOrDefault(x => x.Id == id);
+                if (pizza == null)
+                {
+                    return NotFound();
+
+                }
+                _pizzasRepository.Remove(pizza);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
