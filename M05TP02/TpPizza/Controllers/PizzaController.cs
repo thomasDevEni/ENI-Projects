@@ -1,6 +1,7 @@
 ﻿using TpPizza.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace TpPizza.Controllers
 {
@@ -14,18 +15,26 @@ namespace TpPizza.Controllers
             new Pizza { Id=2,Nom = "Pepperoni", Pate = Pizza.PatesDisponibles[1], Ingredients = new List<Ingredient>{Pizza.IngredientsDisponibles[7], Pizza.IngredientsDisponibles[5], Pizza.IngredientsDisponibles[0] } }
         };
 
+        private static List<Pizza> _pizzasRepository = _pizzas.ToList();
+
         // GET: PizzaController:Action pour afficher la liste des pizzas
         public ActionResult Index()
         {
-            return View(_pizzas);
+            return View(_pizzasRepository);
         }
         
         // GET: PizzaController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Pizza? pizza = _pizzasRepository.FirstOrDefault(x => x.Id == id);
+            if (pizza==null)
+            {
+                return NotFound();  
+                
+            }
+            return View(pizza);
         }
-
+        
         // GET: PizzaController/Create
         public ActionResult Create()
         {
