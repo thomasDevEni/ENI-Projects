@@ -1,0 +1,10 @@
+﻿@model List<TpPizza.Models.Pizza.PatesDisponibles>
+
+<label for="pate">Sélectionnez la pâte :</label>
+<select asp-for="Pizza.PatesDisponibles" class="form-control">
+    <option value="">-- Sélectionnez une pâte --</option>
+    @foreach (var pate in Model)
+    {
+        <option value="@pate">@pate.Nom</option>
+    }
+</select>
