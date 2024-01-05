@@ -1,22 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using TPChats.Models;
 
 namespace TpChats.Controllers
 {
     public class ChatController : Controller
     {
+        private static List<Chat> _chats = Chat.GetMeuteDeChats();
+
         // GET: ChatController
         public ActionResult Index()
         {
-             var v = Chat.GetMeuteDeChats();
-            return View(v);
+             return View(_chats);
         }
 
         // GET: ChatController/Details/5
         public ActionResult Details(int id)
         {
-            var chat = Chat.GetMeuteDeChats().FirstOrDefault(c => c.Id == id);
+            var chat = _chats.FirstOrDefault(c => c.Id == id);
                
             return View(chat);
         }
@@ -26,7 +28,10 @@ namespace TpChats.Controllers
         // GET: ChatController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var chatToRemove = _chats.FirstOrDefault(c => c.Id == id);
+            
+                return View(chatToRemove);
+   
         }
 
         // POST: ChatController/Delete/5
@@ -34,6 +39,14 @@ namespace TpChats.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
+            var chat = _chats.FirstOrDefault(c => c.Id == id);
+            if (chat == null)
+            {
+                return NotFound();
+            }
+
+            _chats.Remove(chat);
+
             try
             {
                 return RedirectToAction(nameof(Index));
@@ -43,5 +56,7 @@ namespace TpChats.Controllers
                 return View();
             }
         }
+
+        
     }
 }
