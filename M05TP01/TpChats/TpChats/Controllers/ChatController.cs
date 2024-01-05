@@ -16,7 +16,9 @@ namespace TpChats.Controllers
         // GET: ChatController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var chat = Chat.GetMeuteDeChats().FirstOrDefault(c => c.Id == id);
+               
+            return View(chat);
         }
 
 
