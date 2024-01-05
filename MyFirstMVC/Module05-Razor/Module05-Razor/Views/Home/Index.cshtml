@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@* Commentaire évalué coté serveur*@
+
+<!-- Commentaire évalué coté client-->
+
+@{
+    int i = 1357;
+    var mots = new List<string>() { "Coucou", "Il", "Fait", "Beau", "Ici" };
+}
+<div class="text-center">
+    @foreach(var mot in mots)
+    {
+        <p>@mot</p>
+    }
+
+    <h1 class="display-4">Welcome</h1>
+
+    <p>Valeur de la variable : @(i+100)</p>
+    @if (i == 5)
+    {
+        <p>Elle vaut 5</p>
+    }
+    else
+    {
+        <p>Elle vaut pas 5</p>
+    }
+
+    @for (int x=0;x<10; x++)
+    {
+        <p>Bonjour @(x)!</p>
+    }
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
