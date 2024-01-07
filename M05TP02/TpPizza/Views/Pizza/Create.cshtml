@@ -1,4 +1,4 @@
-﻿@model TpPizza.Models.Pizza
+﻿@model TpPizza.Models.PizzaViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -13,24 +13,36 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
+                <label asp-for="Pizza.Id" class="control-label"></label>
+                <input asp-for="Pizza.Id" class="form-control" />
+                <span asp-validation-for="Pizza.Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Nom" class="control-label"></label>
-                <input asp-for="Nom" class="form-control" />
-                <span asp-validation-for="Nom" class="text-danger"></span>
+                <label asp-for="Pizza.Nom" class="control-label"></label>
+                <input asp-for="Pizza.Nom" class="form-control" />
+                <span asp-validation-for="Pizza.Nom" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Pate" class="control-label"></label>
-                <input asp-for="Pate" class="form-control" />
-                <span asp-validation-for="Pate" class="text-danger"></span>
+                <label asp-for="PateSelectionne.Nom" class="control-label"></label>
+                <select asp-for="PateSelectionne.Nom" class="form-control" id="pate">
+                    <option value="">Sélectionnez une Pâte</option>
+                    @foreach (var pate in Model.Pates)
+                    {
+                        <option value="@pate.Nom">@pate.Nom</option>
+                    }
+                </select>
+                <span asp-validation-for="PateSelectionne.Nom" asp-items="@Model.Pates" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ingredients" class="control-label"></label>
-                <input asp-for="Ingredients" class="form-control" />
-                <span asp-validation-for="Ingredients" class="text-danger"></span>
+                <select asp-for="IngredientsSelectionnes" class="form-control" id="ingredients" multiple>
+                    <option value="">Sélectionnez un Ingrédient</option>
+                    @foreach (var ingredient in Model.Ingredients)
+                    {
+                        <option value="@ingredient.Nom">@ingredient.Nom</option>
+                    }
+                </select>
+                <span asp-validation-for="IngredientsSelectionnes" asp-items="@Model.Ingredients" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -38,7 +50,6 @@
         </form>
     </div>
 </div>
-
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

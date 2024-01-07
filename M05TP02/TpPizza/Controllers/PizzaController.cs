@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using Microsoft.CodeAnalysis;
 
 namespace TpPizza.Controllers
 {
@@ -38,42 +39,79 @@ namespace TpPizza.Controllers
         // GET: PizzaController/Create
         public ActionResult Create()
         {
-            return View();
+            var newPizza = new PizzaViewModel
+            {
+                Pizza = new Pizza(),
+                Ingredients = Pizza.IngredientsDisponibles,
+                Pates = Pizza.PatesDisponibles,
+                PateSelectionne = new Pate(),
+                IngredientsSelectionnes = new List<Ingredient>()
+            };
+            return View(newPizza);
         }
 
         // POST: PizzaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(PizzaViewModel newPizza)
         {
             try
             {
+                _pizzasRepository.Add(newPizza.Pizza);
+                // Traitement pour enregistrer la pizza dans la base de données
+                // Utilisez viewModel.Pizza pour obtenir les détails de la pizza, y compris la pâte et les ingrédients sélectionnés
                 return RedirectToAction(nameof(Index));
             }
+            
             catch
             {
-                return View();
+                
+                return View(newPizza.Pizza);
             }
         }
 
         // GET: PizzaController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            // Logique pour récupérer la pizza avec l'ID spécifié depuis la base de données
+            // Assurez-vous de charger les listes des pâtes et des ingrédients disponibles
+
+            var viewModel = _pizzasRepository.FirstOrDefault(c => c.Id == id);
+            if (viewModel == null) { return NotFound(); }
+            {
+                // Affectez la pizza à modifier à viewModel.Pizza
+                // Chargez les listes des pâtes et des ingrédients disponibles dans viewModel.Pates et viewModel.Ingredients
+            };
+            return View(viewModel);
+
         }
 
         // POST: PizzaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, PizzaViewModel viewModel)
         {
             try
             {
+                // Logique pour mettre à jour la pizza dans la base de données avec les nouvelles informations
+                //methode 1
+                int pizzaBddIndex = _pizzasRepository.FindIndex(x => x.Id == id);
+                if (pizzaBddIndex == -1) return NotFound();
+
+
+                _pizzasRepository[pizzaBddIndex].Nom = viewModel.Pizza.Nom;
+
+                _pizzasRepository[pizzaBddIndex].Pate = viewModel.Pizza.Pate;
+
+                _pizzasRepository[pizzaBddIndex].Ingredients = viewModel.Ingredients;
+
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                viewModel.Pates = Pizza.PatesDisponibles;
+                viewModel.Ingredients = Pizza.IngredientsDisponibles;
+                return View(viewModel);
             }
         }
 

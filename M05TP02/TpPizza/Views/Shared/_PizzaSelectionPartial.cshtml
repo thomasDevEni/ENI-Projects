@@ -1,16 +1,8 @@
 ﻿@model TpPizza.Models.PizzaViewModel
 
-@{
-    ViewData["Title"] = "Edit";
-}
-
-<h1>Edit</h1>
-
-<h4>Pizza</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Pizza.Id" class="control-label"></label>
@@ -28,18 +20,18 @@
                     <option value="">Sélectionnez une Pâte</option>
                     @foreach (var pate in Model.Pates)
                     {
-                        <option value="@pate.Nom">@pate.Nom</option>
+                        <option value="@pate">@pate</option>
                     }
                 </select>
                 <span asp-validation-for="Pates" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ingredients" class="control-label"></label>
-                <select asp-for="Ingredients" class="form-control" id="ingredients" multiples>
+                <select asp-for="Ingredients" class="form-control" id="ingredients">
                     <option value="">Sélectionnez un Ingrédient</option>
                     @foreach (var ingredient in Model.Ingredients)
                     {
-                        <option value="@ingredient.Nom">@ingredient.Nom</option>
+                        <option value="@ingredient">@ingredient</option>
                     }
                 </select>
                 <span asp-validation-for="Ingredients" class="text-danger"></span>
@@ -50,11 +42,3 @@
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
