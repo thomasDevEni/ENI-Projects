@@ -1,44 +1,36 @@
 ﻿@model TpPizza.Models.PizzaViewModel
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Pizza.Id" class="control-label"></label>
-                <input asp-for="Pizza.Id" class="form-control" />
-                <span asp-validation-for="Pizza.Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pizza.Nom" class="control-label"></label>
-                <input asp-for="Pizza.Nom" class="form-control" />
-                <span asp-validation-for="Pizza.Nom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pates" class="control-label"></label>
-                <select asp-for="Pates" class="form-control" id="pate">
-                    <option value="">Sélectionnez une Pâte</option>
-                    @foreach (var pate in Model.Pates)
-                    {
-                        <option value="@pate">@pate</option>
-                    }
-                </select>
-                <span asp-validation-for="Pates" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ingredients" class="control-label"></label>
-                <select asp-for="Ingredients" class="form-control" id="ingredients">
-                    <option value="">Sélectionnez un Ingrédient</option>
-                    @foreach (var ingredient in Model.Ingredients)
-                    {
-                        <option value="@ingredient">@ingredient</option>
-                    }
-                </select>
-                <span asp-validation-for="Ingredients" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="PizzaSelect.Id" class="control-label"></label>
+    <input asp-for="PizzaSelect.Id" class="form-control" />
+    <span asp-validation-for="PizzaSelect.Id" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="PizzaSelect.Nom" class="control-label"></label>
+    <input asp-for="PizzaSelect.Nom" class="form-control" />
+    <span asp-validation-for="PizzaSelect.Nom" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="PizzaSelect.Pate" class="control-label"></label>
+    <select asp-for="PizzaSelect.Pate" class="form-control" id="pate">
+        <option value="">Sélectionnez une Pâte</option>
+        @foreach (var pate in Model.Pates)
+        {
+            <option value="@pate.Nom">@pate.Nom</option>
+        }
+    </select>
+    <span asp-validation-for="PizzaSelect.Pate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Ingredients" class="control-label"></label>
+    <select asp-for="Ingredients" class="form-control" id="ingredients" multiples>
+        <option value="">Sélectionnez un Ingrédient</option>
+        @foreach (var ingredient in Model.Ingredients)
+        {
+            <option value="@ingredient.Nom">@ingredient.Nom</option>
+        }
+    </select>
+</div>
 </div>

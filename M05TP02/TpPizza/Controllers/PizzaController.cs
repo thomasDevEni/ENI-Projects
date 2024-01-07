@@ -41,11 +41,10 @@ namespace TpPizza.Controllers
         {
             var newPizza = new PizzaViewModel
             {
-                Pizza = new Pizza(),
                 Ingredients = Pizza.IngredientsDisponibles,
                 Pates = Pizza.PatesDisponibles,
-                PateSelectionne = new Pate(),
-                IngredientsSelectionnes = new List<Ingredient>()
+                PateSelectionne = new int(),
+                IngredientsSelectionnes = new List<int>()
             };
             return View(newPizza);
         }
@@ -57,7 +56,7 @@ namespace TpPizza.Controllers
         {
             try
             {
-                _pizzasRepository.Add(newPizza.Pizza);
+                _pizzasRepository.Add(newPizza.PizzaSelect);
                 // Traitement pour enregistrer la pizza dans la base de données
                 // Utilisez viewModel.Pizza pour obtenir les détails de la pizza, y compris la pâte et les ingrédients sélectionnés
                 return RedirectToAction(nameof(Index));
@@ -66,7 +65,7 @@ namespace TpPizza.Controllers
             catch
             {
                 
-                return View(newPizza.Pizza);
+                return View(newPizza);
             }
         }
 
@@ -76,7 +75,15 @@ namespace TpPizza.Controllers
             // Logique pour récupérer la pizza avec l'ID spécifié depuis la base de données
             // Assurez-vous de charger les listes des pâtes et des ingrédients disponibles
 
-            var viewModel = _pizzasRepository.FirstOrDefault(c => c.Id == id);
+            var pizzaSelected = _pizzasRepository.FirstOrDefault(c => c.Id == id);
+            var viewModel = new PizzaViewModel
+            {
+                PizzaSelect = pizzaSelected,
+                Ingredients = Pizza.IngredientsDisponibles,
+                Pates = Pizza.PatesDisponibles,
+                PateSelectionne = new int(),
+                IngredientsSelectionnes = new List<int>()
+            };
             if (viewModel == null) { return NotFound(); }
             {
                 // Affectez la pizza à modifier à viewModel.Pizza
@@ -99,9 +106,9 @@ namespace TpPizza.Controllers
                 if (pizzaBddIndex == -1) return NotFound();
 
 
-                _pizzasRepository[pizzaBddIndex].Nom = viewModel.Pizza.Nom;
+                _pizzasRepository[pizzaBddIndex].Nom = viewModel.PizzaSelect.Nom;
 
-                _pizzasRepository[pizzaBddIndex].Pate = viewModel.Pizza.Pate;
+               // _pizzasRepository[pizzaBddIndex].Pate = viewModel.Pizza.Pate;
 
                 _pizzasRepository[pizzaBddIndex].Ingredients = viewModel.Ingredients;
 
