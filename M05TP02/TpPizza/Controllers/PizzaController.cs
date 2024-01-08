@@ -49,23 +49,23 @@ namespace TpPizza.Controllers
         {
             try
             {
-                _pizzasRepository.Add(new Pizza
+                if (Valider(newPizza))
                 {
-                    Id = _pizzasRepository.Any() ? _pizzasRepository.Max(p => p.Id) + 1 : 1,
-                    Nom = newPizza.PizzaSelect.Nom,
-                    Pate = Pizza.PatesDisponibles.First(p => p.Id == newPizza.IdPateSelectionne),
-                    Ingredients = Pizza.IngredientsDisponibles.Where(i => newPizza.IdsIngredientsSelectionnes.Contains(i.Id)).ToList()
-                });
-                    
-                // Traitement pour enregistrer la pizza dans la base de données
-                // Utilisez viewModel.Pizza pour obtenir les détails de la pizza, y compris la pâte et les ingrédients sélectionnés
-                return RedirectToAction(nameof(Index));
+                    Pizza pizza = new Pizza
+                    {
+                        Id = _pizzasRepository.OrderByDescending(p => p.Id).FirstOrDefault()?.Id + 1 ?? 1,
+                        Nom = newPizza.Nom,
+                        Pate = Pizza.PatesDisponibles.First(p => p.Id == newPizza.IdPateSelectionne),
+                        Ingredients = Pizza.IngredientsDisponibles.Where(i => newPizza.IdsIngredientsSelectionnes.Contains(i.Id)).ToList()
+                    };
+                    _pizzasRepository.Add(pizza);
+                    return RedirectToAction(nameof(Index));
+                }
+                else return View(newPizza);
             }
-            
             catch
             {
-                
-                return View();
+                return View(newPizza);
             }
         }
 
@@ -75,46 +75,44 @@ namespace TpPizza.Controllers
             // Logique pour récupérer la pizza avec l'ID spécifié depuis la base de données
             // Assurez-vous de charger les listes des pâtes et des ingrédients disponibles
 
-            Pizza? pizza = _pizzasRepository.Find(p => p.Id == id);
-            if (pizza == null)
+            Pizza? pizza = _pizzasRepository.FirstOrDefault(p => p.Id == id);
+            if (pizza == null) return NotFound();
+            PizzaViewModel pizzaVM = new PizzaViewModel
             {
-                return NotFound();
-            }
-            return View(new PizzaViewModel
-            {
-                PizzaSelect = pizza,
+                Id = pizza.Id,
+                Nom = pizza.Nom,
                 IdPateSelectionne = pizza.Pate.Id,
                 IdsIngredientsSelectionnes = pizza.Ingredients.Select(i => i.Id).ToList()
-            });
+            };
+            return View(pizzaVM);
 
         }
 
         // POST: PizzaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, PizzaViewModel viewModel)
+        public ActionResult Edit(int id, PizzaViewModel pizzaVM)
         {
             try
             {
                 // Logique pour mettre à jour la pizza dans la base de données avec les nouvelles informations
                 //methode 1
-                int pizzaBddIndex = _pizzasRepository.FindIndex(x => x.Id == id);
-                if (pizzaBddIndex == -1) return NotFound();
-
-
-                _pizzasRepository[pizzaBddIndex].Nom = viewModel.PizzaSelect.Nom;
-
-               // _pizzasRepository[pizzaBddIndex].Pate = viewModel.Pizza.Pate;
-
-                _pizzasRepository[pizzaBddIndex].Ingredients = viewModel.Ingredients;
-
-                return RedirectToAction(nameof(Index));
+                if (id != pizzaVM.Id) return BadRequest();
+                Pizza? pizza = _pizzasRepository.FirstOrDefault(p => p.Id == id);
+                if (pizza == null) return NotFound();
+                if (Valider(pizzaVM))
+                {
+                    pizza.Nom = pizzaVM.Nom;
+                    pizza.Pate = Pizza.PatesDisponibles.First(p => p.Id == pizzaVM.IdPateSelectionne);
+                    pizza.Ingredients = Pizza.IngredientsDisponibles
+                        .Where(i => pizzaVM.IdsIngredientsSelectionnes.Contains(i.Id)).ToList();
+                    return RedirectToAction(nameof(Index));
+                }
+                else return View(pizzaVM);
             }
             catch
             {
-                viewModel.Pates = Pizza.PatesDisponibles;
-                viewModel.Ingredients = Pizza.IngredientsDisponibles;
-                return View(viewModel);
+                return View(pizzaVM);
             }
         }
 
@@ -151,6 +149,35 @@ namespace TpPizza.Controllers
             {
                 return View();
             }
+        }
+
+        private bool Valider(PizzaViewModel pizzaVM)
+        {
+            if (!ModelState.IsValid) return false;
+
+            int nbIng = pizzaVM.IdsIngredientsSelectionnes.Count();
+            if (nbIng < 2 || nbIng > 5)
+            {
+                ModelState.AddModelError("IdsIngredientsSelectionnes", "Une pizza doit avoir entre 2 et 5 ingrédients");
+                return false;
+            }
+
+            string nomPizza = pizzaVM.Nom.ToLower();
+            if (_pizzasRepository.Any(p => p.Nom.ToLower() == nomPizza && p.Id != pizzaVM.Id))
+            {
+                ModelState.AddModelError("Nom", "Une autre pizza porte déjà ce nom");
+                return false;
+            }
+
+            if (_pizzasRepository.Where(p => p.Ingredients.Count() == nbIng && p.Id != pizzaVM.Id)
+                .Any(p => p.Ingredients.All(i => pizzaVM.IdsIngredientsSelectionnes.Contains(i.Id))))
+            {
+                ModelState.AddModelError("IdsIngredientsSelectionnes",
+                    "Deux pizzas ne peuvent avoir la même liste d'ingrédients");
+                return false;
+            }
+
+            return true;
         }
     }
 }
