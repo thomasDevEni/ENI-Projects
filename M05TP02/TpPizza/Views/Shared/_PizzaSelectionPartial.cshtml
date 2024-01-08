@@ -2,36 +2,28 @@
 
 <div>
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<div class="form-group">
+@*<div class="form-group">
     <label asp-for="PizzaSelect.Id" class="control-label"></label>
     <input asp-for="PizzaSelect.Id" class="form-control" />
     <span asp-validation-for="PizzaSelect.Id" class="text-danger"></span>
-</div>
+</div>*@
 <div class="form-group">
     <label asp-for="PizzaSelect.Nom" class="control-label"></label>
     <input asp-for="PizzaSelect.Nom" class="form-control" />
     <span asp-validation-for="PizzaSelect.Nom" class="text-danger"></span>
 </div>
 <div class="form-group">
-    <label asp-for="PizzaSelect.Pate.Id" class="control-label"></label>
-    <select asp-for="PizzaSelect.Pate.Id" class="form-control" id="pate">
+        <label asp-for="IdPateSelectionne" class="control-label"></label>
+        <select asp-for="IdPateSelectionne" asp-items="Model.choixPate" class="form-control" id="IdPateSelectionne">
         <option value="">Sélectionnez une Pâte</option>
-        @foreach (var pate in Model.Pates)
-        {
-            <option value="@pate.Nom">@pate.Nom</option>
-        }
-    </select>
-    <span asp-validation-for="PizzaSelect.Pate.Id" class="text-danger"></span>
+        </select>
+        <span asp-validation-for="IdPateSelectionne" class="text-danger"></span>
 </div>
 <div class="form-group">
-    <label asp-for="Ingredients" class="control-label"></label>
-    <select asp-for="Ingredients" class="form-control" id="ingredients" multiples>
+        <label asp-for="IdsIngredientsSelectionnes" class="control-label"></label>
+        <select asp-for="IdsIngredientsSelectionnes" asp-items="Model.choixIngredients" class="form-control" id="choixIngredients.Id" multiples>
         <option value="">Sélectionnez un Ingrédient</option>
-        @foreach (var ingredient in Model.Ingredients)
-        {
-            <option value="@ingredient.Nom">@ingredient.Nom</option>
-        }
-    </select>
-        <span asp-validation-for="Ingredients" class="text-danger"></span>
+        </select>
+        <span asp-validation-for="IdsIngredientsSelectionnes" class="text-danger"></span>
 </div>
 </div>

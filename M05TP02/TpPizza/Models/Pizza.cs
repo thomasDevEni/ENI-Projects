@@ -6,9 +6,7 @@
         public Pate Pate { get; set; }
        
         public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
-        public List<Pate> Pates { get; set; }= new List<Pate>();
-
-        
+                
         public static List<Ingredient> IngredientsDisponibles => new List<Ingredient> {
             new Ingredient{Id=1,Nom="Mozzarella"},
             new Ingredient{Id=2,Nom="Jambon"},

@@ -39,14 +39,7 @@ namespace TpPizza.Controllers
         // GET: PizzaController/Create
         public ActionResult Create()
         {
-            var newPizza = new PizzaViewModel
-            {
-                Ingredients = Pizza.IngredientsDisponibles,
-                Pates = Pizza.PatesDisponibles,
-                PateSelectionne = new int(),
-                IngredientsSelectionnes = new List<int>()
-            };
-            return View(newPizza);
+            return View(new PizzaViewModel());
         }
 
         // POST: PizzaController/Create
@@ -56,7 +49,14 @@ namespace TpPizza.Controllers
         {
             try
             {
-                _pizzasRepository.Add(newPizza.PizzaSelect);
+                _pizzasRepository.Add(new Pizza
+                {
+                    Id = _pizzasRepository.Any() ? _pizzasRepository.Max(p => p.Id) + 1 : 1,
+                    Nom = newPizza.PizzaSelect.Nom,
+                    Pate = Pizza.PatesDisponibles.First(p => p.Id == newPizza.IdPateSelectionne),
+                    Ingredients = Pizza.IngredientsDisponibles.Where(i => newPizza.IdsIngredientsSelectionnes.Contains(i.Id)).ToList()
+                });
+                    
                 // Traitement pour enregistrer la pizza dans la base de données
                 // Utilisez viewModel.Pizza pour obtenir les détails de la pizza, y compris la pâte et les ingrédients sélectionnés
                 return RedirectToAction(nameof(Index));
@@ -65,7 +65,7 @@ namespace TpPizza.Controllers
             catch
             {
                 
-                return View(newPizza);
+                return View();
             }
         }
 
@@ -75,21 +75,17 @@ namespace TpPizza.Controllers
             // Logique pour récupérer la pizza avec l'ID spécifié depuis la base de données
             // Assurez-vous de charger les listes des pâtes et des ingrédients disponibles
 
-            var pizzaSelected = _pizzasRepository.FirstOrDefault(c => c.Id == id);
-            var viewModel = new PizzaViewModel
+            Pizza? pizza = _pizzasRepository.Find(p => p.Id == id);
+            if (pizza == null)
             {
-                PizzaSelect = pizzaSelected,
-                Ingredients = Pizza.IngredientsDisponibles,
-                Pates = Pizza.PatesDisponibles,
-                PateSelectionne = new int(),
-                IngredientsSelectionnes = new List<int>()
-            };
-            if (viewModel == null) { return NotFound(); }
+                return NotFound();
+            }
+            return View(new PizzaViewModel
             {
-                // Affectez la pizza à modifier à viewModel.Pizza
-                // Chargez les listes des pâtes et des ingrédients disponibles dans viewModel.Pates et viewModel.Ingredients
-            };
-            return View(viewModel);
+                PizzaSelect = pizza,
+                IdPateSelectionne = pizza.Pate.Id,
+                IdsIngredientsSelectionnes = pizza.Ingredients.Select(i => i.Id).ToList()
+            });
 
         }
 
