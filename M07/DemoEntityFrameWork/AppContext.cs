@@ -11,9 +11,12 @@ namespace DemoEntityFrameWork
     {
         public DbSet<Personne> Personnes { get; set; }
 
+        public DbSet<Adresse> Adresses { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseLazyLoadingProxies(); 
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DemoEntityFrameWorkDb;MultipleActiveResultSets=true"); 
         }
     }

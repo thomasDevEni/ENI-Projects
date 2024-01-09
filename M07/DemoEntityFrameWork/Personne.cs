@@ -11,5 +11,9 @@ namespace DemoEntityFrameWork
         public int Id { get; set; }
         public string? Nom { get; set; }
         public int Age { get; set; }
+
+        //Déclarer la relation
+        public Adresse? Adresse { get; set; }
+        public int? AdresseId { get; set; }
     }
 }

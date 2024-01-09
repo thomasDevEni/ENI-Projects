@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DemoCRUDEntityFramework.props" />
+</Project>
