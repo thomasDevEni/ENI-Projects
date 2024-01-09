@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Thèmes";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>Choix du Thème:l</h2>
+
+<p>Nombre de visites : @ViewBag.VisitsCount</p>
+
+<p>Choisissez une couleur :</p>
+<form action="@Url.Action("SetColor")" method="post">
+    <select name="color" id="color">
+        @foreach (var color in ViewBag.AvailableColors)
+        {
+            <option value="@color">@color</option>
+        }
+    </select>
+    <input type="submit" value="Appliquer" />
+</form>
+
+<p style="color: @(ViewBag.SelectedColor)">Ceci est un texte en couleur</p>

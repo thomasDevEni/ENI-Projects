@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<p>Nombre de visites : @ViewBag.VisitsCount</p>
+
+<p>Choisissez une couleur :</p>
+<form action="@Url.Action("Themes")" method="post">
+    <select name="color" id="color">
+        @foreach (var color in ViewBag.AvailableColors)
+        {
+            <option value="@color">@color</option>
+        }
+    </select>
+    <input type="submit" value="Appliquer" />
+</form>
+
+<p style="color: @(ViewBag.SelectedColor)">Ceci est un texte en couleur</p>
+
+<p>@TempData["valeur"]</p>
