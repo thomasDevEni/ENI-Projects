@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TpDojo", "TpDojo.csproj", "{BBF81F66-46F1-40D9-87DF-166591286BFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "..\BO\BO.csproj", "{F1192B4B-E001-4E7B-9CFB-96041BFD2D5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBF81F66-46F1-40D9-87DF-166591286BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF81F66-46F1-40D9-87DF-166591286BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF81F66-46F1-40D9-87DF-166591286BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF81F66-46F1-40D9-87DF-166591286BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1192B4B-E001-4E7B-9CFB-96041BFD2D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1192B4B-E001-4E7B-9CFB-96041BFD2D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1192B4B-E001-4E7B-9CFB-96041BFD2D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1192B4B-E001-4E7B-9CFB-96041BFD2D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FDC2725-3E3D-47B9-9E6A-00E641DB97F0}
+	EndGlobalSection
+EndGlobal
