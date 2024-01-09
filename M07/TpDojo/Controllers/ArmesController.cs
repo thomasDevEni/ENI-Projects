@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TpDojo.Data;
 using TpDojo.Models;
+using TpDojo.Controllers;
 
 namespace TpDojo.Controllers
 {
@@ -104,7 +105,7 @@ namespace TpDojo.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ArmeExists(arme.Id))
+                    if (!ArmeExists((int)arme.Id))
                     {
                         return NotFound();
                     }
@@ -144,6 +145,18 @@ namespace TpDojo.Controllers
             if (_context.Arme == null)
             {
                 return Problem("Entity set 'TpDojoContext.Arme'  is null.");
+            }
+
+            // Vérifier si l'arme est associée à un samouraï
+            Samourai? samouraiWithArme = await _context.Samourai.FirstOrDefaultAsync(s => s.ArmeId == id);
+
+            if (samouraiWithArme != null)
+            {
+                // Dissocier l'arme du samouraï ou gérer cette situation selon vos besoins
+                samouraiWithArme.ArmeId = null; // Dissocie l'arme du samouraï
+
+                // Vous pouvez également choisir de ne pas supprimer l'arme et retourner un message d'avertissement
+                //return RedirectToAction("Index").WithWarning("L'arme est associée à un samouraï.");
             }
             var arme = await _context.Arme.FindAsync(id);
             if (arme != null)

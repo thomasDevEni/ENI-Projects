@@ -48,7 +48,7 @@ namespace TpDojo.Controllers
         // GET: Samourais/Create
         public IActionResult Create()
         {
-            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Degats");
+            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Nom");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace TpDojo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Degats", samourai.ArmeId);
+            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Nom", samourai.ArmeId);
             return View(samourai);
         }
 
@@ -82,7 +82,7 @@ namespace TpDojo.Controllers
             {
                 return NotFound();
             }
-            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Degats", samourai.ArmeId);
+            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Nom", samourai.ArmeId);
             return View(samourai);
         }
 
@@ -118,7 +118,7 @@ namespace TpDojo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Degats", samourai.ArmeId);
+            ViewData["ArmeId"] = new SelectList(_context.Arme, "Id", "Nom", samourai.ArmeId);
             return View(samourai);
         }
 

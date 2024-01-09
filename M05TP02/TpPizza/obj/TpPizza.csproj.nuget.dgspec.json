@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj": {}
+    "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj": {
+    "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj",
+        "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj",
         "projectName": "TpPizza",
-        "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj",
-        "packagesPath": "C:\\Users\\trequier2023\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\obj\\",
+        "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\TpPizza.csproj",
+        "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M05TP02\\TpPizza\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\trequier2023\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +40,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

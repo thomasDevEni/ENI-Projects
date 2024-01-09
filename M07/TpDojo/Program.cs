@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection.Emit;
 using TpDojo.Data;
+using TpDojo.Models;
 namespace TpDojo
 {
     public class Program
