@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TpDojo.Data;
 
@@ -10,9 +11,10 @@ using TpDojo.Data;
 namespace TpDojo.Migrations
 {
     [DbContext(typeof(TpDojoContext))]
-    partial class TpDojoContextModelSnapshot : ModelSnapshot
+    [Migration("20240109154638_AddSamourais")]
+    partial class AddSamourais
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -15,5 +15,7 @@ namespace TpDojo.Data
         }
 
         public DbSet<TpDojo.Models.Arme> Arme { get; set; } = default!;
+
+        public DbSet<TpDojo.Models.Samourai>? Samourai { get; set; }
     }
 }
