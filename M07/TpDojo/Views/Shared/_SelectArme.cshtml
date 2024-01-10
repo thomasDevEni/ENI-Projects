@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TpDojo.Models.SelectArmeViewModel>
+
+@{
+    ViewData["Title"] = "SelectArme";
+}
+
+<h1>Liste des Armes</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+       
+            <th>
+                @Html.DisplayNameFor(model => model.Arme)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+            @if (item.Arme.Id != null)
+            {
+                        @item.Arme.Id
+            }
+            else
+            {
+                        <text><i>Aucune Arme</i></text>
+            }
+            @Html.DisplayFor(modelItem => item.IdArme)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
