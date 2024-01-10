@@ -27,7 +27,7 @@ namespace TpDojo.Data
             {
                 Id = 1,
                 Nom = "Aucune Arme",
-                Degats = null // ou remplacez null par une valeur par défaut si Degats n'est pas nullable
+                Degats = null
             });
         }
     }
