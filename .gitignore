@@ -82,3 +82,6 @@
 /M07/TpDojo/.vs/TpDojo/config
 /M07/TpDojo/bin/Debug/net6.0
 /M07/TpDojo/obj
+/M07/TpDojo/.vs/ProjectEvaluation
+/M07/DemoCRUDEntityFramework/.vs/ProjectEvaluation
+/.gitignore
