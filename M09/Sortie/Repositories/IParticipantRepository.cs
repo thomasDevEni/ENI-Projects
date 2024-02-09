@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Services
+namespace Infrastructure.Repositories
 {
-    public interface IRoleService
+    public interface IParticipantRepository
     {
-        void AddRole(Role role);
+        void AddParticipant(Participant participant);
     }
 }

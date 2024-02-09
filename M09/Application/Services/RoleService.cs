@@ -10,9 +10,9 @@ namespace Application.Services
 {
     public class RoleService : IRoleService
     {
-        public RoleRepository _rroleRepository { get; set; }
+        public IRoleRepository _rroleRepository { get; set; }
 
-        public RoleService(RoleRepository rroleRepository)
+        public RoleService(IRoleRepository rroleRepository)
         {
             _rroleRepository = rroleRepository;
         }

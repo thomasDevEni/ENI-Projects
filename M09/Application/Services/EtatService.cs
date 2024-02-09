@@ -10,9 +10,9 @@ namespace Application.Services
 {
     public class EtatService : IEtatService
     {
-        public EtatRepository _retatRepository { get; set; }
+        public IEtatRepository _retatRepository { get; set; }
 
-        public EtatService(EtatRepository retatRepository)
+        public EtatService(IEtatRepository retatRepository)
         {
             _retatRepository = retatRepository;
         }

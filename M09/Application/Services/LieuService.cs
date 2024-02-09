@@ -10,9 +10,9 @@ namespace Application.Services
 {
     public class LieuService : ILieuService
     {
-        public LieuRepository _rlieuRepository { get; set; }
+        public ILieuRepository _rlieuRepository { get; set; }
 
-        public LieuService(LieuRepository rlieuRepository)
+        public LieuService(ILieuRepository rlieuRepository)
         {
             _rlieuRepository = rlieuRepository;
         }

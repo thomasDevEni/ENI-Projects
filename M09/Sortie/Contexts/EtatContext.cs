@@ -11,5 +11,8 @@ namespace Infrastructure.Contexts
     public class EtatContext : DbContext
     {
         public DbSet<Etat> Etat { get; set; }
+        public EtatContext(DbContextOptions<SortieContext> options) : base(options)
+        {
+        }
     }
 }

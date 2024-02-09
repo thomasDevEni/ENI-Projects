@@ -10,9 +10,9 @@ namespace Application.Services
 {
     public class ParticipantService : IParticipantService
     {
-        public ParticipantRepository _rparticipantRepository { get; set; }
+        public IParticipantRepository _rparticipantRepository { get; set; }
 
-        public ParticipantService(ParticipantRepository rparticipantRepository)
+        public ParticipantService(IParticipantRepository rparticipantRepository)
         {
             _rparticipantRepository = rparticipantRepository;
         }

@@ -10,9 +10,9 @@ namespace Application.Services
 {
     public class SortieService : ISortieService
     {
-        public SortieRepository _rsortieRepository {  get; set; }
+        public ISortieRepository _rsortieRepository {  get; set; }
 
-        public SortieService(SortieRepository rsortieRepository) {
+        public SortieService(ISortieRepository rsortieRepository) {
             _rsortieRepository = rsortieRepository;
         }
 
