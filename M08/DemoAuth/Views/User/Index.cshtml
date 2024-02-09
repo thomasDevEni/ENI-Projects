@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Microsoft.AspNetCore.Identity.IdentityUser>
+
+@{
+    ViewData["Title"] = "Liste des Utilisateurs";
+
+}
+
+<h1>Liste des Users</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+                E-mail
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <th>
+                    @user.Id
+                </th>
+                <th>
+                    @user.UserName
+                </th>
+                <th>
+                    @user.Email
+                </th>
+            </tr>
+            
+        }
+    </tbody>
+</table>

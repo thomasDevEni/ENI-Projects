@@ -19,7 +19,8 @@ namespace TpDojo.Data
 
         public DbSet<TpDojo.Models.Samourai>? Samourai { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -29,6 +30,6 @@ namespace TpDojo.Data
                 Nom = "Aucune Arme",
                 Degats = null
             });
-        }
+        }*/
     }
 }

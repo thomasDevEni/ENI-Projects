@@ -19,9 +19,26 @@ namespace TpDojo.Controllers
             _context = context;
         }
 
+        // GET: Liste d'armes
+        public async Task<ActionResult> SelectArme()
+        {
+            var weapons = await _context.Arme.ToListAsync();
+
+            var weaponViewModels = weapons.Select(w => new SelectArmeViewModel
+            {
+                IdArme = w.Id,
+                Nom = w.Nom,
+                Arme = w,
+                // Remplissez d'autres propriétés ViewModel si nécessaire
+            }).ToList();
+
+            return View(weaponViewModels);
+        }
+
         // GET: Samourais
         public async Task<IActionResult> Index()
         {
+
             var tpDojoContext = _context.Samourai.Include(s => s.Arme);
             return View(await tpDojoContext.ToListAsync());
         }
