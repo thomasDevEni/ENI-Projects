@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
-using Domain.Entities;
+using Application.Dto;
 
 namespace SortieWebApp.Controllers
 {
@@ -14,7 +14,7 @@ namespace SortieWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddEtat(Etat etat)
+        public async Task<IActionResult> AddEtat(EtatDto etat)
         {
             try
             {

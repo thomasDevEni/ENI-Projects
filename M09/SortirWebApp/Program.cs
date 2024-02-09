@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen(c =>
 // builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddRazorPages();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 

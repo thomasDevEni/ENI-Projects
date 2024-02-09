@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
-using Domain.Entities;
+using Application.Dto;
+
 
 namespace SortieWebApp.Controllers
 {
@@ -14,7 +15,7 @@ namespace SortieWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddSortie(Sortie sortie)
+        public async Task<IActionResult> AddSortie(SortieDto sortie)
         {
             try
             {

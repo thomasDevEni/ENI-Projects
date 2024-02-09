@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
-using Domain.Entities;
+using Application.Dto;
+
 
 namespace SortieWebApp.Controllers
 {
@@ -14,12 +15,12 @@ namespace SortieWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddRole(Role role)
+        public async Task<IActionResult> AddRole(RoleDto roleDto)
         {
             try
             {
-                _roleService.AddRole(role);
-                return Ok(role);
+                _roleService.AddRole(roleDto);
+                return Ok(roleDto);
             }
             catch (Exception ex)
             {

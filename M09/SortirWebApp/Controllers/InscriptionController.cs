@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
-using Domain.Entities;
+using Application.Dto;
 
 namespace SortieWebApp.Controllers
 {
@@ -14,7 +14,7 @@ namespace SortieWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddInscription(Inscription inscription)
+        public async Task<IActionResult> AddInscription(InscriptionDto inscription)
         {
             try
             {
