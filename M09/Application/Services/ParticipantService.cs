@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Application.Dto;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,11 +17,11 @@ namespace Application.Services
             _rparticipantRepository = rparticipantRepository;
         }
 
-        public void AddParticipant(Participant participant)
+        public void AddParticipant(ParticipantDto participant)
         {
             try
             {
-                _rparticipantRepository.AddParticipant(participant);
+                _rparticipantRepository.AddParticipant(null);
 
             }
             catch (Exception ex)

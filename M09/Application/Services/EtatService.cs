@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Application.Dto;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,11 +17,11 @@ namespace Application.Services
             _retatRepository = retatRepository;
         }
 
-        public void AddEtat(Etat etat)
+        public void AddEtat(EtatDto etat)
         {
             try
             {
-                _retatRepository.AddEtat(etat);
+                _retatRepository.AddEtat(null);
 
             }
             catch (Exception ex)

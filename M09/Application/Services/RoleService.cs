@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Application.Dto;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,11 +17,11 @@ namespace Application.Services
             _rroleRepository = rroleRepository;
         }
 
-        public void AddRole(Role role)
+        public void AddRole(RoleDto role)
         {
             try
             {
-                _rroleRepository.AddRole(role);
+                _rroleRepository.AddRole(null);
 
             }
             catch (Exception ex)

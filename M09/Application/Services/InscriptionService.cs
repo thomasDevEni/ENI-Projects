@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Application.Dto;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,11 +17,11 @@ namespace Application.Services
             _rinscriptionRepository = rinscriptionRepository;
         }
 
-        public void AddInscription(Inscription inscription)
+        public void AddInscription(InscriptionDto inscription)
         {
             try
             {
-                _rinscriptionRepository.AddInscription(inscription);
+                _rinscriptionRepository.AddInscription(null);
 
             }
             catch (Exception ex)

@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Application.Dto;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,11 +17,11 @@ namespace Application.Services
             _rlieuRepository = rlieuRepository;
         }
 
-        public void AddLieu(Lieu lieu)
+        public void AddLieu(LieuDto lieu)
         {
             try
             {
-                _rlieuRepository.AddLieu(lieu);
+                _rlieuRepository.AddLieu(null);
 
             }
             catch (Exception ex)

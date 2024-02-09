@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Application.Dto;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -16,11 +16,11 @@ namespace Application.Services
             _rsortieRepository = rsortieRepository;
         }
 
-        public void AddSortie(Sortie sortie) 
+        public void AddSortie(SortieDto sortie) 
         {
             try
             {
-                _rsortieRepository.AddSortie(sortie);
+                _rsortieRepository.AddSortie(null);
 
             } catch (Exception ex)
 

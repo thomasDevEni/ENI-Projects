@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Application.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace Application.Services
 {
     public interface IRoleService
     {
-        void AddRole(Role role);
+        void AddRole(RoleDto role);
     }
 }
