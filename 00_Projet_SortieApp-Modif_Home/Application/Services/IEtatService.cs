@@ -10,5 +10,6 @@ namespace Application.Services
     internal interface IEtatService
     {
         void AddEtat(EtatDto etat);
+        public EtatDto GetDtoById(int id);
     }
 }

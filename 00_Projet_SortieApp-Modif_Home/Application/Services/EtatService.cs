@@ -2,6 +2,7 @@
 using AutoMapper;
 using Infrastructure.Repositories;
 using Infrastructure.Contexts;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,11 @@ namespace Application.Services
     public class EtatService : IEtatService
     {
         private readonly IMapper _mapper;
-        private readonly SortieContext _context;
+        private readonly EtatContext _context;
 
         public IEtatRepository _retatRepository { get; set; }
 
-        public EtatService(IMapper mapper, SortieContext context)
+        public EtatService(IMapper mapper, EtatContext context)
         {
             _mapper = mapper;
             _context = context;
@@ -25,7 +26,7 @@ namespace Application.Services
 
         public EtatDto GetDtoById(int id) 
         {
-            var etatEntity = _context.ContextId(_context);
+            var etatEntity = _context.Etat.FirstOrDefault(p => p.Id == id);
             if (etatEntity == null) 
             {
                 return null;
@@ -40,7 +41,13 @@ namespace Application.Services
             try
             {
                 var etatEntity = _mapper.Map<Etat>(etatDto);
-                _retatRepository.AddEtat(null);
+
+                // Add the product entity to the context
+                //_context.Etat.Add(etatEntity);
+
+                // Save changes to the database
+                //_context.SaveChanges();
+                _retatRepository.AddEtat(etatEntity);
 
             }
             catch (Exception ex)
