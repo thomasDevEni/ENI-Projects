@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SortieApp.Application;
 using SortieApp.Infrastructure;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureApplicationService()
                 .ConfigureInfrastructureService();
 builder.Services.AddControllers();
+//builder.Services.AddAutoMapper();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });

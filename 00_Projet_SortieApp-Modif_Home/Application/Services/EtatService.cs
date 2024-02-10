@@ -1,5 +1,7 @@
 ﻿using Application.Dto;
+using AutoMapper;
 using Infrastructure.Repositories;
+using Infrastructure.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +12,34 @@ namespace Application.Services
 {
     public class EtatService : IEtatService
     {
+        private readonly IMapper _mapper;
+        private readonly SortieContext _context;
+
         public IEtatRepository _retatRepository { get; set; }
 
-        public EtatService(IEtatRepository retatRepository)
+        public EtatService(IMapper mapper, SortieContext context)
         {
-            _retatRepository = retatRepository;
+            _mapper = mapper;
+            _context = context;
         }
 
-        public void AddEtat(EtatDto etat)
+        public EtatDto GetDtoById(int id) 
+        {
+            var etatEntity = _context.ContextId(_context);
+            if (etatEntity == null) 
+            {
+                return null;
+            }
+
+            var etatDto = _mapper.Map<EtatDto>(etatEntity);
+            return etatDto;
+        }
+
+        public void AddEtat(EtatDto etatDto)
         {
             try
             {
+                var etatEntity = _mapper.Map<Etat>(etatDto);
                 _retatRepository.AddEtat(null);
 
             }

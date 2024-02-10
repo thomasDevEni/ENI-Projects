@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6JeIok5cCW4tGARdmJzeTHN8giKRWboIuHI8xbi3P+gTKkXTQYCZf7x8+r/QWykn848n4s7tKyI5CJWQwpBjkg==",
+  "dgSpecHash": "DkfyVas3mfYT8wLa8vfC2NJBnrr87AutGy+CwQMIhp8DfwlnUMBOPwav4XJ+cfpV2t+3ccAJnXJwHBALJCLPnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thoma\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -4334,11 +4334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\SortirWebApp\\SortieWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\SortirWebApp\\SortieWebApp.csproj",
       "projectName": "SortieWebApp",
-      "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\SortirWebApp\\SortieWebApp.csproj",
+      "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\SortirWebApp\\SortieWebApp.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\SortirWebApp\\obj\\",
+      "outputPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\SortirWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4356,11 +4356,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\Application\\Application.csproj"
+            "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Application\\Application.csproj"
             },
-            "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\Sortie\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\M09\\Sortie\\Infrastructure.csproj"
+            "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj"
             }
           }
         }
