@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class ParticipantRepository
+    public class ParticipantRepository:IParticipantRepository
     {
         public readonly ParticipantContext _context;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class InscriptionRepository
+    public class InscriptionRepository:IInscriptionRepository
     {
         public readonly InscriptionContext _context;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class LieuRepository
+    public class LieuRepository:ILieuRepository
     {
         public readonly LieuContext _context;
 
