@@ -4032,11 +4032,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\obj\\",
+      "outputPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4054,8 +4054,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj"
+            "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj"
             }
           }
         }

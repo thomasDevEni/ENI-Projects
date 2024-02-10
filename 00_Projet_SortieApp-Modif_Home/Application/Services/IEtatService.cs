@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    internal interface IEtatService
+    public interface IEtatService
     {
         void AddEtat(EtatDto etat);
         public EtatDto GetDtoById(int id);

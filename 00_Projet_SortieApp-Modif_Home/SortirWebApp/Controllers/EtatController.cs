@@ -7,14 +7,14 @@ namespace SortieWebApp.Controllers
     [Route("api/[controller]")]
     public class EtatController : ControllerBase
     {
-        public EtatService _etatService { get; set; }
-        public EtatController(EtatService etatService) 
+        public IEtatService _etatService { get; set; }
+        public EtatController(IEtatService etatService) 
         {
         _etatService = etatService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddEtat(EtatDto etat)
+        public IActionResult AddEtat(EtatDto etat)
         {
             try
             {

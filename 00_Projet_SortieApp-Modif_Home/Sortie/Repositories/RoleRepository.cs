@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class RoleRepository
+    public class RoleRepository:IRoleRepository
     {
         public readonly RoleContext _context;
 

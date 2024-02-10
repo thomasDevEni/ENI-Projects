@@ -43,10 +43,10 @@ namespace Application.Services
                 var etatEntity = _mapper.Map<Etat>(etatDto);
 
                 // Add the product entity to the context
-                //_context.Etat.Add(etatEntity);
+                _context.Etat.Add(etatEntity);
 
                 // Save changes to the database
-                //_context.SaveChanges();
+                _context.SaveChanges();
                 _retatRepository.AddEtat(etatEntity);
 
             }

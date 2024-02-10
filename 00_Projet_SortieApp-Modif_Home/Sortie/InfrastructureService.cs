@@ -16,11 +16,15 @@ namespace SortieApp.Infrastructure
             services.AddAutoMapper(typeof(InfrastructureService));
             //Type et durée de vie su service (Type Singleton: unique et utilisé dans toute l'application)
             services.AddScoped<ISortieRepository, SortieRepository>();
-            services.AddDbContext<SortieContext>(options => options.UseSqlServer("Data Source=48SE46-HL5HHZ3;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<IEtatRepository, EtatRepository>();
+            services.AddDbContext<SortieContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<RoleContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<EtatContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
 
             //services.AddSingleton<SortieRepository>();
             //services.AddSingleton<SortieContext>();
-          
+
 
             return services;
             }

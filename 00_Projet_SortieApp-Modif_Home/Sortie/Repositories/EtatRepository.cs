@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class EtatRepository
+    public class EtatRepository:IEtatRepository
     {
         public readonly EtatContext _context;
 
@@ -26,7 +26,7 @@ namespace Infrastructure.Repositories
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }
