@@ -3,6 +3,7 @@ using Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using SortieApp.Infrastructure;
 using AutoMapper;
+using Application;
 
 namespace SortieApp.Application
 {
@@ -12,7 +13,7 @@ namespace SortieApp.Application
         {
             //Type et durée de vie su service (Type Singleton: unique et utilisé dans toute l'application)
             // Add AutoMapper and mapping profile
-            //services.AddAutoMapper(typeof(ApplicationService));
+            //services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<IEtatService, EtatService>();
             services.AddScoped<ISortieService,SortieService> ();
             //services.AddScoped<RoleService> ();

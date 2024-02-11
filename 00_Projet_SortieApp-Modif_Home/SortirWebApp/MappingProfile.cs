@@ -7,7 +7,7 @@ using Application.Dto;
 using AutoMapper;
 using Domain.Entities;
 
-namespace Application
+namespace SortieWebApp
 {
     public class MappingProfile:Profile
     {

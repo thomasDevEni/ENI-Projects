@@ -5,14 +5,20 @@ using SortieApp.Application;
 using SortieApp.Infrastructure;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
+using SortieWebApp;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//builder.Services.AddAutoMapper(typeof(MappingProfile));
 //Ajout de la classe d'extension ConfigureApplicationService()
 builder.Services.ConfigureApplicationService()
                 .ConfigureInfrastructureService();
+/*builder.Services.AddAutoMapper(typeof(Program).Assembly,// Replace Program with any type within your application
+    typeof(MappingProfile).Assembly
+);*/
 builder.Services.AddControllers();
 //builder.Services.AddAutoMapper();
 builder.Services.AddSwaggerGen(c =>

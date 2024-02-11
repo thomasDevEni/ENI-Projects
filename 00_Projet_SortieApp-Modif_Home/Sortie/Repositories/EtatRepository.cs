@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +11,30 @@ namespace Infrastructure.Repositories
 {
     public class EtatRepository:IEtatRepository
     {
-        public readonly EtatContext _context;
+        private readonly EtatContext _context;
 
         public EtatRepository(EtatContext context)
         {
             _context = context;
         }
 
-        public void AddEtat(Etat etat)
+        public async Task<Etat> GetByIdAsync(int id)
+        {
+            return await _context.Etat.FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public async Task<List<Etat>> GetAllAsync()
+        {
+            return await _context.Etat.ToListAsync();
+        }
+
+        public async Task<Etat> AddEtatAsync(Etat etat)
         {
             try
             {
-                _context.Etat.Add(etat);
-                _context.SaveChanges();
+                var addedEtat = await _context.Etat.AddAsync(etat);
+                await _context.SaveChangesAsync();
+                return addedEtat.Entity;
             }
             catch (Exception ex)
             {

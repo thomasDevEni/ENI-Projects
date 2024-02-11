@@ -9,7 +9,12 @@ namespace Application.Services
 {
     public interface IEtatService
     {
-        void AddEtat(EtatDto etat);
-        public EtatDto GetDtoById(int id);
+        Task AddEtatAsync(EtatDto etatDto);
+        Task<EtatDto> GetByIdAsync(int id);
+        Task<List<EtatDto>> GetAllEtatAsync();
+
+        Task<EtatDto> GetEtatByIdAsync(int id);
+
+
     }
 }

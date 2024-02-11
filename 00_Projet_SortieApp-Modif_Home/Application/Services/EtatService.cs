@@ -14,40 +14,51 @@ namespace Application.Services
     public class EtatService : IEtatService
     {
         private readonly IMapper _mapper;
-        private readonly EtatContext _context;
+        private readonly IEtatRepository _retatRepository;
 
-        public IEtatRepository _retatRepository { get; set; }
 
-        public EtatService(IMapper mapper, EtatContext context)
+        public EtatService(IMapper mapper, IEtatRepository etatRepository)
         {
             _mapper = mapper;
-            _context = context;
+            _retatRepository = etatRepository;
         }
 
-        public EtatDto GetDtoById(int id) 
+
+
+        public async Task<EtatDto> GetByIdAsync(int id) 
         {
-            var etatEntity = _context.Etat.FirstOrDefault(p => p.Id == id);
-            if (etatEntity == null) 
+            var etat = _retatRepository.GetByIdAsync(id); ;
+            if (_retatRepository == null) 
             {
                 return null;
             }
 
-            var etatDto = _mapper.Map<EtatDto>(etatEntity);
+            var etatDto = _mapper.Map<EtatDto>(etat);
             return etatDto;
         }
 
-        public void AddEtat(EtatDto etatDto)
+        public async Task<List<EtatDto>> GetAllEtatAsync()
+        {
+            var etats = await _retatRepository.GetAllAsync();
+            return _mapper.Map<List<EtatDto>>(etats);
+        }
+
+        public async Task<EtatDto> GetEtatByIdAsync(int id)
+        {
+            var product = await _retatRepository.GetByIdAsync(id);
+            return _mapper.Map<EtatDto>(product);
+        }
+
+        public async Task AddEtatAsync(EtatDto etatDto)
         {
             try
             {
+                // Map EtattDto to Etat entity
                 var etatEntity = _mapper.Map<Etat>(etatDto);
 
-                // Add the product entity to the context
-                _context.Etat.Add(etatEntity);
+                // Pass the mapped entity to the repository for addition
+                await _retatRepository.AddEtatAsync(etatEntity);
 
-                // Save changes to the database
-                _context.SaveChanges();
-                _retatRepository.AddEtat(etatEntity);
 
             }
             catch (Exception ex)
