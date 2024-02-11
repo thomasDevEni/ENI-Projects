@@ -157,7 +157,6 @@ C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWe
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\SortieWebApp.dll
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\SortieWebApp.pdb
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\Humanizer.dll

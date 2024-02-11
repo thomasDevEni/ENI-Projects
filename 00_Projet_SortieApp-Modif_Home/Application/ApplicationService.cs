@@ -13,7 +13,7 @@ namespace SortieApp.Application
         {
             //Type et durée de vie su service (Type Singleton: unique et utilisé dans toute l'application)
             // Add AutoMapper and mapping profile
-            //services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<IEtatService, EtatService>();
             services.AddScoped<ISortieService,SortieService> ();
             //services.AddScoped<RoleService> ();

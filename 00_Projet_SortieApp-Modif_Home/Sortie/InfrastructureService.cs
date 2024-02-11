@@ -13,7 +13,7 @@ namespace SortieApp.Infrastructure
             {
 
             // Add AutoMapper and mapping profile
-            services.AddAutoMapper(typeof(InfrastructureService));
+            //services.AddAutoMapper(typeof(InfrastructureService));
             //Type et durée de vie su service (Type Singleton: unique et utilisé dans toute l'application)
             services.AddScoped<ISortieRepository, SortieRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
