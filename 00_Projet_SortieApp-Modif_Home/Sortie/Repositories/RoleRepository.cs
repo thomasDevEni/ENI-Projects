@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,34 @@ namespace Infrastructure.Repositories
 {
     public class RoleRepository:IRoleRepository
     {
-        public readonly RoleContext _context;
+        private readonly RoleContext _context;
 
         public RoleRepository(RoleContext context)
         {
             _context = context;
         }
 
-        public void AddRole(Role role)
+        public async Task<Role> GetByIdAsync(int id)
+        {
+            return await _context.Role.FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public async Task<List<Role>> GetAllAsync()
+        {
+            return await _context.Role.ToListAsync();
+        }
+
+        public async Task<Role> AddRoleAsync(Role role)
         {
             try
             {
-                _context.Role.Add(role);
-                _context.SaveChanges();
+                var addedrole = await _context.Role.AddAsync(role);
+                await _context.SaveChangesAsync();
+                return addedrole.Entity;
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

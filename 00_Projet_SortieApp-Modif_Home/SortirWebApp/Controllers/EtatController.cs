@@ -16,7 +16,7 @@ namespace SortieWebApp.Controllers
 
         // GET: api/Product
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<EtatDto>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<EtatDto>>> GetEtats()
         {
             var etat = await _etatService.GetAllEtatAsync();
             return Ok(etat);
@@ -26,14 +26,14 @@ namespace SortieWebApp.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<EtatDto>> GetEtat(int id)
         {
-            var product = await _etatService.GetEtatByIdAsync(id);
+            var etat = await _etatService.GetEtatByIdAsync(id);
 
-            if (product == null)
+            if (etat == null)
             {
                 return NotFound();
             }
 
-            return product;
+            return etat;
         }
 
         // POST: api/Etat

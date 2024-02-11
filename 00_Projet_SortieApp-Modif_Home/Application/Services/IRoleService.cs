@@ -9,6 +9,10 @@ namespace Application.Services
 {
     public interface IRoleService
     {
-        void AddRole(RoleDto role);
+        Task AddRoleAsync(RoleDto roleDto);
+        Task<RoleDto> GetByIdAsync(int id);
+        Task<List<RoleDto>> GetAllRoleAsync();
+
+        Task<RoleDto> GetRoleByIdAsync(int id);
     }
 }
