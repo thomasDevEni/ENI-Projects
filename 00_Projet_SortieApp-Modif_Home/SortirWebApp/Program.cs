@@ -16,9 +16,9 @@ var builder = WebApplication.CreateBuilder(args);
 //Ajout de la classe d'extension ConfigureApplicationService()
 builder.Services.ConfigureApplicationService()
                 .ConfigureInfrastructureService();
-builder.Services.AddAutoMapper(// Replace Program with any type within your application
+/*builder.Services.AddAutoMapper(// Replace Program with any type within your application
     typeof(MappingProfile)
-);
+);*/
 builder.Services.AddControllers();
 //builder.Services.AddAutoMapper();
 builder.Services.AddSwaggerGen(c =>

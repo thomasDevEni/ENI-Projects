@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
 using Application.Dto;
+using Domain.Entities;
 
 namespace SortieWebApp.Controllers
 {
@@ -42,7 +43,8 @@ namespace SortieWebApp.Controllers
             try
             {
                 await _etatService.AddEtatAsync(etatDto);
-                return CreatedAtAction(nameof(GetEtat), new { id = etatDto.Id }, etatDto);
+                return Ok(_etatService);
+                //return CreatedAtAction(nameof(GetEtat), new { id = etatDto.Id }, etatDto);
             }
             catch (Exception ex)
             {
