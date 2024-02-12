@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-DemoAuth-fc4e2170-c803-40bf-8a6f-3ce1add136a6")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoAuth")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]

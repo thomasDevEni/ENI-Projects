@@ -9,79 +9,79 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FestivallWeb
 build_property.RootNamespace = FestivallWeb
-build_property.ProjectDir = C:\Users\thoma\source\repos\ENI-Projects\Tps\M09TP01\FestivalMVC\
+build_property.ProjectDir = C:\Users\trequier2023\source\repos\ENI-Projects\01_Tps\M09TP01\FestivalMVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\thoma\source\repos\ENI-Projects\Tps\M09TP01\FestivalMVC
+build_property.MSBuildProjectDirectory = C:\Users\trequier2023\source\repos\ENI-Projects\01_Tps\M09TP01\FestivalMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Artistes/Create.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Artistes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Artistes/Delete.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Artistes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Artistes/Details.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Artistes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Artistes/Edit.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Artistes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Artistes/Index.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Artistes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Groupes/Create.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Groupes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Groupes/Delete.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Groupes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Groupes/Details.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Groupes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Groupes/Edit.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Groupes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Groupes/Index.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Groupes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Home/Index.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Home/Privacy.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Shared/Error.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/_ViewImports.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/_ViewStart.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thoma/source/repos/ENI-Projects/Tps/M09TP01/FestivalMVC/Views/Shared/_Layout.cshtml]
+[C:/Users/trequier2023/source/repos/ENI-Projects/01_Tps/M09TP01/FestivalMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-fx4e82y6r0
