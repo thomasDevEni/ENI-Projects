@@ -11,7 +11,7 @@ namespace Infrastructure.Contexts
     public class ParticipantContext : DbContext
     {
         public DbSet<Participant> Participant { get; set; }
-        public ParticipantContext(DbContextOptions<SortieContext> options) : base(options)
+        public ParticipantContext(DbContextOptions<ParticipantContext> options) : base(options)
         {
         }
 

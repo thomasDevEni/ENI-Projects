@@ -11,7 +11,7 @@ namespace Infrastructure.Contexts
     public class LieuContext : DbContext
     {
         public DbSet<Lieu> Lieu { get; set; }
-        public LieuContext(DbContextOptions<SortieContext> options) : base(options)
+        public LieuContext(DbContextOptions<LieuContext> options) : base(options)
         {
         }
 

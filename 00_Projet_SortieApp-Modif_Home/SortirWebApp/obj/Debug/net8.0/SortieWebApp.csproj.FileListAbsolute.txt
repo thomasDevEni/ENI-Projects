@@ -449,3 +449,6 @@ C:\Users\trequier2023\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\S
 C:\Users\trequier2023\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\trequier2023\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\trequier2023\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
