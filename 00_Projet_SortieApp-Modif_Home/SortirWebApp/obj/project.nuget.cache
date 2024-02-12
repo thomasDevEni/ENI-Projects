@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "U4Vf9yWv4RTznt4/fAH7GFtWiYmJrPbW6wbLCHvEIRLuaawLD5FmbI63T04i3NqMDBByuBs4LalsuHvY2IQlDg==",
+  "dgSpecHash": "baYEjyE+h5NaNO+UzTUKJsW6UNTx909tTwdkkhGkXlsolMxbUHSNQnt3RpCdoPg+iAJYLp1zpptE0QzyeRVbmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\SortirWebApp\\SortieWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\trequier2023\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\trequier2023\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\trequier2023\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\trequier2023\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

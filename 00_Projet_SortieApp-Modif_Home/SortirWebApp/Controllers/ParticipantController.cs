@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
 using Application.Dto;
+using FluentValidation;
 
 namespace SortieWebApp.Controllers
 {
@@ -8,9 +9,12 @@ namespace SortieWebApp.Controllers
     public class ParticipantController : ControllerBase
     {
         public IParticipantService _participantService { get; set; }
-        public ParticipantController(IParticipantService participantService) 
+        private readonly IValidator<ParticipantDto> _participantValidator;
+
+        public ParticipantController(IParticipantService participantService, IValidator<ParticipantDto> participantValidator)
         {
-        _participantService = participantService;
+            _participantService = participantService;
+            _participantValidator = participantValidator;
         }
 
         // GET: api/Product
@@ -21,7 +25,7 @@ namespace SortieWebApp.Controllers
             return Ok(participant);
         }
 
-        // GET: api/Participant/{id}
+        // GET: api/Product/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ParticipantDto>> GetParticipant(int id)
         {
@@ -36,14 +40,20 @@ namespace SortieWebApp.Controllers
         }
 
         // POST: api/Participant
-        [HttpPost]
+        [HttpPost("AddParticipant")]
         public async Task<IActionResult> AddParticipantAsync(ParticipantDto participantDto)
         {
             try
             {
-                await _participantService.AddEtatAsync(participantDto);
-                
-                return CreatedAtAction(nameof(GetParticipant), new { id = participantDto.Id }, participantDto);
+                var result = _participantService.ValidateParticipant(participantDto);
+                if (!result.IsValid)
+                {
+                    return BadRequest(result.Errors);
+                }
+
+                await _participantService.AddParticipantAsync(participantDto);
+                return Ok();
+                //return CreatedAtAction(nameof(GetParticipant), new { id = participantDto.Id }, participantDto);
             }
             catch (Exception ex)
             {

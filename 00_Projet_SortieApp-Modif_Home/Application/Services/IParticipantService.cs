@@ -1,4 +1,5 @@
 ﻿using Application.Dto;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    internal interface IParticipantService
+    public interface IParticipantService
     {
-        void AddParticipant(ParticipantDto participant);
+        Task AddParticipantAsync(ParticipantDto participantDto);
+        Task<ParticipantDto> GetByIdAsync(int id);
+        Task<List<ParticipantDto>> GetAllParticipantAsync();
+
+        Task<ParticipantDto> GetParticipantByIdAsync(int id);
+
+        ValidationResult ValidateParticipant(ParticipantDto participant);
     }
 }

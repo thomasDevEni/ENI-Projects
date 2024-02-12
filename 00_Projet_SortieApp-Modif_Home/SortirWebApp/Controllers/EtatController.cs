@@ -1,6 +1,7 @@
 ﻿using Application.Dto;
 using Application.Services;
 using Domain.Entities;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SortieWebApp.Controllers
@@ -9,9 +10,12 @@ namespace SortieWebApp.Controllers
     public class EtatController : ControllerBase
     {
         private readonly IEtatService _etatService;
-        public EtatController(IEtatService etatService) 
+        private readonly IValidator<EtatDto> _etatValidator;
+
+        public EtatController(IEtatService etatService, IValidator<EtatDto> etatValidator) 
         {
         _etatService = etatService;
+        _etatValidator = etatValidator;
         }
         
         // GET: api/Product
@@ -35,16 +39,22 @@ namespace SortieWebApp.Controllers
 
             return etat;
         }
-        
+
         // POST: api/Etat
-        [HttpPost]
+        [HttpPost("AddEtat")]
         public async Task<IActionResult> AddEtatAsync(EtatDto etatDto)
         {
             try
             {
+                var result = _etatService.ValidateEtat(etatDto);
+                if (!result.IsValid)
+                {
+                    return BadRequest(result.Errors);
+                }
+
                 await _etatService.AddEtatAsync(etatDto);
-                return Ok(_etatService);
-                //return CreatedAtAction(nameof(GetEtat), new { id = etatDto.Id }, etatDto);
+                return Ok();
+                //return CreatedAtAction(nameof(GetRole), new { id = roleDto.Id }, roleDto);
             }
             catch (Exception ex)
             {

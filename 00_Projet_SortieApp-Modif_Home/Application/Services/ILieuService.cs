@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    internal interface ILieuService
+    public interface ILieuService
     {
-        void AddLieu(LieuDto lieu);
+        Task AddLieuAsync(LieuDto lieuDto);
+        Task<LieuDto> GetByIdAsync(int id);
+        Task<List<LieuDto>> GetAllLieuAsync();
+
+        Task<LieuDto> GetLieuByIdAsync(int id);
     }
 }

@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "vj42ZFoxliKRcdorYS90+rkci4GRsP+/3Yq+sZg/mMLdhk88A/50962/IgudFlHcuW+sotOAOSWjT6rIIPr4OQ==",
+  "dgSpecHash": "s21/bLbI+R11IOpE6jZUgRb+EHR78YaS3yDtVTj2xdML+wInroukcGvMTG1nniCykn3p5VzhI9UkxZPzbWwN0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\trequier2023\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\trequier2023\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\trequier2023\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\trequier2023\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\trequier2023\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace Application.Services
 {
@@ -15,15 +17,19 @@ namespace Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IEtatRepository _retatRepository;
+        private readonly IValidator<EtatDto> _etatValidator;
 
-
-        public EtatService(IMapper mapper, IEtatRepository etatRepository)
+        public EtatService(IMapper mapper, IEtatRepository etatRepository, IValidator<EtatDto> etatValidator)
         {
             _mapper = mapper;
             _retatRepository = etatRepository;
+            _etatValidator = etatValidator;
         }
 
-
+        public ValidationResult ValidateEtat(EtatDto etat)
+        {
+            return _etatValidator.Validate(etat);
+        }
 
         public async Task<EtatDto> GetByIdAsync(int id) 
         {

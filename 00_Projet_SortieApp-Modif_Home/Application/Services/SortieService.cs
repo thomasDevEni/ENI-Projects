@@ -14,45 +14,59 @@ namespace Application.Services
     public class SortieService : ISortieService
     {
         private readonly IMapper _mapper;
-        private readonly SortieContext _context;
+        private readonly ISortieRepository _rsortieRepository;
 
-        public ISortieRepository _rsortieRepository { get; set; }
 
-        public SortieService(IMapper mapper, SortieContext context)
+        public SortieService(IMapper mapper, ISortieRepository sortieRepository)
         {
             _mapper = mapper;
-            _context = context;
+            _rsortieRepository = sortieRepository;
         }
 
-        public SortieDto GetDtoById(int id)
+
+
+        public async Task<SortieDto> GetByIdAsync(int id)
         {
-            var sortieEntity = _context.Sortie.FirstOrDefault(p => p.Id == id);
-            if (sortieEntity == null)
+            var sortie = _rsortieRepository.GetByIdAsync(id); ;
+            if (_rsortieRepository == null)
             {
                 return null;
             }
 
-            var sortieDto = _mapper.Map<SortieDto>(sortieEntity);
+            var sortieDto = _mapper.Map<SortieDto>(sortie);
             return sortieDto;
         }
 
-        public void AddSortie(SortieDto sortieDto)
+        public async Task<List<SortieDto>> GetAllSortieAsync()
+        {
+            var sorties = await _rsortieRepository.GetAllAsync();
+            return _mapper.Map<List<SortieDto>>(sorties);
+        }
+
+        public async Task<SortieDto> GetSortieByIdAsync(int id)
+        {
+            var product = await _rsortieRepository.GetByIdAsync(id);
+            return _mapper.Map<SortieDto>(product);
+        }
+
+        public async Task AddSortieAsync(SortieDto sortieDto)
         {
             try
             {
+                // Map SortietDto to Sortie entity
                 var sortieEntity = _mapper.Map<Sortie>(sortieDto);
 
-                // Add the product entity to the context
-                //_context.Sortie.Add(sortieEntity);
+                // Pass the mapped entity to the repository for addition
+                await _rsortieRepository.AddSortieAsync(sortieEntity);
 
-                // Save changes to the database
-                //_context.SaveChanges();
-                _rsortieRepository.AddSortie(sortieEntity);
 
             }
             catch (Exception ex)
 
-            { throw new Exception(); }
+            {
+                throw new Exception();
+            }
         }
+    
     }
 }

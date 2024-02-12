@@ -6,6 +6,8 @@ using SortieApp.Infrastructure;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
 using SortieWebApp;
+using Microsoft.AspNetCore.Hosting;
+using FluentValidation;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,7 @@ builder.Services.ConfigureApplicationService()
     typeof(MappingProfile)
 );*/
 builder.Services.AddControllers();
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 //builder.Services.AddAutoMapper();
 builder.Services.AddSwaggerGen(c =>
 {

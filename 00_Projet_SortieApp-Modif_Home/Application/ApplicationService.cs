@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using SortieApp.Infrastructure;
 using AutoMapper;
 using Application;
+using FluentValidation;
+using Application.Validators;
 
 namespace SortieApp.Application
 {
@@ -20,8 +22,14 @@ namespace SortieApp.Application
             services.AddScoped<ILieuService, LieuService>();
             services.AddScoped<IInscriptionService, InscriptionService>();
             services.AddScoped<ISortieService,SortieService> ();
-            
-           return services;
+            // Register validators
+            services.AddTransient<IValidator<RoleDto>, RoleValidator>();
+            services.AddTransient<IValidator<EtatDto>, EtatValidator>();
+            services.AddTransient<IValidator<ParticipantDto>, ParticipantValidator>();
+            services.AddTransient<IValidator<InscriptionDto>, InscriptionValidator>();
+            services.AddTransient<IValidator<SortieDto>, SortieValidator>();
+
+            return services;
         }
 
     }

@@ -9,7 +9,7 @@ namespace Infrastructure.Repositories
 {
     public interface IRoleRepository
     {
-        Task<Role> AddRoleAsync(Role role);
+        Task<int> AddRoleAsync(Role role);
         Task<Role> GetByIdAsync(int id);
 
         Task<List<Role>> GetAllAsync();

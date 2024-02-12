@@ -1,4 +1,5 @@
 ﻿using Application.Dto;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace Application.Services
         Task<List<RoleDto>> GetAllRoleAsync();
 
         Task<RoleDto> GetRoleByIdAsync(int id);
+
+        ValidationResult ValidateRole(RoleDto role);
     }
 }

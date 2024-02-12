@@ -1,4 +1,6 @@
 ﻿using Application.Dto;
+using AutoMapper;
+using Domain.Entities;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,23 +12,57 @@ namespace Application.Services
 {
     public class InscriptionService : IInscriptionService
     {
-        public InscriptionRepository _rinscriptionRepository { get; set; }
+        private readonly IMapper _mapper;
+        private readonly IInscriptionRepository _rinscriptionRepository;
 
-        public InscriptionService(InscriptionRepository rinscriptionRepository)
+
+        public InscriptionService(IMapper mapper, IInscriptionRepository inscriptionRepository)
         {
-            _rinscriptionRepository = rinscriptionRepository;
+            _mapper = mapper;
+            _rinscriptionRepository = inscriptionRepository;
         }
 
-        public void AddInscription(InscriptionDto inscription)
+        public async Task<InscriptionDto> GetByIdAsync(int id)
+        {
+            var inscription = _rinscriptionRepository.GetByIdAsync(id); ;
+            if (_rinscriptionRepository == null)
+            {
+                return null;
+            }
+
+            var inscriptionDto = _mapper.Map<InscriptionDto>(inscription);
+            return inscriptionDto;
+        }
+
+        public async Task<List<InscriptionDto>> GetAllInscriptionAsync()
+        {
+            var inscriptions = await _rinscriptionRepository.GetAllAsync();
+            return _mapper.Map<List<InscriptionDto>>(inscriptions);
+        }
+
+        public async Task<InscriptionDto> GetInscriptionByIdAsync(int id)
+        {
+            var inscription = await _rinscriptionRepository.GetByIdAsync(id);
+            return _mapper.Map<InscriptionDto>(inscription);
+        }
+
+        public async Task AddInscriptionAsync(InscriptionDto inscriptionDto)
         {
             try
             {
-                _rinscriptionRepository.AddInscription(null);
+                // Map EtattDto to Etat entity
+                var inscriptionEntity = _mapper.Map<Inscription>(inscriptionDto);
+
+                // Pass the mapped entity to the repository for addition
+                await _rinscriptionRepository.AddInscriptionAsync(inscriptionEntity);
+
 
             }
             catch (Exception ex)
 
-            { throw new Exception(); }
+            {
+                throw new Exception();
+            }
         }
     }
 }

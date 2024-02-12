@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    internal interface IInscriptionService
+    public interface IInscriptionService
     {
-        void AddInscription(InscriptionDto inscription);
+        Task AddInscriptionAsync(InscriptionDto inscriptionDto);
+        Task<InscriptionDto> GetByIdAsync(int id);
+        Task<List<InscriptionDto>> GetAllInscriptionAsync();
+
+        Task<InscriptionDto> GetInscriptionByIdAsync(int id);
     }
 }

@@ -31,13 +31,13 @@ namespace Infrastructure.Repositories
             return await _context.Etat.ToListAsync();
         }
 
-        public async Task<Etat> AddEtatAsync(Etat etat)
+        public async Task<int> AddEtatAsync(Etat etat)
         {
             try
             {
                 var addedEtat = await _context.Etat.AddAsync(etat);
                 await _context.SaveChangesAsync();
-                return addedEtat.Entity;
+                return addedEtat.Entity.Id;
             }
             catch (Exception ex)
             {

@@ -4,6 +4,7 @@ using Application.Dto;
 using AutoMapper;
 using Domain.Entities;
 using Infrastructure.Repositories;
+using FluentValidation;
 
 
 namespace SortieWebApp.Controllers
@@ -12,11 +13,15 @@ namespace SortieWebApp.Controllers
     public class RoleController : ControllerBase
     {
         private readonly IRoleService _roleService;
-        public RoleController(IRoleService roleService)
+        private readonly IValidator<RoleDto> _roleValidator;
+
+        public RoleController(IRoleService roleService, IValidator<RoleDto> roleValidator)
         {
             _roleService = roleService;
+            _roleValidator = roleValidator;
         }
 
+        
         // GET: api/Role
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RoleDto>>> GetRoles()
@@ -40,13 +45,18 @@ namespace SortieWebApp.Controllers
         }
 
         // POST: api/Role
-        [HttpPost]
+        [HttpPost("AddRole")]
         public async Task<IActionResult> AddRoleAsync(RoleDto roleDto)
         {
             try
             {
+                var result = _roleService.ValidateRole(roleDto);
+                if (!result.IsValid) {
+                    return BadRequest(result.Errors);
+                }
+
                 await _roleService.AddRoleAsync(roleDto);
-                return Ok(_roleService);
+                return Ok();
                 //return CreatedAtAction(nameof(GetRole), new { id = roleDto.Id }, roleDto);
             }
             catch (Exception ex)

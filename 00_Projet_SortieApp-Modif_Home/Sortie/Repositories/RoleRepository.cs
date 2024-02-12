@@ -28,13 +28,13 @@ namespace Infrastructure.Repositories
             return await _context.Role.ToListAsync();
         }
 
-        public async Task<Role> AddRoleAsync(Role role)
+        public async Task<int> AddRoleAsync(Role role)
         {
             try
             {
                 var addedrole = await _context.Role.AddAsync(role);
                 await _context.SaveChangesAsync();
-                return addedrole.Entity;
+                return addedrole.Entity.Id;
             }
             catch (Exception ex)
             {

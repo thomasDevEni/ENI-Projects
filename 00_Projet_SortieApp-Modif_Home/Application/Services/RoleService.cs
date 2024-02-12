@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace Application.Services
 {
@@ -14,16 +16,20 @@ namespace Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IRoleRepository _rroleRepository;
+        private readonly IValidator<RoleDto> _roleValidator;
 
 
-        public RoleService(IMapper mapper, IRoleRepository roleRepository)
+        public RoleService(IMapper mapper, IRoleRepository roleRepository, IValidator<RoleDto> roleValidator)
         {
             _mapper = mapper;
             _rroleRepository = roleRepository;
+            _roleValidator = roleValidator;
         }
 
-
-
+        public ValidationResult ValidateRole(RoleDto role)
+        {
+            return _roleValidator.Validate(role);
+        }
         public async Task<RoleDto> GetByIdAsync(int id)
         {
             var role = _rroleRepository.GetByIdAsync(id);

@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    internal interface ISortieService
+    public interface ISortieService
     {
-        void AddSortie(SortieDto sortie);
+        Task AddSortieAsync(SortieDto sortieDto);
+        Task<SortieDto> GetByIdAsync(int id);
+        Task<List<SortieDto>> GetAllSortieAsync();
+
+        Task<SortieDto> GetSortieByIdAsync(int id);
     }
 }

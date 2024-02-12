@@ -1,4 +1,5 @@
 ﻿using Application.Dto;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Application.Services
         Task<List<EtatDto>> GetAllEtatAsync();
 
         Task<EtatDto> GetEtatByIdAsync(int id);
+
+        ValidationResult ValidateEtat(EtatDto role);
 
 
     }

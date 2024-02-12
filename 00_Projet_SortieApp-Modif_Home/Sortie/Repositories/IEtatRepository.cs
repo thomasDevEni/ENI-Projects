@@ -9,7 +9,7 @@ namespace Infrastructure.Repositories
 {
     public interface IEtatRepository
     {
-        Task<Etat> AddEtatAsync(Etat etat);
+        Task<int> AddEtatAsync(Etat etat);
         Task<Etat> GetByIdAsync(int id);
 
         Task<List<Etat>> GetAllAsync();
