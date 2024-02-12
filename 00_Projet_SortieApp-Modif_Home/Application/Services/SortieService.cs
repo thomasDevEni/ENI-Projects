@@ -1,6 +1,8 @@
 ﻿using Application.Dto;
 using AutoMapper;
 using Domain.Entities;
+using FluentValidation;
+using FluentValidation.Results;
 using Infrastructure.Contexts;
 using Infrastructure.Repositories;
 using System;
@@ -15,15 +17,19 @@ namespace Application.Services
     {
         private readonly IMapper _mapper;
         private readonly ISortieRepository _rsortieRepository;
+        private readonly IValidator<SortieDto> _sortieValidator;
 
-
-        public SortieService(IMapper mapper, ISortieRepository sortieRepository)
+        public SortieService(IMapper mapper, ISortieRepository sortieRepository, IValidator<SortieDto> sortieValidator)
         {
             _mapper = mapper;
             _rsortieRepository = sortieRepository;
+            _sortieValidator = sortieValidator;
         }
 
-
+        public ValidationResult ValidateSortie(SortieDto sortie)
+        {
+            return _sortieValidator.Validate(sortie);
+        }
 
         public async Task<SortieDto> GetByIdAsync(int id)
         {
@@ -67,6 +73,6 @@ namespace Application.Services
                 throw new Exception();
             }
         }
-    
+
     }
 }

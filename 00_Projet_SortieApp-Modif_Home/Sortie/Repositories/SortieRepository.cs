@@ -30,13 +30,13 @@ namespace Infrastructure.Repositories
             return await _context.Sortie.ToListAsync();
         }
 
-        public async Task<Sortie> AddSortieAsync(Sortie sortie)
+        public async Task<int> AddSortieAsync(Sortie sortie)
         {
             try
             {
                 var addedSortie = await _context.Sortie.AddAsync(sortie);
                 await _context.SaveChangesAsync();
-                return addedSortie.Entity;
+                return addedSortie.Entity.Id;
             }
             catch (Exception ex)
             {

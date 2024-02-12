@@ -633,7 +633,49 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/Sortie/{id}": {
+      "get": {
+        "tags": [
+          "Sortie"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SortieDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SortieDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SortieDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Sortie/AddSortie": {
       "post": {
         "tags": [
           "Sortie"
@@ -698,46 +740,6 @@
         "responses": {
           "200": {
             "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/Sortie/{id}": {
-      "get": {
-        "tags": [
-          "Sortie"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/SortieDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SortieDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SortieDto"
-                }
-              }
-            }
           }
         }
       }
@@ -864,7 +866,8 @@
           },
           "dateFin": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "organisateurId": {
             "type": "integer",

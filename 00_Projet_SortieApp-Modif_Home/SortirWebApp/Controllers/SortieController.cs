@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
 using Application.Dto;
+using FluentValidation;
 
 
 namespace SortieWebApp.Controllers
@@ -9,9 +10,12 @@ namespace SortieWebApp.Controllers
     public class SortieController : ControllerBase
     {
         private readonly ISortieService _sortieService;
-        public SortieController(ISortieService sortieService)
+        private readonly IValidator<SortieDto> _sortieValidator;
+
+        public SortieController(ISortieService sortieService, IValidator<SortieDto> sortieValidator)
         {
             _sortieService = sortieService;
+            _sortieValidator = sortieValidator;
         }
 
         // GET: api/Product
@@ -37,13 +41,19 @@ namespace SortieWebApp.Controllers
         }
 
         // POST: api/Sortie
-        [HttpPost]
+        [HttpPost("AddSortie")]
         public async Task<IActionResult> AddSortieAsync(SortieDto sortieDto)
         {
             try
             {
+                var result = _sortieService.ValidateSortie(sortieDto);
+                if (!result.IsValid)
+                {
+                    return BadRequest(result.Errors);
+                }
+
                 await _sortieService.AddSortieAsync(sortieDto);
-                return Ok(_sortieService);
+                return Ok();
                 //return CreatedAtAction(nameof(GetSortie), new { id = sortieDto.Id }, sortieDto);
             }
             catch (Exception ex)

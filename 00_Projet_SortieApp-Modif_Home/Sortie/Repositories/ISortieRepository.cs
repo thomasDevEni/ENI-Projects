@@ -9,7 +9,7 @@ namespace Infrastructure.Repositories
 {
     public interface ISortieRepository
     {
-        Task<Sortie> AddSortieAsync(Sortie sortie);
+        Task<int> AddSortieAsync(Sortie sortie);
         Task<Sortie> GetByIdAsync(int id);
 
         Task<List<Sortie>> GetAllAsync();

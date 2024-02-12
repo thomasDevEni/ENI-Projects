@@ -24,7 +24,7 @@ namespace SortieApp.Infrastructure
             services.AddDbContext<SortieContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
             services.AddDbContext<RoleContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
             services.AddDbContext<EtatContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
-            services.AddDbContext<ParticipantContext>(options => options.UseSqlServer("Data DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<ParticipantContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
             services.AddDbContext<LieuContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
             services.AddDbContext<InscriptionContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
 
