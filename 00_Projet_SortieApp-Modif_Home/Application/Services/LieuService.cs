@@ -1,6 +1,8 @@
 ﻿using Application.Dto;
 using AutoMapper;
 using Domain.Entities;
+using FluentValidation;
+using FluentValidation.Results;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -13,50 +15,54 @@ namespace Application.Services
     public class LieuService : ILieuService
     {
         private readonly IMapper _mapper;
-        private readonly ILieuRepository _rLieuRepository;
+        private readonly ILieuRepository _rlieuRepository;
+        private readonly IValidator<LieuDto> _lieuValidator;
 
-
-        public LieuService(IMapper mapper, ILieuRepository LieuRepository)
+        public LieuService(IMapper mapper, ILieuRepository lieuRepository, IValidator<LieuDto> lieuValidator)
         {
             _mapper = mapper;
-            _rLieuRepository = LieuRepository;
+            _rlieuRepository = lieuRepository;
+            _lieuValidator = lieuValidator;
         }
 
-
+        public ValidationResult ValidateLieu(LieuDto lieu)
+        {
+            return _lieuValidator.Validate(lieu);
+        }
 
         public async Task<LieuDto> GetByIdAsync(int id)
         {
-            var Lieu = _rLieuRepository.GetByIdAsync(id); ;
-            if (_rLieuRepository == null)
+            var lieu = _rlieuRepository.GetByIdAsync(id); ;
+            if (_rlieuRepository == null)
             {
                 return null;
             }
 
-            var LieuDto = _mapper.Map<LieuDto>(Lieu);
-            return LieuDto;
+            var lieuDto = _mapper.Map<LieuDto>(lieu);
+            return lieuDto;
         }
 
         public async Task<List<LieuDto>> GetAllLieuAsync()
         {
-            var Lieus = await _rLieuRepository.GetAllAsync();
-            return _mapper.Map<List<LieuDto>>(Lieus);
+            var lieus = await _rlieuRepository.GetAllAsync();
+            return _mapper.Map<List<LieuDto>>(lieus);
         }
 
         public async Task<LieuDto> GetLieuByIdAsync(int id)
         {
-            var lieu = await _rLieuRepository.GetByIdAsync(id);
-            return _mapper.Map<LieuDto>(lieu);
+            var product = await _rlieuRepository.GetByIdAsync(id);
+            return _mapper.Map<LieuDto>(product);
         }
 
-        public async Task AddLieuAsync(LieuDto LieuDto)
+        public async Task AddLieuAsync(LieuDto lieuDto)
         {
             try
             {
                 // Map LieutDto to Lieu entity
-                var LieuEntity = _mapper.Map<Lieu>(LieuDto);
+                var lieuEntity = _mapper.Map<Lieu>(lieuDto);
 
                 // Pass the mapped entity to the repository for addition
-                await _rLieuRepository.AddLieuAsync(LieuEntity);
+                await _rlieuRepository.AddLieuAsync(lieuEntity);
 
 
             }

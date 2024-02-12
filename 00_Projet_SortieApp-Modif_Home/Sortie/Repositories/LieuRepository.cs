@@ -30,13 +30,13 @@ namespace Infrastructure.Repositories
             return await _context.Lieu.ToListAsync();
         }
 
-        public async Task<Lieu> AddLieuAsync(Lieu lieu)
+        public async Task<int> AddLieuAsync(Lieu lieu)
         {
             try
             {
                 var addedLieu = await _context.Lieu.AddAsync(lieu);
                 await _context.SaveChangesAsync();
-                return addedLieu.Entity;
+                return addedLieu.Entity.Id;
             }
             catch (Exception ex)
             {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
 using Application.Dto;
+using FluentValidation;
 
 namespace SortieWebApp.Controllers
 {
@@ -8,9 +9,12 @@ namespace SortieWebApp.Controllers
     public class LieuController : ControllerBase
     {
         private readonly ILieuService _lieuService;
-        public LieuController(ILieuService lieuService)
+        private readonly IValidator<LieuDto> _lieuValidator;
+
+        public LieuController(ILieuService lieuService, IValidator<LieuDto> lieuValidator)
         {
             _lieuService = lieuService;
+            _lieuValidator = lieuValidator;
         }
 
         // GET: api/Product
@@ -36,14 +40,20 @@ namespace SortieWebApp.Controllers
         }
 
         // POST: api/Lieu
-        [HttpPost]
+        [HttpPost("AddLieu")]
         public async Task<IActionResult> AddLieuAsync(LieuDto lieuDto)
         {
             try
             {
+                var result = _lieuService.ValidateLieu(lieuDto);
+                if (!result.IsValid)
+                {
+                    return BadRequest(result.Errors);
+                }
+
                 await _lieuService.AddLieuAsync(lieuDto);
-                return Ok(_lieuService);
-                //return CreatedAtAction(nameof(GetLieu), new { id = lieuDto.Id }, lieuDto);
+                return Ok();
+                //return CreatedAtAction(nameof(GetLieu), new { id = LieuDto.Id }, LieuDto);
             }
             catch (Exception ex)
             {

@@ -4,7 +4,7 @@ using Application.Dto;
 
 namespace Application.Validators
 {
-    public class SortieValidator
+    public class SortieValidator : AbstractValidator<SortieDto>
     {
     }
 }
