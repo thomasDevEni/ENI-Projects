@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
 using Application.Dto;
+using FluentValidation;
 
 namespace SortieWebApp.Controllers
 {
@@ -8,9 +9,12 @@ namespace SortieWebApp.Controllers
     public class InscriptionController : ControllerBase
     {
         private readonly IInscriptionService _inscriptionService;
-        public InscriptionController(IInscriptionService inscriptionService)
+        private readonly IValidator<InscriptionDto> _inscriptionValidator;
+
+        public InscriptionController(IInscriptionService inscriptionService, IValidator<InscriptionDto> inscriptionValidator)
         {
             _inscriptionService = inscriptionService;
+            _inscriptionValidator = inscriptionValidator;
         }
 
         // GET: api/Product
@@ -36,14 +40,20 @@ namespace SortieWebApp.Controllers
         }
 
         // POST: api/Inscription
-        [HttpPost]
+        [HttpPost("AddInscription")]
         public async Task<IActionResult> AddInscriptionAsync(InscriptionDto inscriptionDto)
         {
             try
             {
+                var result = _inscriptionService.ValidateInscription(inscriptionDto);
+                if (!result.IsValid)
+                {
+                    return BadRequest(result.Errors);
+                }
+
                 await _inscriptionService.AddInscriptionAsync(inscriptionDto);
-                return Ok(_inscriptionService);
-                //return CreatedAtAction(nameof(GetInscription), new { id = inscriptionDto.Id }, inscriptionDto);
+                return Ok();
+                //return CreatedAtAction(nameof(GetRole), new { id = roleDto.Id }, roleDto);
             }
             catch (Exception ex)
             {

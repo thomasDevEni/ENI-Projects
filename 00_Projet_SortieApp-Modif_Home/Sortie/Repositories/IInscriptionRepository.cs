@@ -9,7 +9,7 @@ namespace Infrastructure.Repositories
 {
     public interface IInscriptionRepository
     {
-        Task<Inscription> AddInscriptionAsync(Inscription inscription);
+        Task<int> AddInscriptionAsync(Inscription inscription);
         Task<Inscription> GetByIdAsync(int id);
 
         Task<List<Inscription>> GetAllAsync();

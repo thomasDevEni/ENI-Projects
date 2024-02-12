@@ -1,6 +1,8 @@
 ﻿using Application.Dto;
 using AutoMapper;
 using Domain.Entities;
+using FluentValidation;
+using FluentValidation.Results;
 using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,12 +16,18 @@ namespace Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IInscriptionRepository _rinscriptionRepository;
+        private readonly IValidator<InscriptionDto> _inscriptionValidator;
 
-
-        public InscriptionService(IMapper mapper, IInscriptionRepository inscriptionRepository)
+        public InscriptionService(IMapper mapper, IInscriptionRepository inscriptionRepository, IValidator<InscriptionDto> inscriptionValidator)
         {
             _mapper = mapper;
             _rinscriptionRepository = inscriptionRepository;
+            _inscriptionValidator = inscriptionValidator;
+        }
+
+        public ValidationResult ValidateInscription(InscriptionDto inscription)
+        {
+            return _inscriptionValidator.Validate(inscription);
         }
 
         public async Task<InscriptionDto> GetByIdAsync(int id)
@@ -42,15 +50,15 @@ namespace Application.Services
 
         public async Task<InscriptionDto> GetInscriptionByIdAsync(int id)
         {
-            var inscription = await _rinscriptionRepository.GetByIdAsync(id);
-            return _mapper.Map<InscriptionDto>(inscription);
+            var product = await _rinscriptionRepository.GetByIdAsync(id);
+            return _mapper.Map<InscriptionDto>(product);
         }
 
         public async Task AddInscriptionAsync(InscriptionDto inscriptionDto)
         {
             try
             {
-                // Map EtattDto to Etat entity
+                // Map InscriptiontDto to Inscription entity
                 var inscriptionEntity = _mapper.Map<Inscription>(inscriptionDto);
 
                 // Pass the mapped entity to the repository for addition

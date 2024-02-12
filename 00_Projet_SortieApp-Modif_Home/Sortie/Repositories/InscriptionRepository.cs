@@ -11,7 +11,7 @@ namespace Infrastructure.Repositories
 {
     public class InscriptionRepository:IInscriptionRepository
     {
-        public readonly InscriptionContext _context;
+        private readonly InscriptionContext _context;
 
         public InscriptionRepository(InscriptionContext context)
         {
@@ -30,13 +30,13 @@ namespace Infrastructure.Repositories
             return await _context.Inscription.ToListAsync();
         }
 
-        public async Task<Inscription> AddInscriptionAsync(Inscription inscription)
+        public async Task<int> AddInscriptionAsync(Inscription inscription)
         {
             try
             {
-                var addedInscription = await _context.Inscription.AddAsync(inscription);
+                var addedEtat = await _context.Inscription.AddAsync(inscription);
                 await _context.SaveChangesAsync();
-                return addedInscription.Entity;
+                return addedEtat.Entity.Id;
             }
             catch (Exception ex)
             {
