@@ -11,8 +11,20 @@ namespace Infrastructure.Contexts
     public class InscriptionContext : DbContext
     {
         public DbSet<Inscription> Inscription { get; set; }
-        public InscriptionContext(DbContextOptions<SortieContext> options) : base(options)
+        public InscriptionContext(DbContextOptions<InscriptionContext> options) : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder
+            .Entity<Inscription>()
+            .Property(p => p.Id)
+            .ValueGeneratedOnAdd()
+            .UseIdentityColumn();
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

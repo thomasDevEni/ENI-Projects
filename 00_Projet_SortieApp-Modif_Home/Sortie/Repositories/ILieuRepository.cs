@@ -9,6 +9,9 @@ namespace Infrastructure.Repositories
 {
     public interface ILieuRepository
     {
-        void AddLieu(Lieu lieu);
+        Task<Lieu> AddLieuAsync(Lieu lieu);
+        Task<Lieu> GetByIdAsync(int id);
+
+        Task<List<Lieu>> GetAllAsync();
     }
 }

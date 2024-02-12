@@ -15,5 +15,17 @@ namespace Infrastructure.Contexts
         public SortieContext(DbContextOptions<SortieContext> options) : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder
+            .Entity<Sortie>()
+            .Property(p => p.Id)
+            .ValueGeneratedOnAdd()
+            .UseIdentityColumn();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

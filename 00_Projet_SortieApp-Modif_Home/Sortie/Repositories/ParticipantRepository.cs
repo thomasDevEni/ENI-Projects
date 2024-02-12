@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,36 @@ namespace Infrastructure.Repositories
 {
     public class ParticipantRepository:IParticipantRepository
     {
-        public readonly ParticipantContext _context;
+        private readonly ParticipantContext _context;
 
         public ParticipantRepository(ParticipantContext context)
         {
             _context = context;
         }
 
-        public void AddParticipant(Participant participant)
+        public async Task<Participant> GetByIdAsync(int id)
+        {
+            return await _context.Participant.FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+
+
+        public async Task<List<Participant>> GetAllAsync()
+        {
+            return await _context.Participant.ToListAsync();
+        }
+
+        public async Task<Participant> AddParticipantAsync(Participant participant)
         {
             try
             {
-                _context.Participant.Add(participant);
-                _context.SaveChanges();
+                var addedParticipant = await _context.Participant.AddAsync(participant);
+                await _context.SaveChangesAsync();
+                return addedParticipant.Entity;
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,36 @@ namespace Infrastructure.Repositories
 {
     public class LieuRepository:ILieuRepository
     {
-        public readonly LieuContext _context;
+        private readonly LieuContext _context;
 
         public LieuRepository(LieuContext context)
         {
             _context = context;
         }
 
-        public void AddLieu(Lieu lieu)
+        public async Task<Lieu> GetByIdAsync(int id)
+        {
+            return await _context.Lieu.FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+
+
+        public async Task<List<Lieu>> GetAllAsync()
+        {
+            return await _context.Lieu.ToListAsync();
+        }
+
+        public async Task<Lieu> AddLieuAsync(Lieu lieu)
         {
             try
             {
-                _context.Lieu.Add(lieu);
-                _context.SaveChanges();
+                var addedLieu = await _context.Lieu.AddAsync(lieu);
+                await _context.SaveChangesAsync();
+                return addedLieu.Entity;
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

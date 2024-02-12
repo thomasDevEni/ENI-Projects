@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,16 +18,29 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public void AddInscription(Inscription inscription)
+        public async Task<Inscription> GetByIdAsync(int id)
+        {
+            return await _context.Inscription.FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+
+
+        public async Task<List<Inscription>> GetAllAsync()
+        {
+            return await _context.Inscription.ToListAsync();
+        }
+
+        public async Task<Inscription> AddInscriptionAsync(Inscription inscription)
         {
             try
             {
-                _context.Inscription.Add(inscription);
-                _context.SaveChanges();
+                var addedInscription = await _context.Inscription.AddAsync(inscription);
+                await _context.SaveChangesAsync();
+                return addedInscription.Entity;
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

@@ -9,6 +9,9 @@ namespace Infrastructure.Repositories
 {
     public interface IParticipantRepository
     {
-        void AddParticipant(Participant participant);
+        Task<Participant> AddParticipantAsync(Participant participant);
+        Task<Participant> GetByIdAsync(int id);
+
+        Task<List<Participant>> GetAllAsync();
     }
 }

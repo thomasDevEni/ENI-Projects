@@ -14,5 +14,17 @@ namespace Infrastructure.Contexts
         public LieuContext(DbContextOptions<SortieContext> options) : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder
+            .Entity<Lieu>()
+            .Property(p => p.Id)
+            .ValueGeneratedOnAdd()
+            .UseIdentityColumn();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
