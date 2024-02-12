@@ -13,5 +13,9 @@ namespace Infrastructure.Repositories
         Task<Etat> GetByIdAsync(int id);
 
         Task<List<Etat>> GetAllAsync();
+
+        Task UpdateEtatAsync(Etat etat);
+
+        Task DeleteEtatAsync(int id);
     }
 }

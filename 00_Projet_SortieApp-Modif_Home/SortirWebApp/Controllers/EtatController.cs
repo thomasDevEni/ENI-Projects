@@ -61,5 +61,59 @@ namespace SortieWebApp.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        // PUT: api/Etat/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEtat(int id, EtatDto etatDto)
+        {
+            if (id != etatDto.Id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                await _etatService.UpdateEtatAsync(etatDto);
+            }
+            catch (Exception)
+            {
+                if (true)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [HttpGet("Exists/{id}")]
+        public async Task<bool> EtatExists(int id)
+        {
+            // Assume _etatService.GetEtatByIdAsync(id) exists and retrieves the Etat entity by its id
+            var etat = await _etatService.GetByIdAsync(id);
+            // Return true if the etat is not null, indicating that the entity with the specified ID exists
+            // Otherwise, return false
+
+            return (etat != null);
+        }
+
+        // DELETE: api/Etat/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEtat(int id)
+        {
+            var etat = await _etatService.GetEtatByIdAsync(id);
+            if (etat == null)
+            {
+                return NotFound();
+            }
+
+            await _etatService.DeleteEtatAsync(id);
+
+            return NoContent();
+        }
     }
 }

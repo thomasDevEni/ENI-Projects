@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Services
 {
@@ -70,6 +71,47 @@ namespace Application.Services
             catch (Exception ex)
 
             { 
+                throw new Exception();
+            }
+        }
+
+        public async Task UpdateEtatAsync(EtatDto etatDto)
+        {
+            // Map EtattDto to Etat entity
+            var etatEntity = _mapper.Map<Etat>(etatDto);
+            // Retrieve the existing Etat entity from the database
+            //var existingEtat = await _retatRepository.UpdateEtatAsync(etatEntity);
+
+            if (etatEntity != null)
+            {
+                // Update the properties of the existing Etat entity with values from etatDto
+                etatEntity.Libelle = etatDto.Libelle;
+                // Update other properties as necessary
+                
+
+                // Save the changes back to the database
+                await _retatRepository.UpdateEtatAsync(etatEntity);
+            }
+            else
+            {
+                // Handle the case where the Etat entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
+
+        public async Task DeleteEtatAsync(int id)
+        {
+            // Retrieve the existing Etat entity from the database
+            var etatToDelete = await _retatRepository.GetByIdAsync(id);
+                        
+            if (etatToDelete != null)
+            {
+                // Remove the Etat entity from the database
+                await _retatRepository.DeleteEtatAsync(id);
+            }
+            else
+            {
+                // Handle the case where the Etat entity with the provided Id does not exist
                 throw new Exception();
             }
         }

@@ -18,6 +18,10 @@ namespace Application.Services
 
         ValidationResult ValidateEtat(EtatDto role);
 
+        Task UpdateEtatAsync(EtatDto etatDto);
+
+        Task DeleteEtatAsync(int id);
+
 
     }
 }
