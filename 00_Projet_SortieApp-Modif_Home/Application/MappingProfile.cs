@@ -13,14 +13,19 @@ namespace Application
     {
         public MappingProfile() 
         {
-            CreateMap<Etat, EtatDto>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-            .ForMember(dest => dest.Libelle, opt => opt.MapFrom(src => src.Libelle));
+            //Configuration du mapper pour GET et POST
+            CreateMap<EtatDto, Etat>();
+            CreateMap<Etat, EtatDto>();
             CreateMap<Inscription,InscriptionDto>();
+            CreateMap<InscriptionDto,Inscription>();
             CreateMap<Lieu,LieuDto>();
+            CreateMap<LieuDto,Lieu>();
             CreateMap<Participant,ParticipantDto>();
+            CreateMap<ParticipantDto,Participant>();
+            CreateMap<RoleDto,Role>();
             CreateMap<Role,RoleDto>();
             CreateMap<Sortie,SortieDto>();
+            CreateMap<SortieDto,Sortie>();
 
         }
     }

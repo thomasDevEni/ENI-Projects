@@ -63,7 +63,9 @@ namespace Application.Services
             }
             catch (Exception ex)
 
-            { throw new Exception(); }
+            { 
+                throw new Exception();
+            }
         }
     }
 }

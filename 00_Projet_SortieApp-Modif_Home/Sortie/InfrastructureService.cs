@@ -21,12 +21,12 @@ namespace SortieApp.Infrastructure
             services.AddScoped<IParticipantRepository, ParticipantRepository>();
             services.AddScoped<ILieuRepository, LieuRepository>();
             services.AddScoped<IInscriptionRepository, InscriptionRepository>();
-            services.AddDbContext<SortieContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
-            services.AddDbContext<RoleContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
-            services.AddDbContext<EtatContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
-            services.AddDbContext<ParticipantContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
-            services.AddDbContext<LieuContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
-            services.AddDbContext<InscriptionContext>(options => options.UseSqlServer("Data Source=DESKTOP-J96TQVV;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<SortieContext>(options => options.UseSqlServer("Data Source=48SE46-HL5HHZ3;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<RoleContext>(options => options.UseSqlServer("Data Source=48SE46-HL5HHZ3;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<EtatContext>(options => options.UseSqlServer("Data Source=48SE46-HL5HHZ3;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<ParticipantContext>(options => options.UseSqlServer("Data 48SE46-HL5HHZ3;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<LieuContext>(options => options.UseSqlServer("Data Source=48SE46-HL5HHZ3;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
+            services.AddDbContext<InscriptionContext>(options => options.UseSqlServer("Data Source=48SE46-HL5HHZ3;Initial Catalog=Sortie;User ID=sa;Password=Pa$$w0rd;Trust Server Certificate=True"));
 
             //services.AddSingleton<SortieRepository>();
             //services.AddSingleton<SortieContext>();

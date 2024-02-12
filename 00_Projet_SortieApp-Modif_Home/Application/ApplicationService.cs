@@ -15,8 +15,8 @@ namespace SortieApp.Application
             // Add AutoMapper and mapping profile
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<IEtatService, EtatService>();
+            services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<ISortieService,SortieService> ();
-            //services.AddScoped<RoleService> ();
             
            return services;
         }

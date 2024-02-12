@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace Infrastructure.Repositories
         {
             return await _context.Etat.FirstOrDefaultAsync(c => c.Id == id);
         }
+
+         
 
         public async Task<List<Etat>> GetAllAsync()
         {

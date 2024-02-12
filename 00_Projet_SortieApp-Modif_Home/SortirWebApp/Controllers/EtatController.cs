@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application.Dto;
 using Application.Services;
-using Application.Dto;
 using Domain.Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SortieWebApp.Controllers
 {
@@ -13,7 +13,7 @@ namespace SortieWebApp.Controllers
         {
         _etatService = etatService;
         }
-
+        
         // GET: api/Product
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EtatDto>>> GetEtats()
@@ -35,7 +35,7 @@ namespace SortieWebApp.Controllers
 
             return etat;
         }
-
+        
         // POST: api/Etat
         [HttpPost]
         public async Task<IActionResult> AddEtatAsync(EtatDto etatDto)
