@@ -26,8 +26,8 @@ namespace SortieApp.Application
             services.AddTransient<IValidator<RoleDto>, RoleValidator>();
             services.AddTransient<IValidator<EtatDto>, EtatValidator>();
             services.AddTransient<IValidator<ParticipantDto>, ParticipantValidator>();
-            services.AddTransient<IValidator<InscriptionDto>, InscriptionValidator>();
-            services.AddTransient<IValidator<SortieDto>, SortieValidator>();
+            //services.AddTransient<IValidator<InscriptionDto>, InscriptionValidator>();
+            //services.AddTransient<IValidator<SortieDto>, SortieValidator>();
 
             return services;
         }
