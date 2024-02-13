@@ -11,10 +11,4 @@ namespace Application.Dto
         public int Id { get; set; }
         public string Libelle { get; set; }
     }
-
-    public class EtatDtoGet
-    { 
-        public int Id { get; set; } 
-    
-    }
 }
