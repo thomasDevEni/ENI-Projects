@@ -18,9 +18,9 @@ namespace Domain.Entities
 
         public bool IsActive { get; set; }
 
-        public virtual Participant Organisateur { get; set; }
-        public virtual Lieu Lieu { get; set; }  
-        public virtual Etat Etat { get; set; }  
+        public virtual ICollection<Participant> Organisateur { get; set; }
+        public virtual ICollection<Lieu> Lieu { get; set; }  
+        public virtual ICollection<Etat> Etats { get; set; }  
     }
 
 }

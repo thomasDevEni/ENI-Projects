@@ -15,5 +15,7 @@ namespace Domain.Entities
         public int RoleId { get; set; }
 
         public bool IsActive { get; set; }
+
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }
