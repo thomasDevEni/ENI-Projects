@@ -278,8 +278,6 @@ C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWe
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.csproj.CoreCompileInputs.cache
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.RazorAssemblyInfo.cache
-C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.RazorAssemblyInfo.cs
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.sourcelink.json
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\staticwebassets.development.json
@@ -288,9 +286,7 @@ C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWe
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SortieWebApp.props
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SortieWebApp.props
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\scopedcss\bundle\SortieWebApp.styles.css
-C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\scopedcss\projectbundle\SortieWebApp.bundle.scp.css
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.csproj.CopyComplete
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\SortieWebApp.dll
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\obj\Debug\net8.0\refint\SortieWebApp.dll

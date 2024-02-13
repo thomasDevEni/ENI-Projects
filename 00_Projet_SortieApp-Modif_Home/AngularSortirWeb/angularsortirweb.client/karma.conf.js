@@ -1,4 +1,4 @@
-﻿module.exports = function (config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
@@ -30,7 +30,7 @@
       ]
     },
     reporters: ['progress', 'kjhtml'],
-    port: 9876,
+    port: 5147,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,

@@ -58,5 +58,5 @@ app.UseEndpoints(endpoints => endpoints.MapControllers());
 //app.UseAuthorization();
 /*
 app.MapRazorPages();*/
-
+app.MapFallbackToFile("/index.html");
 app.Run();

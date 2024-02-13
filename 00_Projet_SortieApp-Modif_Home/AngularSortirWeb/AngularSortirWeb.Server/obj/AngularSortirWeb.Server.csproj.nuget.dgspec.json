@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj": {}
+    "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj": {
+    "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
+        "projectUniqueName": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
         "projectName": "AngularSortirWeb.Server",
-        "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
+        "projectPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
         "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\obj\\",
+        "outputPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
