@@ -91,6 +91,7 @@ namespace Application.Services
                 if (inscriptionEntity != null)
                 {   // Update the properties of the existing Inscription entity with values from inscriptionDto
                     inscriptionEntity.ParticipantId = inscriptionDto.ParticipantId;
+                    inscriptionEntity.SortieId= inscriptionDto.SortieId;
                     // Save the changes back to the database
                     await _rinscriptionRepository.UpdateInscriptionAsync(inscriptionEntity);
 

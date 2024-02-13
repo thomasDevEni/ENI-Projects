@@ -91,6 +91,9 @@ namespace Application.Services
                 if (lieuEntity != null)
                 {   // Update the properties of the existing Lieu entity with values from lieuDto
                     lieuEntity.Etablissement = lieuDto.Etablissement;
+                    lieuEntity.Adresse = lieuDto.Adresse;
+                    lieuEntity.CodePostal = lieuDto.CodePostal;
+                    lieuEntity.CoordonneeGPS=lieuDto.CoordonneeGPS;
                     // Save the changes back to the database
                     await _rlieuRepository.UpdateLieuAsync(lieuEntity);
 

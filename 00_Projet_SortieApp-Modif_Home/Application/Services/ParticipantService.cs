@@ -91,6 +91,9 @@ namespace Application.Services
                 if (participantEntity != null)
                 {   // Update the properties of the existing Participant entity with values from participantDto
                     participantEntity.Nom = participantDto.Nom;
+                    participantEntity.Prenom = participantDto.Prenom;
+                    participantEntity.Mail= participantDto.Mail;
+                    participantEntity.RoleId = participantDto.RoleId;
                     // Save the changes back to the database
                     await _rparticipantRepository.UpdateParticipantAsync(participantEntity);
 

@@ -90,7 +90,12 @@ namespace Application.Services
                 }
                 if (sortieEntity != null)
                 {   // Update the properties of the existing Sortie entity with values from sortieDto
+                    sortieEntity.Nom=sortieDto.Nom;
                     sortieEntity.LieuId = sortieDto.LieuId;
+                    sortieEntity.OrganisateurId= sortieDto.OrganisateurId;
+                    sortieEntity.DateDebut = sortieDto.DateDebut;
+                    sortieEntity.DateFin = sortieDto.DateFin;
+                    sortieEntity.EtatId = sortieDto.EtatId;
                     // Save the changes back to the database
                     await _rsortieRepository.UpdateSortieAsync(sortieEntity);
 

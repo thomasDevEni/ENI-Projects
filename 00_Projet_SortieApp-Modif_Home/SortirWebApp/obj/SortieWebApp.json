@@ -162,7 +162,7 @@
         }
       }
     },
-    "/api/Inscription": {
+    "/api/Inscription/All": {
       "get": {
         "tags": [
           "Inscription"
@@ -297,7 +297,7 @@
         }
       }
     },
-    "/api/Inscription/updateInscription": {
+    "/api/Inscription/UpdateInscription": {
       "put": {
         "tags": [
           "Inscription"
@@ -333,7 +333,7 @@
         }
       }
     },
-    "/api/Lieu": {
+    "/api/Lieu/All": {
       "get": {
         "tags": [
           "Lieu"
@@ -489,7 +489,7 @@
         }
       }
     },
-    "/api/Lieu/updateLieu": {
+    "/api/Lieu/UpdateLieu": {
       "put": {
         "tags": [
           "Lieu"
@@ -546,7 +546,7 @@
         }
       }
     },
-    "/api/Participant": {
+    "/api/Participant/All": {
       "get": {
         "tags": [
           "Participant"
@@ -696,7 +696,7 @@
         }
       }
     },
-    "/api/Participant/updateParticipant": {
+    "/api/Participant/UpdateParticipant": {
       "put": {
         "tags": [
           "Participant"
@@ -747,7 +747,7 @@
         }
       }
     },
-    "/api/Role": {
+    "/api/Role/All": {
       "get": {
         "tags": [
           "Role"
@@ -875,7 +875,7 @@
         }
       }
     },
-    "/api/Role/updateRole": {
+    "/api/Role/UpdateRole": {
       "put": {
         "tags": [
           "Role"
@@ -904,7 +904,7 @@
         }
       }
     },
-    "/api/Sortie": {
+    "/api/Sortie/All": {
       "get": {
         "tags": [
           "Sortie"
@@ -1072,7 +1072,7 @@
         }
       }
     },
-    "/api/Sortie/updateSortie": {
+    "/api/Sortie/UpdateSortie": {
       "put": {
         "tags": [
           "Sortie"

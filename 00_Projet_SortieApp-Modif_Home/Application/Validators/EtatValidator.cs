@@ -8,7 +8,7 @@ namespace Application.Validators
     {
         public EtatValidator()
         {
-            RuleFor(x => x.Libelle).NotEmpty().WithMessage("Le libéllé de l'état est recquis");
+            RuleFor(x => x.Libelle).NotNull().NotEmpty().WithMessage("Le libéllé de l'état est recquis");
             // Add more validation rules as needed
         }
     }
