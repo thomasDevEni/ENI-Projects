@@ -13,6 +13,7 @@ namespace Domain.Entities
         public string SortieId { get; set; }
 
         public virtual ICollection<Participant> Participants { get; set; }
-        public virtual Sortie Sortie { get; set; }
+        public virtual ICollection<Sortie> Sorties { get; set; }
+    
     }
 }

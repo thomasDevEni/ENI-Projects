@@ -54,7 +54,7 @@ namespace SortieWebApp.Controllers
 
                 await _etatService.AddEtatAsync(etatDto);
                 return Ok();
-                //return CreatedAtAction(nameof(GetRole), new { id = roleDto.Id }, roleDto);
+                //return CreatedAtAction(nameof(GetEtat), new { id = etatDto.Id }, etatDto);
             }
             catch (Exception ex)
             {
