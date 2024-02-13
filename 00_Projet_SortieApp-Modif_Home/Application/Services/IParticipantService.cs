@@ -17,5 +17,9 @@ namespace Application.Services
         Task<ParticipantDto> GetParticipantByIdAsync(int id);
 
         ValidationResult ValidateParticipant(ParticipantDto participant);
+
+        Task UpdateParticipantAsync(ParticipantDto participantDto);
+
+        Task DeleteParticipantAsync(int id);
     }
 }

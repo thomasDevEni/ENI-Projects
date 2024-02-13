@@ -1,14 +1,17 @@
 ﻿using Application.Dto;
 using AutoMapper;
-using Domain.Entities;
-using FluentValidation;
-using FluentValidation.Results;
 using Infrastructure.Repositories;
+using Infrastructure.Contexts;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Application.Services
 {
@@ -30,28 +33,29 @@ namespace Application.Services
             return _inscriptionValidator.Validate(inscription);
         }
 
+        public async Task<InscriptionDto> GetByIdAsync(int id)
+        {
+            var inscription = _rinscriptionRepository.GetByIdAsync(id); ;
+            if (_rinscriptionRepository == null)
+            {
+                return null;
+            }
+
+            var inscriptionDto = _mapper.Map<InscriptionDto>(inscription);
+            return inscriptionDto;
+        }
 
         public async Task<List<InscriptionDto>> GetAllInscriptionAsync()
         {
             var inscriptions = await _rinscriptionRepository.GetAllAsync();
-
-            if (_rinscriptionRepository == null)
-            {
-                return null;
-            }
             return _mapper.Map<List<InscriptionDto>>(inscriptions);
         }
 
-        public async Task<InscriptionDto> GetInscriptionByIdAsync(int id)
+        public async Task<InscriptionDto?> GetInscriptionByIdAsync(int id)
         {
             var product = await _rinscriptionRepository.GetByIdAsync(id);
-
-            if (_rinscriptionRepository == null)
-            {
-                return null;
-            }
-
-            return _mapper.Map<InscriptionDto>(product);
+            if (product == null) { return null; }
+            else { return _mapper.Map<InscriptionDto>(product); }
         }
 
         public async Task AddInscriptionAsync(InscriptionDto inscriptionDto)
@@ -73,22 +77,25 @@ namespace Application.Services
             }
         }
 
-        public async Task UpdateInscriptionAsync(InscriptionDto inscriptionDto)
+        public async Task UpdateInscriptionAsync(InscriptionDto? inscriptionDto)
         {
-            // Map InscriptiontDto to Inscription entity
-            var inscriptionEntity = _mapper.Map<Inscription>(inscriptionDto);
-            // Retrieve the existing Inscription entity from the database
-            //var existingInscription = await _rinscriptionRepository.UpdateInscriptionAsync(inscriptionEntity);
 
-            if (inscriptionEntity != null)
+            if (inscriptionDto != null)
             {
-                // Update the properties of the existing Inscription entity with values from inscriptionDto
-                inscriptionEntity.ParticipantId = inscriptionDto.ParticipantId;
-                // Update other properties as necessary
+                var inscriptionEntity = await _rinscriptionRepository.GetByIdAsync(inscriptionDto.Id);
+                if (inscriptionEntity == null)
+                {
+                    // Handle the case where the Inscription entity with the provided Id does not exist
+                    throw new Exception("Elément non trouvé");
+                }
+                if (inscriptionEntity != null)
+                {   // Update the properties of the existing Inscription entity with values from inscriptionDto
+                    inscriptionEntity.ParticipantId = inscriptionDto.ParticipantId;
+                    // Save the changes back to the database
+                    await _rinscriptionRepository.UpdateInscriptionAsync(inscriptionEntity);
 
+                }
 
-                // Save the changes back to the database
-                await _rinscriptionRepository.UpdateInscriptionAsync(inscriptionEntity);
             }
             else
             {

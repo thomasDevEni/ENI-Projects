@@ -13,5 +13,9 @@ namespace Infrastructure.Repositories
         Task<Role> GetByIdAsync(int id);
 
         Task<List<Role>> GetAllAsync();
+
+        Task UpdateRoleAsync(Role role);
+
+        Task DeleteRoleAsync(int id);
     }
 }

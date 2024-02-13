@@ -11,10 +11,12 @@ namespace Infrastructure.Contexts
     public class ParticipantContext : DbContext
     {
         public DbSet<Participant> Participant { get; set; }
+        
         public ParticipantContext(DbContextOptions<ParticipantContext> options) : base(options)
         {
         }
 
+        //AutoIncrementation des Id's Participant & Mail
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -23,6 +25,7 @@ namespace Infrastructure.Contexts
             .Property(p => p.Id)
             .ValueGeneratedOnAdd()
             .UseIdentityColumn();
+
 
             base.OnModelCreating(modelBuilder);
         }

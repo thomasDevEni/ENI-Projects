@@ -17,5 +17,9 @@ namespace Application.Services
         Task<SortieDto> GetSortieByIdAsync(int id);
 
         ValidationResult ValidateSortie(SortieDto sortie);
+
+        Task UpdateSortieAsync(SortieDto sortieDto);
+
+        Task DeleteSortieAsync(int id);
     }
 }

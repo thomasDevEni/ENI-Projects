@@ -1,14 +1,17 @@
 ﻿using Application.Dto;
 using AutoMapper;
-using Domain.Entities;
-using FluentValidation;
-using FluentValidation.Results;
 using Infrastructure.Repositories;
+using Infrastructure.Contexts;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Application.Services
 {
@@ -48,10 +51,11 @@ namespace Application.Services
             return _mapper.Map<List<LieuDto>>(lieus);
         }
 
-        public async Task<LieuDto> GetLieuByIdAsync(int id)
+        public async Task<LieuDto?> GetLieuByIdAsync(int id)
         {
             var product = await _rlieuRepository.GetByIdAsync(id);
-            return _mapper.Map<LieuDto>(product);
+            if (product == null) { return null; }
+            else { return _mapper.Map<LieuDto>(product); }
         }
 
         public async Task AddLieuAsync(LieuDto lieuDto)
@@ -73,22 +77,25 @@ namespace Application.Services
             }
         }
 
-        public async Task UpdateLieuAsync(LieuDto lieuDto)
+        public async Task UpdateLieuAsync(LieuDto? lieuDto)
         {
-            // Map LieutDto to Lieu entity
-            var lieuEntity = _mapper.Map<Lieu>(lieuDto);
-            // Retrieve the existing Lieu entity from the database
-            //var existingLieu = await _rlieuRepository.UpdateLieuAsync(lieuEntity);
 
-            if (lieuEntity != null)
+            if (lieuDto != null)
             {
-                // Update the properties of the existing Lieu entity with values from lieuDto
-                lieuEntity.Etablissement = lieuDto.Etablissement;
-                // Update other properties as necessary
+                var lieuEntity = await _rlieuRepository.GetByIdAsync(lieuDto.Id);
+                if (lieuEntity == null)
+                {
+                    // Handle the case where the Lieu entity with the provided Id does not exist
+                    throw new Exception("Elément non trouvé");
+                }
+                if (lieuEntity != null)
+                {   // Update the properties of the existing Lieu entity with values from lieuDto
+                    lieuEntity.Etablissement = lieuDto.Etablissement;
+                    // Save the changes back to the database
+                    await _rlieuRepository.UpdateLieuAsync(lieuEntity);
 
+                }
 
-                // Save the changes back to the database
-                await _rlieuRepository.UpdateLieuAsync(lieuEntity);
             }
             else
             {

@@ -1,14 +1,17 @@
 ﻿using Application.Dto;
 using AutoMapper;
-using Domain.Entities;
-using FluentValidation;
-using FluentValidation.Results;
 using Infrastructure.Repositories;
+using Infrastructure.Contexts;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Application.Services
 {
@@ -30,8 +33,6 @@ namespace Application.Services
             return _participantValidator.Validate(participant);
         }
 
-
-
         public async Task<ParticipantDto> GetByIdAsync(int id)
         {
             var participant = _rparticipantRepository.GetByIdAsync(id); ;
@@ -50,10 +51,11 @@ namespace Application.Services
             return _mapper.Map<List<ParticipantDto>>(participants);
         }
 
-        public async Task<ParticipantDto> GetParticipantByIdAsync(int id)
+        public async Task<ParticipantDto?> GetParticipantByIdAsync(int id)
         {
             var product = await _rparticipantRepository.GetByIdAsync(id);
-            return _mapper.Map<ParticipantDto>(product);
+            if (product == null) { return null; }
+            else { return _mapper.Map<ParticipantDto>(product); }
         }
 
         public async Task AddParticipantAsync(ParticipantDto participantDto)
@@ -71,6 +73,50 @@ namespace Application.Services
             catch (Exception ex)
 
             {
+                throw new Exception();
+            }
+        }
+
+        public async Task UpdateParticipantAsync(ParticipantDto? participantDto)
+        {
+
+            if (participantDto != null)
+            {
+                var participantEntity = await _rparticipantRepository.GetByIdAsync(participantDto.Id);
+                if (participantEntity == null)
+                {
+                    // Handle the case where the Participant entity with the provided Id does not exist
+                    throw new Exception("Elément non trouvé");
+                }
+                if (participantEntity != null)
+                {   // Update the properties of the existing Participant entity with values from participantDto
+                    participantEntity.Nom = participantDto.Nom;
+                    // Save the changes back to the database
+                    await _rparticipantRepository.UpdateParticipantAsync(participantEntity);
+
+                }
+
+            }
+            else
+            {
+                // Handle the case where the Participant entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
+
+        public async Task DeleteParticipantAsync(int id)
+        {
+            // Retrieve the existing Participant entity from the database
+            var participantToDelete = await _rparticipantRepository.GetByIdAsync(id);
+
+            if (participantToDelete != null)
+            {
+                // Remove the Participant entity from the database
+                await _rparticipantRepository.DeleteParticipantAsync(id);
+            }
+            else
+            {
+                // Handle the case where the Participant entity with the provided Id does not exist
                 throw new Exception();
             }
         }

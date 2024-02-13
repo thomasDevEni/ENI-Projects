@@ -17,5 +17,9 @@ namespace Application.Services
         Task<RoleDto> GetRoleByIdAsync(int id);
 
         ValidationResult ValidateRole(RoleDto role);
+
+        Task UpdateRoleAsync(RoleDto roleDto);
+
+        Task DeleteRoleAsync(int id);
     }
 }

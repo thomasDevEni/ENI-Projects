@@ -15,5 +15,7 @@ namespace Domain.Entities
         public string CodePostal { get; set; }
         public string CoordonneeGPS { get; set; }
 
+        public bool IsActive { get; set; }
+
     }
 }

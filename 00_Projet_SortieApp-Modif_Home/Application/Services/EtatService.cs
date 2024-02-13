@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Application.Services
 {
@@ -50,10 +51,11 @@ namespace Application.Services
             return _mapper.Map<List<EtatDto>>(etats);
         }
 
-        public async Task<EtatDto> GetEtatByIdAsync(int id)
+        public async Task<EtatDto?> GetEtatByIdAsync(int id)
         {
             var product = await _retatRepository.GetByIdAsync(id);
-            return _mapper.Map<EtatDto>(product);
+            if (product == null) { return null; }
+            else { return _mapper.Map<EtatDto>(product); }
         }
 
         public async Task AddEtatAsync(EtatDto etatDto)
@@ -75,22 +77,25 @@ namespace Application.Services
             }
         }
 
-        public async Task UpdateEtatAsync(EtatDto etatDto)
+        public async Task  UpdateEtatAsync(EtatDto? etatDto)
         {
-            // Map EtattDto to Etat entity
-            var etatEntity = _mapper.Map<Etat>(etatDto);
-            // Retrieve the existing Etat entity from the database
-            //var existingEtat = await _retatRepository.UpdateEtatAsync(etatEntity);
 
-            if (etatEntity != null)
+            if (etatDto != null)
             {
-                // Update the properties of the existing Etat entity with values from etatDto
-                etatEntity.Libelle = etatDto.Libelle;
-                // Update other properties as necessary
-                
+                var etatEntity = await _retatRepository.GetByIdAsync(etatDto.Id);
+                if (etatEntity == null) 
+                {
+                    // Handle the case where the Etat entity with the provided Id does not exist
+                    throw new Exception("Elément non trouvé");
+                }
+                if (etatEntity != null)
+                {   // Update the properties of the existing Etat entity with values from etatDto
+                    etatEntity.Libelle = etatDto.Libelle;
+                    // Save the changes back to the database
+                    await _retatRepository.UpdateEtatAsync(etatEntity);
 
-                // Save the changes back to the database
-                await _retatRepository.UpdateEtatAsync(etatEntity);
+                }
+                
             }
             else
             {

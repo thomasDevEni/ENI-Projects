@@ -12,6 +12,8 @@ namespace Domain.Entities
         public string ParticipantId { get; set; }
         public string SortieId { get; set; }
 
+        public bool IsActive { get; set; }
+
         public virtual ICollection<Participant> Participants { get; set; }
         public virtual ICollection<Sortie> Sorties { get; set; }
     

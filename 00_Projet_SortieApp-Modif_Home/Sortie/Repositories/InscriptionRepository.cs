@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class InscriptionRepository:IInscriptionRepository
+    public class InscriptionRepository : IInscriptionRepository
     {
         private readonly InscriptionContext _context;
 
@@ -19,25 +20,30 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Inscription> GetByIdAsync(int id)
+        public async Task<Inscription?> GetByIdAsync(int id)
         {
-            return await _context.Inscription.FirstOrDefaultAsync(c => c.Id == id);
+            var itemFound = await _context.Inscription.FirstOrDefaultAsync(c => c.Id == id);
+
+            if (itemFound == null) { return null; }
+            if (itemFound.IsActive == true) { return itemFound; }
+
+            else { return null; }
+
         }
-
-
 
         public async Task<List<Inscription>> GetAllAsync()
         {
-            return await _context.Inscription.ToListAsync();
+            return await _context.Inscription.Where(inscription => inscription.IsActive).ToListAsync();
         }
 
         public async Task<int> AddInscriptionAsync(Inscription inscription)
         {
             try
             {
-                var addedEtat = await _context.Inscription.AddAsync(inscription);
+                inscription.IsActive = true;
+                var addedInscription = await _context.Inscription.AddAsync(inscription);
                 await _context.SaveChangesAsync();
-                return addedEtat.Entity.Id;
+                return addedInscription.Entity.Id;
             }
             catch (Exception ex)
             {
@@ -48,22 +54,12 @@ namespace Infrastructure.Repositories
         public async Task UpdateInscriptionAsync(Inscription inscription)
         {
             // Retrieve the existing Inscription entity from the database
-            var existingInscription = await _context.Inscription.FindAsync(inscription.Id);
 
-            if (existingInscription != null)
-            {
-                // Update the properties of the existing Inscription entity with values from inscriptionDto
-                existingInscription.ParticipantId = inscription.ParticipantId;
-                // Update other properties as necessary
+            // Update other properties as necessary
+            _context.Update(inscription);
+            // Save the changes back to the database
+            await _context.SaveChangesAsync();
 
-                // Save the changes back to the database
-                await _context.SaveChangesAsync();
-            }
-            else
-            {
-                // Handle the case where the Inscription entity with the provided Id does not exist
-                throw new NotFoundException($"Inscription with Id {inscription.Id} not found.");
-            }
         }
 
         public async Task DeleteInscriptionAsync(int id)
@@ -74,7 +70,8 @@ namespace Infrastructure.Repositories
             if (inscriptionToDelete != null)
             {
                 // Remove the Inscription entity from the database
-                _context.Inscription.Remove(inscriptionToDelete);
+                inscriptionToDelete.IsActive = false;
+                //_context.Inscription.Remove(inscriptionToDelete);
 
                 // Save the changes back to the database
                 await _context.SaveChangesAsync();
@@ -85,8 +82,5 @@ namespace Infrastructure.Repositories
                 throw new NotFoundException($"Inscription with Id {id} not found.");
             }
         }
-    
-
-    
     }
 }

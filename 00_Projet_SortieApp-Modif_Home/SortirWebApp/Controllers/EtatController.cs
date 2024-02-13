@@ -19,7 +19,7 @@ namespace SortieWebApp.Controllers
         }
         
         // GET: api/Product
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<EtatDto>>> GetEtats()
         {
             var etat = await _etatService.GetAllEtatAsync();
@@ -63,10 +63,10 @@ namespace SortieWebApp.Controllers
         }
 
         // PUT: api/Etat/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEtat(int id, EtatDto etatDto)
+        [HttpPut("UpdateEtat")]
+        public async Task<IActionResult> UpdateEtat(EtatDto? etatDto)
         {
-            if (id != etatDto.Id)
+            if (etatDto?.Id <= 0)
             {
                 return BadRequest();
             }
@@ -90,17 +90,7 @@ namespace SortieWebApp.Controllers
             return NoContent();
         }
 
-        [HttpGet("Exists/{id}")]
-        public async Task<bool> EtatExists(int id)
-        {
-            // Assume _etatService.GetEtatByIdAsync(id) exists and retrieves the Etat entity by its id
-            var etat = await _etatService.GetByIdAsync(id);
-            // Return true if the etat is not null, indicating that the entity with the specified ID exists
-            // Otherwise, return false
-
-            return (etat != null);
-        }
-
+        
         // DELETE: api/Etat/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEtat(int id)

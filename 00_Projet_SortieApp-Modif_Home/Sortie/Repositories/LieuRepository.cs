@@ -1,15 +1,17 @@
 ﻿using Domain.Entities;
 using Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class LieuRepository:ILieuRepository
+    public class LieuRepository : ILieuRepository
     {
         private readonly LieuContext _context;
 
@@ -18,22 +20,27 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Lieu> GetByIdAsync(int id)
+        public async Task<Lieu?> GetByIdAsync(int id)
         {
-            return await _context.Lieu.FirstOrDefaultAsync(c => c.Id == id);
+            var itemFound = await _context.Lieu.FirstOrDefaultAsync(c => c.Id == id);
+
+            if (itemFound == null) { return null; }
+            if (itemFound.IsActive == true) { return itemFound; }
+
+            else { return null; }
+
         }
-
-
 
         public async Task<List<Lieu>> GetAllAsync()
         {
-            return await _context.Lieu.ToListAsync();
+            return await _context.Lieu.Where(lieu => lieu.IsActive).ToListAsync();
         }
 
         public async Task<int> AddLieuAsync(Lieu lieu)
         {
             try
             {
+                lieu.IsActive = true;
                 var addedLieu = await _context.Lieu.AddAsync(lieu);
                 await _context.SaveChangesAsync();
                 return addedLieu.Entity.Id;
@@ -47,22 +54,12 @@ namespace Infrastructure.Repositories
         public async Task UpdateLieuAsync(Lieu lieu)
         {
             // Retrieve the existing Lieu entity from the database
-            var existingLieu = await _context.Lieu.FindAsync(lieu.Id);
 
-            if (existingLieu != null)
-            {
-                // Update the properties of the existing Lieu entity with values from lieuDto
-                existingLieu.Etablissement = lieu.Etablissement;
-                // Update other properties as necessary
+            // Update other properties as necessary
+            _context.Update(lieu);
+            // Save the changes back to the database
+            await _context.SaveChangesAsync();
 
-                // Save the changes back to the database
-                await _context.SaveChangesAsync();
-            }
-            else
-            {
-                // Handle the case where the Lieu entity with the provided Id does not exist
-                throw new NotFoundException($"Lieu with Id {lieu.Id} not found.");
-            }
         }
 
         public async Task DeleteLieuAsync(int id)
@@ -73,7 +70,8 @@ namespace Infrastructure.Repositories
             if (lieuToDelete != null)
             {
                 // Remove the Lieu entity from the database
-                _context.Lieu.Remove(lieuToDelete);
+                lieuToDelete.IsActive = false;
+                //_context.Lieu.Remove(lieuToDelete);
 
                 // Save the changes back to the database
                 await _context.SaveChangesAsync();

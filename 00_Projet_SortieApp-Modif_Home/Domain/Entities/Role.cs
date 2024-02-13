@@ -10,6 +10,8 @@ namespace Domain.Entities
     {
         public int Id { get; set; }
         public string Libelle { get; set; }
-        
+
+        public bool IsActive { get; set; }
+
     }
 }

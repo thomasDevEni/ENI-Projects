@@ -19,7 +19,7 @@ namespace SortieWebApp.Controllers
         }
 
         // GET: api/Product
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<SortieDto>>> GetSorties()
         {
             var sortie = await _sortieService.GetAllSortieAsync();
@@ -60,6 +60,50 @@ namespace SortieWebApp.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        // PUT: api/Sortie/5
+        [HttpPut("UpdateSortie")]
+        public async Task<IActionResult> UpdateSortie(SortieDto sortieDto)
+        {
+            if (sortieDto?.Id <= 0)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                await _sortieService.UpdateSortieAsync(sortieDto);
+            }
+            catch (Exception)
+            {
+                if (true)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+
+        // DELETE: api/Sortie/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteSortie(int id)
+        {
+            var sortie = await _sortieService.GetSortieByIdAsync(id);
+            if (sortie == null)
+            {
+                return NotFound();
+            }
+
+            await _sortieService.DeleteSortieAsync(id);
+
+            return NoContent();
         }
     }
 }

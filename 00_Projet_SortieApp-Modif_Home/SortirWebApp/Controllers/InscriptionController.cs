@@ -18,7 +18,7 @@ namespace SortieWebApp.Controllers
         }
 
         // GET: api/Product
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<InscriptionDto>>> GetInscriptions()
         {
             var inscription = await _inscriptionService.GetAllInscriptionAsync();
@@ -63,10 +63,10 @@ namespace SortieWebApp.Controllers
         }
 
         // PUT: api/Inscription/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateInscription(int id, InscriptionDto inscriptionDto)
+        [HttpPut("UpdateInscription")]
+        public async Task<IActionResult> UpdateInscription(InscriptionDto inscriptionDto)
         {
-            if (id != inscriptionDto.Id)
+            if (inscriptionDto?.Id <= 0)
             {
                 return BadRequest();
             }
@@ -90,17 +90,7 @@ namespace SortieWebApp.Controllers
             return NoContent();
         }
 
-        [HttpGet("Exists/{id}")]
-        public async Task<bool> InscriptionExists(int id)
-        {
-            // Assume _inscriptionService.GetInscriptionByIdAsync(id) exists and retrieves the Inscription entity by its id
-            var inscription = await _inscriptionService.GetInscriptionByIdAsync(id);
-            // Return true if the inscription is not null, indicating that the entity with the specified ID exists
-            // Otherwise, return false
-
-            return (inscription != null);
-        }
-
+        
         // DELETE: api/Inscription/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteInscription(int id)

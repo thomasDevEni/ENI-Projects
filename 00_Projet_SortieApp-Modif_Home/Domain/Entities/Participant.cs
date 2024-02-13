@@ -13,7 +13,7 @@ namespace Domain.Entities
         public string Prenom { get; set; }
         public string Mail { get; set; }
         public int RoleId { get; set; }
-        
 
+        public bool IsActive { get; set; }
     }
 }

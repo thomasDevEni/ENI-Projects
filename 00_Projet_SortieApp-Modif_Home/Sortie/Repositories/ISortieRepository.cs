@@ -13,5 +13,9 @@ namespace Infrastructure.Repositories
         Task<Sortie> GetByIdAsync(int id);
 
         Task<List<Sortie>> GetAllAsync();
+
+        Task UpdateSortieAsync(Sortie sortie);
+
+        Task DeleteSortieAsync(int id);
     }
 }

@@ -18,7 +18,7 @@ namespace SortieWebApp.Controllers
         }
 
         // GET: api/Product
-        [HttpGet]
+        [HttpGet("All")]]
         public async Task<ActionResult<IEnumerable<LieuDto>>> GetLieus()
         {
             var lieu = await _lieuService.GetAllLieuAsync();
@@ -62,10 +62,10 @@ namespace SortieWebApp.Controllers
         }
 
         // PUT: api/Lieu/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateLieu(int id, LieuDto lieuDto)
+        [HttpPut("UpdateLieu")]
+        public async Task<IActionResult> UpdateLieu(LieuDto lieuDto)
         {
-            if (id != lieuDto.Id)
+            if (lieuDto?.Id <= 0)
             {
                 return BadRequest();
             }
@@ -89,16 +89,6 @@ namespace SortieWebApp.Controllers
             return NoContent();
         }
 
-        [HttpGet("Exists/{id}")]
-        public async Task<bool> LieuExists(int id)
-        {
-            // Assume _lieuService.GetLieuByIdAsync(id) exists and retrieves the Lieu entity by its id
-            var lieu = await _lieuService.GetByIdAsync(id);
-            // Return true if the lieu is not null, indicating that the entity with the specified ID exists
-            // Otherwise, return false
-
-            return (lieu != null);
-        }
 
         // DELETE: api/Lieu/5
         [HttpDelete("{id}")]

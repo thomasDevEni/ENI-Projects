@@ -20,22 +20,27 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Etat> GetByIdAsync(int id)
+        public async Task<Etat?> GetByIdAsync(int id)
         {
-            return await _context.Etat.FirstOrDefaultAsync(c => c.Id == id);
-        }
+            var itemFound = await _context.Etat.FirstOrDefaultAsync(c => c.Id == id);
 
-         
+            if (itemFound == null) { return null; }
+            if (itemFound.IsActive == true) { return itemFound; }
+
+            else { return null; }
+            
+        }
 
         public async Task<List<Etat>> GetAllAsync()
         {
-            return await _context.Etat.ToListAsync();
+            return await _context.Etat.Where(etat => etat.IsActive).ToListAsync();
         }
 
         public async Task<int> AddEtatAsync(Etat etat)
         {
             try
             {
+                etat.IsActive = true;
                 var addedEtat = await _context.Etat.AddAsync(etat);
                 await _context.SaveChangesAsync();
                 return addedEtat.Entity.Id;
@@ -49,22 +54,12 @@ namespace Infrastructure.Repositories
         public async Task UpdateEtatAsync(Etat etat)
         {
             // Retrieve the existing Etat entity from the database
-            var existingEtat = await _context.Etat.FindAsync(etat.Id);
 
-            if (existingEtat != null)
-            {
-                // Update the properties of the existing Etat entity with values from etatDto
-                existingEtat.Libelle = etat.Libelle;
-                // Update other properties as necessary
+            // Update other properties as necessary
+            _context.Update(etat);
+            // Save the changes back to the database
+            await _context.SaveChangesAsync();
 
-                // Save the changes back to the database
-                await _context.SaveChangesAsync();
-            }
-            else
-            {
-                // Handle the case where the Etat entity with the provided Id does not exist
-                throw new NotFoundException($"Etat with Id {etat.Id} not found.");
-            }
         }
 
         public async Task DeleteEtatAsync(int id)
@@ -75,7 +70,8 @@ namespace Infrastructure.Repositories
             if (etatToDelete != null)
             {
                 // Remove the Etat entity from the database
-                _context.Etat.Remove(etatToDelete);
+                etatToDelete.IsActive = false;
+                //_context.Etat.Remove(etatToDelete);
 
                 // Save the changes back to the database
                 await _context.SaveChangesAsync();

@@ -1,15 +1,17 @@
 ﻿using Application.Dto;
 using AutoMapper;
-using Domain.Entities;
-using FluentValidation;
-using FluentValidation.Results;
-using Infrastructure.Contexts;
 using Infrastructure.Repositories;
+using Infrastructure.Contexts;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Application.Services
 {
@@ -49,10 +51,11 @@ namespace Application.Services
             return _mapper.Map<List<SortieDto>>(sorties);
         }
 
-        public async Task<SortieDto> GetSortieByIdAsync(int id)
+        public async Task<SortieDto?> GetSortieByIdAsync(int id)
         {
             var product = await _rsortieRepository.GetByIdAsync(id);
-            return _mapper.Map<SortieDto>(product);
+            if (product == null) { return null; }
+            else { return _mapper.Map<SortieDto>(product); }
         }
 
         public async Task AddSortieAsync(SortieDto sortieDto)
@@ -74,5 +77,48 @@ namespace Application.Services
             }
         }
 
+        public async Task UpdateSortieAsync(SortieDto? sortieDto)
+        {
+
+            if (sortieDto != null)
+            {
+                var sortieEntity = await _rsortieRepository.GetByIdAsync(sortieDto.Id);
+                if (sortieEntity == null)
+                {
+                    // Handle the case where the Sortie entity with the provided Id does not exist
+                    throw new Exception("Elément non trouvé");
+                }
+                if (sortieEntity != null)
+                {   // Update the properties of the existing Sortie entity with values from sortieDto
+                    sortieEntity.LieuId = sortieDto.LieuId;
+                    // Save the changes back to the database
+                    await _rsortieRepository.UpdateSortieAsync(sortieEntity);
+
+                }
+
+            }
+            else
+            {
+                // Handle the case where the Sortie entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
+
+        public async Task DeleteSortieAsync(int id)
+        {
+            // Retrieve the existing Sortie entity from the database
+            var sortieToDelete = await _rsortieRepository.GetByIdAsync(id);
+
+            if (sortieToDelete != null)
+            {
+                // Remove the Sortie entity from the database
+                await _rsortieRepository.DeleteSortieAsync(id);
+            }
+            else
+            {
+                // Handle the case where the Sortie entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
     }
 }

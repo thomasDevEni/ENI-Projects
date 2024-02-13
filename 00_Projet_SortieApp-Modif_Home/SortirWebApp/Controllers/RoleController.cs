@@ -23,7 +23,7 @@ namespace SortieWebApp.Controllers
 
         
         // GET: api/Role
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<RoleDto>>> GetRoles()
         {
             var role = await _roleService.GetAllRoleAsync();
@@ -63,6 +63,50 @@ namespace SortieWebApp.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        // PUT: api/Role/5
+        [HttpPut("UpdateRole")]
+        public async Task<IActionResult> UpdateRole(RoleDto roleDto)
+        {
+            if (roleDto?.Id <= 0)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                await _roleService.UpdateRoleAsync(roleDto);
+            }
+            catch (Exception)
+            {
+                if (true)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+
+        // DELETE: api/Role/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteRole(int id)
+        {
+            var role = await _roleService.GetRoleByIdAsync(id);
+            if (role == null)
+            {
+                return NotFound();
+            }
+
+            await _roleService.DeleteRoleAsync(id);
+
+            return NoContent();
         }
     }
 }
