@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:4200",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\..\\angularsortirweb.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
