@@ -18,7 +18,7 @@ namespace SortieWebApp.Controllers
         }
 
         // GET: api/Product
-        [HttpGet("All")]]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<LieuDto>>> GetLieus()
         {
             var lieu = await _lieuService.GetAllLieuAsync();
