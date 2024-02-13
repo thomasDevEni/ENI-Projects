@@ -30,27 +30,27 @@ namespace Application.Services
             return _inscriptionValidator.Validate(inscription);
         }
 
-        public async Task<InscriptionDto> GetByIdAsync(int id)
-        {
-            var inscription = _rinscriptionRepository.GetByIdAsync(id); ;
-            if (_rinscriptionRepository == null)
-            {
-                return null;
-            }
-
-            var inscriptionDto = _mapper.Map<InscriptionDto>(inscription);
-            return inscriptionDto;
-        }
 
         public async Task<List<InscriptionDto>> GetAllInscriptionAsync()
         {
             var inscriptions = await _rinscriptionRepository.GetAllAsync();
+
+            if (_rinscriptionRepository == null)
+            {
+                return null;
+            }
             return _mapper.Map<List<InscriptionDto>>(inscriptions);
         }
 
         public async Task<InscriptionDto> GetInscriptionByIdAsync(int id)
         {
             var product = await _rinscriptionRepository.GetByIdAsync(id);
+
+            if (_rinscriptionRepository == null)
+            {
+                return null;
+            }
+
             return _mapper.Map<InscriptionDto>(product);
         }
 

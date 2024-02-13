@@ -11,7 +11,6 @@ namespace Application.Services
     public interface IInscriptionService
     {
         Task AddInscriptionAsync(InscriptionDto inscriptionDto);
-        Task<InscriptionDto> GetByIdAsync(int id);
         Task<List<InscriptionDto>> GetAllInscriptionAsync();
 
         Task<InscriptionDto> GetInscriptionByIdAsync(int id);
