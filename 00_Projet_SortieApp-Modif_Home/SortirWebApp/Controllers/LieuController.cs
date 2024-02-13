@@ -60,5 +60,59 @@ namespace SortieWebApp.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        // PUT: api/Lieu/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateLieu(int id, LieuDto lieuDto)
+        {
+            if (id != lieuDto.Id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                await _lieuService.UpdateLieuAsync(lieuDto);
+            }
+            catch (Exception)
+            {
+                if (true)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [HttpGet("Exists/{id}")]
+        public async Task<bool> LieuExists(int id)
+        {
+            // Assume _lieuService.GetLieuByIdAsync(id) exists and retrieves the Lieu entity by its id
+            var lieu = await _lieuService.GetByIdAsync(id);
+            // Return true if the lieu is not null, indicating that the entity with the specified ID exists
+            // Otherwise, return false
+
+            return (lieu != null);
+        }
+
+        // DELETE: api/Lieu/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteLieu(int id)
+        {
+            var lieu = await _lieuService.GetLieuByIdAsync(id);
+            if (lieu == null)
+            {
+                return NotFound();
+            }
+
+            await _lieuService.DeleteLieuAsync(id);
+
+            return NoContent();
+        }
     }
 }

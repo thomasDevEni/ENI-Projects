@@ -13,5 +13,9 @@ namespace Infrastructure.Repositories
         Task<Lieu> GetByIdAsync(int id);
 
         Task<List<Lieu>> GetAllAsync();
+
+        Task UpdateLieuAsync(Lieu lieu);
+
+        Task DeleteLieuAsync(int id);
     }
 }

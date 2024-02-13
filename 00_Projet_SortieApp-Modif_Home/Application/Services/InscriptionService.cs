@@ -72,5 +72,46 @@ namespace Application.Services
                 throw new Exception();
             }
         }
+
+        public async Task UpdateInscriptionAsync(InscriptionDto inscriptionDto)
+        {
+            // Map InscriptiontDto to Inscription entity
+            var inscriptionEntity = _mapper.Map<Inscription>(inscriptionDto);
+            // Retrieve the existing Inscription entity from the database
+            //var existingInscription = await _rinscriptionRepository.UpdateInscriptionAsync(inscriptionEntity);
+
+            if (inscriptionEntity != null)
+            {
+                // Update the properties of the existing Inscription entity with values from inscriptionDto
+                inscriptionEntity.ParticipantId = inscriptionDto.ParticipantId;
+                // Update other properties as necessary
+
+
+                // Save the changes back to the database
+                await _rinscriptionRepository.UpdateInscriptionAsync(inscriptionEntity);
+            }
+            else
+            {
+                // Handle the case where the Inscription entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
+
+        public async Task DeleteInscriptionAsync(int id)
+        {
+            // Retrieve the existing Inscription entity from the database
+            var inscriptionToDelete = await _rinscriptionRepository.GetByIdAsync(id);
+
+            if (inscriptionToDelete != null)
+            {
+                // Remove the Inscription entity from the database
+                await _rinscriptionRepository.DeleteInscriptionAsync(id);
+            }
+            else
+            {
+                // Handle the case where the Inscription entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
     }
 }

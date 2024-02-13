@@ -59,6 +59,61 @@ namespace SortieWebApp.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            
+        }
+
+        // PUT: api/Inscription/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateInscription(int id, InscriptionDto inscriptionDto)
+        {
+            if (id != inscriptionDto.Id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                await _inscriptionService.UpdateInscriptionAsync(inscriptionDto);
+            }
+            catch (Exception)
+            {
+                if (true)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [HttpGet("Exists/{id}")]
+        public async Task<bool> InscriptionExists(int id)
+        {
+            // Assume _inscriptionService.GetInscriptionByIdAsync(id) exists and retrieves the Inscription entity by its id
+            var inscription = await _inscriptionService.GetInscriptionByIdAsync(id);
+            // Return true if the inscription is not null, indicating that the entity with the specified ID exists
+            // Otherwise, return false
+
+            return (inscription != null);
+        }
+
+        // DELETE: api/Inscription/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteInscription(int id)
+        {
+            var inscription = await _inscriptionService.GetInscriptionByIdAsync(id);
+            if (inscription == null)
+            {
+                return NotFound();
+            }
+
+            await _inscriptionService.DeleteInscriptionAsync(id);
+
+            return NoContent();
         }
     }
 }

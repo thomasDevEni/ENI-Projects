@@ -72,5 +72,46 @@ namespace Application.Services
                 throw new Exception();
             }
         }
+
+        public async Task UpdateLieuAsync(LieuDto lieuDto)
+        {
+            // Map LieutDto to Lieu entity
+            var lieuEntity = _mapper.Map<Lieu>(lieuDto);
+            // Retrieve the existing Lieu entity from the database
+            //var existingLieu = await _rlieuRepository.UpdateLieuAsync(lieuEntity);
+
+            if (lieuEntity != null)
+            {
+                // Update the properties of the existing Lieu entity with values from lieuDto
+                lieuEntity.Etablissement = lieuDto.Etablissement;
+                // Update other properties as necessary
+
+
+                // Save the changes back to the database
+                await _rlieuRepository.UpdateLieuAsync(lieuEntity);
+            }
+            else
+            {
+                // Handle the case where the Lieu entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
+
+        public async Task DeleteLieuAsync(int id)
+        {
+            // Retrieve the existing Lieu entity from the database
+            var lieuToDelete = await _rlieuRepository.GetByIdAsync(id);
+
+            if (lieuToDelete != null)
+            {
+                // Remove the Lieu entity from the database
+                await _rlieuRepository.DeleteLieuAsync(id);
+            }
+            else
+            {
+                // Handle the case where the Lieu entity with the provided Id does not exist
+                throw new Exception();
+            }
+        }
     }
 }

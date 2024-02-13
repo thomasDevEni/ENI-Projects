@@ -43,5 +43,46 @@ namespace Infrastructure.Repositories
                 throw ex;
             }
         }
+
+        public async Task UpdateLieuAsync(Lieu lieu)
+        {
+            // Retrieve the existing Lieu entity from the database
+            var existingLieu = await _context.Lieu.FindAsync(lieu.Id);
+
+            if (existingLieu != null)
+            {
+                // Update the properties of the existing Lieu entity with values from lieuDto
+                existingLieu.Etablissement = lieu.Etablissement;
+                // Update other properties as necessary
+
+                // Save the changes back to the database
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                // Handle the case where the Lieu entity with the provided Id does not exist
+                throw new NotFoundException($"Lieu with Id {lieu.Id} not found.");
+            }
+        }
+
+        public async Task DeleteLieuAsync(int id)
+        {
+            // Retrieve the existing Lieu entity from the database
+            var lieuToDelete = await _context.Lieu.FindAsync(id);
+
+            if (lieuToDelete != null)
+            {
+                // Remove the Lieu entity from the database
+                _context.Lieu.Remove(lieuToDelete);
+
+                // Save the changes back to the database
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                // Handle the case where the Lieu entity with the provided Id does not exist
+                throw new NotFoundException($"Lieu with Id {id} not found.");
+            }
+        }
     }
 }

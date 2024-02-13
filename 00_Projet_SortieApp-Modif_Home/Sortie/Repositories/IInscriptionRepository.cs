@@ -13,5 +13,9 @@ namespace Infrastructure.Repositories
         Task<Inscription> GetByIdAsync(int id);
 
         Task<List<Inscription>> GetAllAsync();
+
+        Task UpdateInscriptionAsync(Inscription inscription);
+
+        Task DeleteInscriptionAsync(int id);
     }
 }

@@ -16,5 +16,9 @@ namespace Application.Services
         Task<InscriptionDto> GetInscriptionByIdAsync(int id);
 
         ValidationResult ValidateInscription(InscriptionDto inscription);
+
+        Task UpdateInscriptionAsync(InscriptionDto inscriptionDto);
+
+        Task DeleteInscriptionAsync(int id);
     }
 }

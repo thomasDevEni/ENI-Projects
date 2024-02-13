@@ -17,5 +17,9 @@ namespace Application.Services
         Task<LieuDto> GetLieuByIdAsync(int id);
 
         ValidationResult ValidateLieu(LieuDto lieu);
+
+        Task UpdateLieuAsync(LieuDto lieuDto);
+
+        Task DeleteLieuAsync(int id);
     }
 }
