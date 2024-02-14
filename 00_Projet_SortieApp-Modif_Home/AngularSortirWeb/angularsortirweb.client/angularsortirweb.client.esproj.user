@@ -7,7 +7,7 @@
   "type": "chrome",
   "request": "launch",
   "url": "https://localhost:4200",
-  "webRoot": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client"
+  "webRoot": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client"
 }</LaunchJsonTarget>
   </PropertyGroup>
 </Project>

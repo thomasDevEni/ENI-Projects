@@ -63,7 +63,7 @@ namespace SortieWebApp.Controllers
         }
 
         // PUT: api/Etat/5
-        [HttpPut("UpdateEtat")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEtat(EtatDto? etatDto)
         {
             if (etatDto?.Id <= 0)
