@@ -15,6 +15,13 @@ namespace SortieApp.Application
         {
             //Type et durée de vie su service (Type Singleton: unique et utilisé dans toute l'application)
             // Add AutoMapper and mapping profile
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin",
+                    builder => builder.AllowAnyOrigin()
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader());
+            });
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<IEtatService, EtatService>();
             services.AddScoped<IRoleService, RoleService>();
@@ -29,13 +36,6 @@ namespace SortieApp.Application
             services.AddTransient<IValidator<LieuDto>, LieuValidator>();
             services.AddTransient<IValidator<InscriptionDto>, InscriptionValidator>();
             services.AddTransient<IValidator<SortieDto>, SortieValidator>();
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowOrigin",
-                    builder => builder.AllowAnyOrigin()
-                                      .AllowAnyMethod()
-                                      .AllowAnyHeader());
-            });
 
             return services;
         }
