@@ -8,6 +8,7 @@ using AutoMapper;
 using SortieWebApp;
 using Microsoft.AspNetCore.Hosting;
 using FluentValidation;
+using Microsoft.AspNetCore.Builder;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -60,4 +61,5 @@ app.UseEndpoints(endpoints => endpoints.MapControllers());
 app.MapRazorPages();*/
 app.MapFallbackToFile("/index.html");
 app.UseCors("AllowOrigin");
+
 app.Run();
