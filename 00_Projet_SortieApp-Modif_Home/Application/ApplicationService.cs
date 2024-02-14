@@ -29,6 +29,13 @@ namespace SortieApp.Application
             services.AddTransient<IValidator<LieuDto>, LieuValidator>();
             services.AddTransient<IValidator<InscriptionDto>, InscriptionValidator>();
             services.AddTransient<IValidator<SortieDto>, SortieValidator>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin",
+                    builder => builder.AllowAnyOrigin()
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader());
+            });
 
             return services;
         }

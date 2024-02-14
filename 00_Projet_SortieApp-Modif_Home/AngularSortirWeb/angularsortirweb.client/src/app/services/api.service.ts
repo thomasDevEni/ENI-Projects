@@ -2,23 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environements/environement';
 
-@Injectable({
-  providedIn: 'root'
-})
-
 interface Participant {
   nom: string;
   prenom: string;
   mail: string;
   roleid: number;
 }
+
+@Injectable({
+  providedIn: 'root',
+})
+
 export class ApiService {
 
   apiUrl = environment.apiUrl;
+  public participants: Participant[] = [];
 
   constructor(private http: HttpClient) { }
 
-  get(endpoint: string) {
+  get<Participant>(endpoint: string) {
     return this.http.get<Participant>(`${this.apiUrl}/${endpoint}`);
   }
 

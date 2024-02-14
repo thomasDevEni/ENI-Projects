@@ -59,4 +59,5 @@ app.UseEndpoints(endpoints => endpoints.MapControllers());
 /*
 app.MapRazorPages();*/
 app.MapFallbackToFile("/index.html");
+app.UseCors("AllowOrigin");
 app.Run();

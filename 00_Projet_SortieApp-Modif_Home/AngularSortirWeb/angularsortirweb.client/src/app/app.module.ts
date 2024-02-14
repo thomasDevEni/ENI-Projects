@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ApiService } from './services/api.service'; // Import ApiService
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { AppComponent } from './app.component';
     BrowserModule, HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService], // Add ApiService to providers array
   bootstrap: [AppComponent]
 })
 export class AppModule { }

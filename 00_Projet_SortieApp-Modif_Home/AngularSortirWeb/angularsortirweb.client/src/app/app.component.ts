@@ -22,31 +22,12 @@ export class AppComponent implements OnInit {
     this.getParticipants();
   }
 
-  /*getParticipants() {
-    this.apiService.get<Participant>('Participant/GetAll').subscribe((participants) => {
-      console.log(participants);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }*/
-
-  getForecasts() {
-    this.apiService.get<Participant[]>('Participant/All').subscribe(
-      (result) => {
-        this.participants = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
   getParticipants() {
-    this.apiService.get('Participant/GetAll').subscribe(
-      (participants: Participant[]) => { // Specify type here
-        console.log(participants);
-        this.participants = participants; // Assuming result is an array of participants
+    this.apiService.get<Participant[]>('Participant/GetAll').subscribe(
+      (result) => {
+        this.participants = result;      // Specify type here
+        console.log(result);
+        
       },
       (error) => {
         console.error(error);
