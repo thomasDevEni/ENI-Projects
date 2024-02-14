@@ -19,7 +19,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   get(endpoint: string) {
-    return this.http.get(`${this.apiUrl}/${endpoint}`);
+    return this.http.get<Participant>(`${this.apiUrl}/${endpoint}`);
   }
 
   // Other API methods (post, put, delete, etc.)
