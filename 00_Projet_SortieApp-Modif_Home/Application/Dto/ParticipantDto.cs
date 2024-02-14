@@ -13,5 +13,6 @@ namespace Application.Dto
         public string Prenom { get; set; }
         public string Mail { get; set; }
         public int RoleId { get; set; }
+
     }
 }

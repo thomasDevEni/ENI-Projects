@@ -41,6 +41,7 @@ namespace Infrastructure.Repositories
             try
             {
                 etat.IsActive = true;
+                etat.Protected = false;
                 var addedEtat = await _context.Etat.AddAsync(etat);
                 await _context.SaveChangesAsync();
                 return addedEtat.Entity.Id;
@@ -54,12 +55,21 @@ namespace Infrastructure.Repositories
         public async Task UpdateEtatAsync(Etat etat)
         {
             // Retrieve the existing Etat entity from the database
-
-            // Update other properties as necessary
-            _context.Update(etat);
-            // Save the changes back to the database
-            await _context.SaveChangesAsync();
-
+            if (etat.Protected != true)
+            { // Update other properties as necessary
+                _context.Update(etat);
+                // Save the changes back to the database
+                await _context.SaveChangesAsync();
+            }
+            if (etat.Protected == true)
+            { // Update other properties as necessary
+                await Console.Out.WriteLineAsync("On ne met pas à jour un etat protégé");
+            }
+            else
+            {
+                // Handle the case where the Etat entity with the provided Id does not exist
+                throw new NotFoundException("L'Etat est protégé");
+            }
         }
 
         public async Task DeleteEtatAsync(int id)
@@ -67,17 +77,24 @@ namespace Infrastructure.Repositories
             // Retrieve the existing Etat entity from the database
             var etatToDelete = await _context.Etat.FindAsync(id);
 
-            if (etatToDelete != null)
+            if (etatToDelete != null && etatToDelete.Protected != true)
             {
-                // Remove the Etat entity from the database
+                // Put Etat to inactive in database
                 etatToDelete.IsActive = false;
                 //_context.Etat.Remove(etatToDelete);
 
                 // Save the changes back to the database
                 await _context.SaveChangesAsync();
             }
+            if (etatToDelete != null && etatToDelete.Protected == true)
+            {
+                // On ne supprime pas un Etat protégé
+                await Console.Out.WriteLineAsync("On ne supprime pas un etat protégé.");
+                //throw new NotFoundException($"Etat avec Id {id} protégé.");
+            }
             else
             {
+
                 // Handle the case where the Etat entity with the provided Id does not exist
                 throw new NotFoundException($"Etat with Id {id} not found.");
             }

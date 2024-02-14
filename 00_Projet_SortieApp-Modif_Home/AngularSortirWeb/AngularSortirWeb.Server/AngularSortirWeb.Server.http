@@ -1,6 +1,6 @@
-@AngularSortirWeb.Server_HostAddress = http://localhost:5147
+@AngularSortirWeb.Server_HostAddress = http://localhost:5003
 
-GET {{AngularSortirWeb.Server_HostAddress}}/weatherforecast/
+GET {{AngularSortirWeb.Server_HostAddress}}/api/
 Accept: application/json
 
 ###

@@ -18,7 +18,7 @@ namespace SortieWebApp.Controllers
         }
 
         // GET: api/Product
-        [HttpGet("All")]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<ParticipantDto>>> GetParticipants()
         {
             var participant = await _participantService.GetAllParticipantAsync();
@@ -40,7 +40,7 @@ namespace SortieWebApp.Controllers
         }
 
         // POST: api/Participant
-        [HttpPost("AddParticipant")]
+        [HttpPost(Name ="AddParticipant")]
         public async Task<IActionResult> AddParticipantAsync(ParticipantDto participantDto)
         {
             try
@@ -62,7 +62,7 @@ namespace SortieWebApp.Controllers
         }
 
         // PUT: api/Participant/5
-        [HttpPut("UpdateParticipant")]
+        [HttpPut(Name ="UpdateParticipant")]
         public async Task<IActionResult> UpdateParticipant(ParticipantDto participantDto)
         {
             if (participantDto?.Id <= 0)

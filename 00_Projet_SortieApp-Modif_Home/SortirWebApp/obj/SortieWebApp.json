@@ -546,7 +546,7 @@
         }
       }
     },
-    "/api/Participant/All": {
+    "/api/Participant/GetAll": {
       "get": {
         "tags": [
           "Participant"
@@ -645,11 +645,12 @@
         }
       }
     },
-    "/api/Participant/AddParticipant": {
+    "/api/Participant": {
       "post": {
         "tags": [
           "Participant"
         ],
+        "operationId": "AddParticipant",
         "parameters": [
           {
             "name": "Id",
@@ -694,13 +695,12 @@
             "description": "Success"
           }
         }
-      }
-    },
-    "/api/Participant/UpdateParticipant": {
+      },
       "put": {
         "tags": [
           "Participant"
         ],
+        "operationId": "UpdateParticipant",
         "parameters": [
           {
             "name": "Id",

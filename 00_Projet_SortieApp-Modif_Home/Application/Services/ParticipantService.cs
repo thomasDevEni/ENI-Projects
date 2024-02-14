@@ -93,7 +93,7 @@ namespace Application.Services
                     participantEntity.Nom = participantDto.Nom;
                     participantEntity.Prenom = participantDto.Prenom;
                     participantEntity.Mail= participantDto.Mail;
-                    participantEntity.RoleId = participantDto.RoleId;
+                    //participantEntity.RoleId = participantDto.RoleId;
                     // Save the changes back to the database
                     await _rparticipantRepository.UpdateParticipantAsync(participantEntity);
 

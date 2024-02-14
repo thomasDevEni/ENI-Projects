@@ -16,6 +16,8 @@ namespace Domain.Entities
 
         public bool IsActive { get; set; }
 
+        public bool Protected { get; set; }
+
         public virtual ICollection<Role> Roles { get; set; }
     }
 }

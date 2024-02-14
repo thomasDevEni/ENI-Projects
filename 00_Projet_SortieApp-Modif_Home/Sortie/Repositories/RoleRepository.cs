@@ -41,6 +41,7 @@ namespace Infrastructure.Repositories
             try
             {
                 role.IsActive = true;
+                role.Protected = false;
                 var addedRole = await _context.Role.AddAsync(role);
                 await _context.SaveChangesAsync();
                 return addedRole.Entity.Id;
@@ -54,12 +55,16 @@ namespace Infrastructure.Repositories
         public async Task UpdateRoleAsync(Role role)
         {
             // Retrieve the existing Role entity from the database
-
-            // Update other properties as necessary
-            _context.Update(role);
-            // Save the changes back to the database
-            await _context.SaveChangesAsync();
-
+            if (role.Protected != true)
+            { // Update other properties as necessary
+                _context.Update(role);
+                // Save the changes back to the database
+                await _context.SaveChangesAsync();
+            }
+            if (role.Protected == true)
+            { // Update other properties as necessary
+                await Console.Out.WriteLineAsync("On ne met pas à jour un role protégé");
+            }
         }
 
         public async Task DeleteRoleAsync(int id)
@@ -67,17 +72,24 @@ namespace Infrastructure.Repositories
             // Retrieve the existing Role entity from the database
             var roleToDelete = await _context.Role.FindAsync(id);
 
-            if (roleToDelete != null)
+            if (roleToDelete != null && roleToDelete.Protected != true)
             {
-                // Remove the Role entity from the database
+                // Put Role to inactive in database
                 roleToDelete.IsActive = false;
                 //_context.Role.Remove(roleToDelete);
 
                 // Save the changes back to the database
                 await _context.SaveChangesAsync();
             }
+            if (roleToDelete != null && roleToDelete.Protected == true)
+            {
+                // On ne supprime pas un Role protégé
+                await Console.Out.WriteLineAsync("On ne supprime pas un role protégé.");
+                //throw new NotFoundException($"Role avec Id {id} protégé.");
+            }
             else
             {
+
                 // Handle the case where the Role entity with the provided Id does not exist
                 throw new NotFoundException($"Role with Id {id} not found.");
             }

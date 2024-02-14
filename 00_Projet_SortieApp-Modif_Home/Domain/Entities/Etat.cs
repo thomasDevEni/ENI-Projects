@@ -15,5 +15,7 @@ namespace Domain.Entities
         public string Libelle { get; set; }
 
         public bool IsActive { get; set; }
+
+        public bool Protected { get; set; }
     }
 }

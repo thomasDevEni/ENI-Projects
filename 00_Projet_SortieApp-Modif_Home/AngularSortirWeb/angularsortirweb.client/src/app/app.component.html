@@ -1,24 +1,24 @@
-﻿<h1 id="tableLabel">Weather forecast</h1>
+<h1 id="tableLabel">Liste des Participants</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>Ce composant affiche la liste des Participants.</p>
 
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+<p *ngIf="!participants"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
 
-<table *ngIf="forecasts">
+<table *ngIf="participants">
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Mail</th>
+            <th>RoleId</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.date }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
+        <tr *ngFor="let participant of participants">
+            <td>{{ participant.nom }}</td>
+            <td>{{ participant.prenom }}</td>
+            <td>{{ participant.mail }}</td>
+            <td>{{ participant.roleid }}</td>
         </tr>
     </tbody>
 </table>

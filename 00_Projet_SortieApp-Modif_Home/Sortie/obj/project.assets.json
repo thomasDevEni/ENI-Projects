@@ -4036,19 +4036,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thoma\\.nuget\\packages\\": {}
+    "C:\\Users\\trequier2023\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\obj\\",
+      "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\trequier2023\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Sortie\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\trequier2023\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4056,15 +4056,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj"
+            "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\Domain\\Domain.csproj"
             }
           }
         }

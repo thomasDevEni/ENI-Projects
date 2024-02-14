@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "ll63ZHsnsBsjUSjYhiOPBwHoXEeC62b7/uqSHGaERr4=",
+  "Hash": "t/Cz4oauyS7rXnNcdWcQSqNmlwESVINmwAoVNIeDyXg=",
   "Source": "AngularSortirWeb.Server",
   "BasePath": "_content/AngularSortirWeb.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\thoma\\Source\\Repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\angularsortirweb.client.esproj",
+      "Identity": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\angularsortirweb.client.esproj",
       "Version": 2,
       "Source": "angularsortirweb.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

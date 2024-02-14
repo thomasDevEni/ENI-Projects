@@ -1,1 +1,2 @@
 C:\Users\thoma\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\AngularSortirWeb\angularsortirweb.client\obj\Debug\angularsortirweb.client.esproj.CoreCompileInputs.cache
+C:\Users\trequier2023\source\repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\AngularSortirWeb\angularsortirweb.client\obj\Debug\angularsortirweb.client.esproj.CoreCompileInputs.cache

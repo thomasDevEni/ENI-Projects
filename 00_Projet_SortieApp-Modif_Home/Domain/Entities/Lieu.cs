@@ -17,5 +17,6 @@ namespace Domain.Entities
 
         public bool IsActive { get; set; }
 
+
     }
 }

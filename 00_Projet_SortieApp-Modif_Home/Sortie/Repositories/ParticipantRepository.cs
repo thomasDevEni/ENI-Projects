@@ -41,6 +41,9 @@ namespace Infrastructure.Repositories
             try
             {
                 participant.IsActive = true;
+                participant.Protected = false;
+                //Tout nouveau participant aura le role d'utilisateur: seul le superadmin peut changer ce role
+                participant.RoleId = 2;
                 var addedParticipant = await _context.Participant.AddAsync(participant);
                 await _context.SaveChangesAsync();
                 return addedParticipant.Entity.Id;
@@ -54,12 +57,21 @@ namespace Infrastructure.Repositories
         public async Task UpdateParticipantAsync(Participant participant)
         {
             // Retrieve the existing Participant entity from the database
-
-            // Update other properties as necessary
-            _context.Update(participant);
-            // Save the changes back to the database
-            await _context.SaveChangesAsync();
-
+            if (participant.Protected != true)
+            { // Update other properties as necessary
+                _context.Update(participant);
+                // Save the changes back to the database
+                await _context.SaveChangesAsync();
+            }
+            if (participant.Protected == true)
+            { // Update other properties as necessary
+                await Console.Out.WriteLineAsync("On ne met pas à jour un participant protégé");
+            }
+            else
+            {
+                // Handle the case where the Participant entity with the provided Id does not exist
+                throw new NotFoundException("L'Participant est protégé");
+            }
         }
 
         public async Task DeleteParticipantAsync(int id)
@@ -67,17 +79,24 @@ namespace Infrastructure.Repositories
             // Retrieve the existing Participant entity from the database
             var participantToDelete = await _context.Participant.FindAsync(id);
 
-            if (participantToDelete != null)
+            if (participantToDelete != null && participantToDelete.Protected != true)
             {
-                // Remove the Participant entity from the database
+                // Put Participant to inactive in database
                 participantToDelete.IsActive = false;
                 //_context.Participant.Remove(participantToDelete);
 
                 // Save the changes back to the database
                 await _context.SaveChangesAsync();
             }
+            if (participantToDelete != null && participantToDelete.Protected == true)
+            {
+                // On ne supprime pas un Participant protégé
+                await Console.Out.WriteLineAsync("On ne supprime pas un participant protégé.");
+                //throw new NotFoundException($"Participant avec Id {id} protégé.");
+            }
             else
             {
+
                 // Handle the case where the Participant entity with the provided Id does not exist
                 throw new NotFoundException($"Participant with Id {id} not found.");
             }

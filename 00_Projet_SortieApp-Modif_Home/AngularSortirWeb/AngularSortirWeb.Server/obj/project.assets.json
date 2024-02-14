@@ -459,19 +459,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thoma\\.nuget\\packages\\": {}
+    "C:\\Users\\trequier2023\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
+      "projectUniqueName": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
       "projectName": "AngularSortirWeb.Server",
-      "projectPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
-      "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\obj\\",
+      "projectPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\AngularSortirWeb.Server.csproj",
+      "packagesPath": "C:\\Users\\trequier2023\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\trequier2023\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\AngularSortirWeb.Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\trequier2023\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -479,7 +479,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

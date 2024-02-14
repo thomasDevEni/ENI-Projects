@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '././services/api.service';
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface Participant {
+  nom: string;
+  prenom: string;
+  mail: string;
+  roleid: number;
 }
 
 @Component({
@@ -14,18 +14,39 @@ interface WeatherForecast {
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+  public participants: Participant[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.getForecasts();
+    this.getParticipants();
   }
 
+  /*getParticipants() {
+    this.apiService.get<Participant>('Participant/GetAll').subscribe((participants) => {
+      console.log(participants);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }*/
+
   getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
+    this.apiService.get<Participant[]>('Participant/All').subscribe(
       (result) => {
-        this.forecasts = result;
+        this.participants = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+  getParticipants() {
+    this.apiService.get('Participant/GetAll').subscribe(
+      (participants: Participant[]) => { // Specify type here
+        console.log(participants);
+        this.participants = participants; // Assuming result is an array of participants
       },
       (error) => {
         console.error(error);
