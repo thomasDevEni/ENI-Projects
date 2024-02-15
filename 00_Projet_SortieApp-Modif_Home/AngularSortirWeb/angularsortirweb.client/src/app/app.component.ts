@@ -5,7 +5,7 @@ interface Participant {
   nom: string;
   prenom: string;
   mail: string;
-  roleid: number;
+  roleId: number;
 }
 
 @Component({
