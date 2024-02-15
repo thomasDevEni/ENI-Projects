@@ -2,11 +2,14 @@
 using Application.Services;
 using Domain.Entities;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SortieWebApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
+    [ApiController]
     public class EtatController : ControllerBase
     {
         private readonly IEtatService _etatService;

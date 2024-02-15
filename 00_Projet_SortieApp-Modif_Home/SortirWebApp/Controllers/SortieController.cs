@@ -2,11 +2,14 @@
 using Application.Services;
 using Application.Dto;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace SortieWebApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
+    [ApiController]
     public class SortieController : ControllerBase
     {
         private readonly ISortieService _sortieService;

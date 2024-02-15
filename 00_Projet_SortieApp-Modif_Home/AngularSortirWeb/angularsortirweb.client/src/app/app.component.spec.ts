@@ -30,8 +30,8 @@ describe('AppComponent', () => {
 
   it('should retrieve weather forecasts from the server', () => {
     const mockParticipants = [
-      { nom: 'SuperAdmin', prenom: 'Unique', mail: 'super.admin@mail.com', roleid: 1 },
-      { nom: 'Bovin', prenom: 'Joséphine', mail: 'jo.bov@mail.com, roleid', roleid: 2 }
+      { nom: 'SuperAdmin', prenom: 'Unique', mail: 'super.admin@mail.com', roleId: 1 },
+      { nom: 'Bovin', prenom: 'Joséphine', mail: 'jo.bov@mail.com, roleid', roleId: 2 }
     ];
 
     component.ngOnInit();

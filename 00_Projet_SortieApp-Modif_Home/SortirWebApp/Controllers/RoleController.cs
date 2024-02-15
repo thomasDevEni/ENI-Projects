@@ -5,11 +5,14 @@ using AutoMapper;
 using Domain.Entities;
 using Infrastructure.Repositories;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace SortieWebApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
+    [ApiController]
     public class RoleController : ControllerBase
     {
         private readonly IRoleService _roleService;

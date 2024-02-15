@@ -445,3 +445,4 @@ C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWe
 C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\thoma\Source\Repos\ENI-Projects\00_Projet_SortieApp-Modif_Home\SortirWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -7,6 +7,10 @@ interface Participant {
   mail: string;
   roleId: number;
 }
+interface Role {
+  id: number;
+  libelle: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -15,6 +19,7 @@ interface Participant {
 })
 export class AppComponent implements OnInit {
   public participants: Participant[] = [];
+  public roles: Role[] = [];
 
   constructor(private apiService: ApiService) {}
 
