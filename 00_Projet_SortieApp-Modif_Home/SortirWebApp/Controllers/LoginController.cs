@@ -1,10 +1,12 @@
 ﻿
 using Application.Dto;
+using Application.Services;
 using SortieWebApp.Models;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Text;
 
@@ -16,18 +18,19 @@ namespace SortieWebApp.Controllers
     public class LoginController : ControllerBase
     {
         // Dummy list of users (replace this with your actual user database)
-        private static readonly List<UserDto> _users = new List<UserDto>
+        private static readonly List<LoginDto> _users = new List<LoginDto>
     {
-        new UserDto { UserName = "admin", Password = "Pa$$w0rd" }
+        new LoginDto { UserName = "admin", Password = "Pa$$w0rd" }
     };
-        private IConfiguration _config;
-        public LoginController(IConfiguration config)
+        private ILoginService _loginService;
+       
+        public LoginController(ILoginService loginService)
         {
-            _config = config;
+            _loginService = loginService;
         }
 
-        [HttpPost]
-        public IActionResult Post(LoginModel loginRequest)
+        /*[HttpPost]
+        public IActionResult Login(LoginModel loginRequest)
         {
             //your logic for login process
             //If login usrename and password are correct then proceed to generate token
@@ -44,47 +47,91 @@ namespace SortieWebApp.Controllers
             var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
 
             return Ok(token);
-        }
+        }*/
 
-        /*[HttpPost("login")]
-        public IActionResult Login( LoginModel model)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            // Authenticate user (validate credentials) and generate a JWT token
-            if (UserAuthenticated(model.Username, model.Password))
+            // Validate the username and password
+            if (!await AuthenticateUser(model.Username, model.Password))
             {
-                var token = GenerateJwtToken(model.Username);
-                return Ok(new { Token = token });
+                return Unauthorized();
             }
 
-            return Unauthorized();
-        }
+            // If valid, generate a JWT token
+            var token = GenerateJwtToken(model.Username);
 
-        private bool UserAuthenticated(string username, string password)
-        {
-            // Find the user with the provided username
-            var user = _users.FirstOrDefault(u => u.UserName == username);
-
-            // If no user found or password doesn't match, return false
-            if (user == null || user.Password != password)
-            {
-                return false;
-            }
-
-            return true;
+            return Ok(new { Token = token });
         }
 
         private string GenerateJwtToken(string username)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSecretKeyForAuthenticationOfApplication"));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken("MySortieApp.com", "UneBandeDeNazes", new[]
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
+            var tokenDescriptor = new SecurityTokenDescriptor
             {
-                new Claim(ClaimTypes.Name, username)
-            },
-                expires: DateTime.Now.AddMinutes(30), signingCredentials: credentials);
+                Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, username) }),
+                Expires = DateTime.UtcNow.AddHours(1), // Token expiration time
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }*/
+        //Hash the Password During User Registration
+        public static string HashPassword(string password)
+        {
+            // Create an instance of PasswordHasher
+            var hasher = new PasswordHasher<string>();
+
+            // Hash the password
+            return hasher.HashPassword(null, password);
+        }
+
+        public static bool VerifyPassword(string plainTextPassword, string hashedPassword)
+        {
+            // Create an instance of PasswordHasher
+            var hasher = new PasswordHasher<string>();
+
+            // Verify the password
+            var result = hasher.VerifyHashedPassword(null, hashedPassword, plainTextPassword);
+
+            // Result will be PasswordVerificationResult.Success if the password matches
+            return result == PasswordVerificationResult.Success;
+        }
+
+        [HttpPost("register")]
+        public async Task RegisterUser(string username, string password)
+        {
+            // Hash the password
+            string hashedPassword = HashPassword(password);
+            _password = hashedPassword;
+            _username= username;
+
+
+            // Store the hashed password in your database along with other user details
+            // Your database logic here...
+            
+        }
+
+        //Verify Hashed Password During Authentication
+        [HttpGet("authenticate")]
+        public async Task<bool> AuthenticateUser(string username, string password)
+        {
+            // Retrieve the hashed password from your database based on the username
+            string hashedPasswordFromDatabase = GetHashedPasswordFromDatabase(username);
+
+            // Verify the password
+            bool isValidPassword = VerifyPassword(password, hashedPasswordFromDatabase);
+
+            return isValidPassword;
+        }
+
+        private string GetHashedPasswordFromDatabase(string username)
+        {
+            return _password;
+        }
+
+       
     }
 }
