@@ -23,15 +23,16 @@ namespace SortieApp.Application
                                       .AllowAnyHeader());
             });
             services.AddAutoMapper(typeof(MappingProfile));
-            services.AddTransient<ILoginService, LoginService>();
+            services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IEtatService, EtatService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IParticipantService, ParticipantService>();
             services.AddScoped<ILieuService, LieuService>();
             services.AddScoped<IInscriptionService, InscriptionService>();
             services.AddScoped<ISortieService,SortieService> ();
+            services.AddScoped<IJwtService, JwtService>();
             // Register validators
-            services.AddTransient<IValidator<LoginDto>, LoginValidator>();
+            services.AddTransient<IValidator<LoginDto>, UserValidator>();
             services.AddTransient<IValidator<RoleDto>, RoleValidator>();
             services.AddTransient<IValidator<EtatDto>, EtatValidator>();
             services.AddTransient<IValidator<ParticipantDto>, ParticipantValidator>();

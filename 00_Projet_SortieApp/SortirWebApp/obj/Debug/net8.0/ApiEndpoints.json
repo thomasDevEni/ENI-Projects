@@ -1,0 +1,756 @@
+[
+  {
+    "ContainingType": "SortieWebApp.Controllers.EtatController",
+    "Method": "GetEtat",
+    "RelativePath": "api/Etat/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Dto.EtatDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.EtatController",
+    "Method": "DeleteEtat",
+    "RelativePath": "api/Etat/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.EtatController",
+    "Method": "AddEtatAsync",
+    "RelativePath": "api/Etat/AddEtat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Libelle",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.EtatController",
+    "Method": "GetEtats",
+    "RelativePath": "api/Etat/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Dto.EtatDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.EtatController",
+    "Method": "UpdateEtat",
+    "RelativePath": "api/Etat/UpdateEtat",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Libelle",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.InscriptionController",
+    "Method": "GetInscription",
+    "RelativePath": "api/Inscription/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Dto.InscriptionDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.InscriptionController",
+    "Method": "DeleteInscription",
+    "RelativePath": "api/Inscription/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.InscriptionController",
+    "Method": "AddInscriptionAsync",
+    "RelativePath": "api/Inscription/AddInscription",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ParticipantId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortieId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.InscriptionController",
+    "Method": "GetInscriptions",
+    "RelativePath": "api/Inscription/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Dto.InscriptionDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.InscriptionController",
+    "Method": "UpdateInscription",
+    "RelativePath": "api/Inscription/UpdateInscription",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ParticipantId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortieId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.LieuController",
+    "Method": "GetLieu",
+    "RelativePath": "api/Lieu/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Dto.LieuDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.LieuController",
+    "Method": "DeleteLieu",
+    "RelativePath": "api/Lieu/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.LieuController",
+    "Method": "AddLieuAsync",
+    "RelativePath": "api/Lieu/AddLieu",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Etablissement",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Adresse",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Ville",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CodePostal",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CoordonneeGPS",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.LieuController",
+    "Method": "GetLieus",
+    "RelativePath": "api/Lieu/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Dto.LieuDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.LieuController",
+    "Method": "UpdateLieu",
+    "RelativePath": "api/Lieu/UpdateLieu",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Etablissement",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Adresse",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Ville",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CodePostal",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CoordonneeGPS",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.ParticipantController",
+    "Method": "GetParticipant",
+    "RelativePath": "api/Participant/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Dto.ParticipantDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.ParticipantController",
+    "Method": "DeleteParticipant",
+    "RelativePath": "api/Participant/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.ParticipantController",
+    "Method": "AddParticipantAsync",
+    "RelativePath": "api/Participant/AddParticipant",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Prenom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Mail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RoleId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.ParticipantController",
+    "Method": "GetParticipants",
+    "RelativePath": "api/Participant/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Dto.ParticipantDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.ParticipantController",
+    "Method": "UpdateParticipant",
+    "RelativePath": "api/Participant/UpdateParticipant",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Prenom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Mail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RoleId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.RoleController",
+    "Method": "GetRole",
+    "RelativePath": "api/Role/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Dto.RoleDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.RoleController",
+    "Method": "DeleteRole",
+    "RelativePath": "api/Role/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.RoleController",
+    "Method": "AddRoleAsync",
+    "RelativePath": "api/Role/AddRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Libelle",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.RoleController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Role/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Dto.RoleDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.RoleController",
+    "Method": "UpdateRole",
+    "RelativePath": "api/Role/UpdateRole",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Libelle",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.SortieController",
+    "Method": "GetSortie",
+    "RelativePath": "api/Sortie/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Dto.SortieDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.SortieController",
+    "Method": "DeleteSortie",
+    "RelativePath": "api/Sortie/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.SortieController",
+    "Method": "AddSortieAsync",
+    "RelativePath": "api/Sortie/AddSortie",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateDebut",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateFin",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrganisateurId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LieuId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "EtatId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.SortieController",
+    "Method": "GetSorties",
+    "RelativePath": "api/Sortie/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Dto.SortieDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SortieWebApp.Controllers.SortieController",
+    "Method": "UpdateSortie",
+    "RelativePath": "api/Sortie/UpdateSortie",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nom",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateDebut",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateFin",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrganisateurId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LieuId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "EtatId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

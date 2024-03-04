@@ -20,7 +20,7 @@ namespace SortieWebApp.Controllers
             _inscriptionValidator = inscriptionValidator;
         }
 
-        // GET: api/Product
+        // GET: api/All
         [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<InscriptionDto>>> GetInscriptions()
         {
@@ -28,7 +28,7 @@ namespace SortieWebApp.Controllers
             return Ok(inscription);
         }
 
-        // GET: api/Product/5
+        // GET: api/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<InscriptionDto>> GetInscription(int id)
         {
@@ -42,7 +42,7 @@ namespace SortieWebApp.Controllers
             return inscription;
         }
 
-        // POST: api/Inscription
+        // POST: api/InscriptionloginDto
         [HttpPost("AddInscription")]
         public async Task<IActionResult> AddInscriptionAsync(InscriptionDto inscriptionDto)
         {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SortieWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c377538620c88692587f054e1748929a0201cc6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06606c1246dcdfc67ab68aa4c9e8d62232c11bd5")]
 [assembly: System.Reflection.AssemblyProductAttribute("SortieWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SortieWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
