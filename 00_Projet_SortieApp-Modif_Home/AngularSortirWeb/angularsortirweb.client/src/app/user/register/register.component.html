@@ -1,0 +1,87 @@
+<div id="register-container">
+  <div class="row container-fluid justify-content-center register-card mt-5">
+    <div class="card card-container col-12 align-items-center register-card-content">
+      <form *ngIf="!isSuccessful" class="w-100" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+            novalidate>
+        <div class="form-group">
+          <label class="mb-2 mt-2" for="lastname">Nom</label>
+          <input type="text" class="form-control" name="lastname" id="lastname" [(ngModel)]="form.lastname" required
+                 minlength="3" maxlength="50" #lastname="ngModel" />
+          <div class="mb-2 mt-2 text-danger" *ngIf="lastname.errors && f.submitted">
+            <div *ngIf="lastname.errors['required']">Lastname is required</div>
+            <div *ngIf="lastname.errors['minlength']">
+              Le nom doit avoir 3 caractères minimum
+            </div>
+            <div *ngIf="lastname.errors['maxlength']">
+              Le nom doit avoir 50 caractères au maxi
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="mb-2 mt-2" for="firstname">Prénom</label>
+          <input type="text" class="form-control" name="firstname"  id="firstname" [(ngModel)]="form.firstname" required
+                 minlength="3" maxlength="50" #firstname="ngModel" />
+          <div class="mb-2 mt-2 text-danger" *ngIf="firstname.errors && f.submitted">
+            <div *ngIf="firstname.errors['required']">Firstname is required</div>
+            <div *ngIf="firstname.errors['minlength']">
+              Le prénom doit avoir 3 caractères minimum
+            </div>
+            <div *ngIf="firstname.errors['maxlength']">
+              Le prénom doit avoir 50 caractères au maxi
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="mb-2 mt-2" for="username">Nom d'utilisateur</label>
+          <input type="text" class="form-control" name="username" id="username" [(ngModel)]="form.username"
+                 required minlength="3" maxlength="20" #username="ngModel" />
+          <div class="mb-2 mt-2 text-danger" *ngIf="username.errors && f.submitted">
+            <div *ngIf="username.errors['required']">Username is required</div>
+            <div *ngIf="username.errors['minlength']">
+              Le nom d'utilisateur doit avoir 3 caractères minimum
+            </div>
+            <div *ngIf="username.errors['maxlength']">
+              Le nom d'utilisateur doit avoir 20 caractères au maxi
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="mb-2 mt-2" for="email">Email</label>
+          <input type="email" class="form-control" name="email" id="email" [(ngModel)]="form.email" required
+                 email #email="ngModel" />
+          <div class="mb-2 mt-2 text-danger" *ngIf="email.errors && f.submitted">
+            <div *ngIf="email.errors['required']">Email is required</div>
+            <div *ngIf="email.errors['email']">
+              L'adresse Email doit être valide !
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="mb-2 mt-2" for="password">Mot de Passe</label>
+          <input type="password" class="form-control" name="password" id="password"
+                 [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
+          <div class="mb-2 mt-2 text-danger" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['minlength']">
+              Votre mot de passe doit contenir 6 caractères minimum
+            </div>
+          </div>
+        </div>
+        <div class="form-group d-flex mt-3 justify-content-center">
+          <button class="btn btn-primary btn-block">S'enregistrer</button>
+        </div>
+        <div class="mb-2 mt-2 text-danger" *ngIf="f.submitted && isSignUpFailed">
+          Echec de la tentative !<br />{{ errorMessage }}
+        </div>
+      </form>
+      <div class="mb-2 mt-2 text-success" *ngIf="isSuccessful">
+        Enregistrement réalisé avec succès !
+      </div>
+    </div>
+    <div class="form-group d-flex mt-3 justify-content-center">
+      <div class="col-auto p-0">Déjà un compte ?
+        <a class="login-speech" [routerLink]="'/login'">Se connecter</a>
+      </div>
+    </div>
+  </div>
+</div>

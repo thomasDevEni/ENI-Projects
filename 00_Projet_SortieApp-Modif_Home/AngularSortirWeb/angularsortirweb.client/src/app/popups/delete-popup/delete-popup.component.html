@@ -1,0 +1,38 @@
+<div *ngIf="userRole > 1">
+  <button *ngIf="!archived()" type="button" class="btn btn-outline-danger" (click)="openModal($event, template)">
+    Archiver</button>
+  <button *ngIf="archived()" type="button" class="btn btn-outline-primary" (click)="openModal($event, template2)">
+    Désarchiver</button>
+
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Archiver {{type | titlecase}}</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>{{confirmationMessage()}}</p>
+      <div class="row justify-content-end">
+        <button type="submit" class="btn btn-primary col-auto me-1" (click)="toggleArchive()">Confirmer</button>
+        <button type="submit" class="btn btn-secondary col-auto" (click)="closeModal()">Annuler</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #template2>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Désarchiver {{type | titlecase}}</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>{{confirmationMessage()}}</p>
+      <div class="row justify-content-end">
+        <button type="submit" class="btn btn-primary col-auto me-1" (click)="toggleArchive()">Confirmer</button>
+        <button type="submit" class="btn btn-secondary col-auto" (click)="closeModal()">Annuler</button>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,79 @@
+#navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+/*LEFT*/
+#navigation-left {
+  display: flex;
+  flex:1;
+  justify-content: space-between;
+}
+
+#navbar-list {
+  min-width: 50%;
+  max-width: 50%;
+}
+
+.navbar-userName-button, .navbar-userRole-button{
+  margin: 0.1vw;
+}
+
+/*CENTER*/
+#navigation-center {
+  display: flex;
+  flex:1;
+  justify-content: center;
+}
+
+/*RIGHT*/
+#navigation-right {
+  display: flex;
+  flex:1;
+  justify-content: flex-end;
+}
+
+#navbar-params {
+  border: solid 2px black;
+  background-color: #FFCCCC;
+  margin-right: 0.7vw;
+}
+
+#navbar-user-details {
+  border: solid 1px #A9C4EB;
+  border-radius: 50%;
+  background: #A9C4EB;
+  min-width: 45px;
+  max-width: 45px;
+  min-height: 45px;
+  max-height: 45px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: #444E5E;
+  margin-left: .5rem;
+  font-weight: bold;
+  padding:0;
+}
+
+#big-user-avatar {
+  border: solid 1px #A9C4EB;
+  border-radius: 50%;
+  background: #A9C4EB;
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: #444E5E;
+  font-weight: bold;
+  font-size: 3rem !important;
+  padding:0;
+}

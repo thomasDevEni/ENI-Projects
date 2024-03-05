@@ -1,0 +1,20 @@
+<div class="row mt-2">
+  <div class="col-auto">
+    <div *ngFor="let user of users;" class="mb-2">
+      <div class="card">
+        <div class="card-header">{{user.username}}</div>
+        <div class="card-body">
+          <div class="mb-2">Rôle actuel : {{getRoleName(user.role.id)}}</div>
+          <form>
+            <div class="input-group mb-3">
+              <select class="form-select" name="" id="" (change)="onSelectChange($event)" [disabled]="user.role.id >= currentUser.role.id">
+                <option class="form-control" *ngFor="let i of [1,2,3,4];" value="{{i}}" [defaultSelected]="user.role.id === i">{{getRoleName(i)}}</option>
+              </select>
+              <button class="btn btn-outline-primary" (click)="setRole(user, selectedRole)" [disabled]="user.role.id >= currentUser.role.id">Changer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+/**Main**/
+.crucial{}
+
+.crucial-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  border-radius: 10px;
+  padding: 0.75vw;
+  min-width: 75vw;
+  max-width: 75vw;
+  min-height: auto;
+  background-color: #FFFFFF;
+  margin-top: 1vw;
+}
+
+.crucial-card-title{
+  margin-top: 0.5vw;
+  font-weight: bolder;
+}
+
+.crucial-card-content{
+  display: flex;
+  flex-direction: column;
+  padding: 0.75vw;
+  background-color: #E9ECEF;
+  border: solid 1px #CED4DA;
+  border-radius: 10px;
+  margin-bottom: 1.5vw;
+}
+
+.crucial-card-content-item{
+  display: flex;
+  padding-top: 0.25vw;
+  padding-bottom: 0.25vw;
+  color: #7D868C;
+}
+
+.crucial-card-content-item-left{
+  flex: 1;
+}
+
+.crucial-card-content-item-right{
+  flex: 1;
+}
+
+.crucial-card-buttons{
+  text-align: right;
+}
+

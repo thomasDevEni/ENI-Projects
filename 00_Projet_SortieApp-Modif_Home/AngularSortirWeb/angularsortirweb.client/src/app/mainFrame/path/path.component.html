@@ -1,0 +1,7 @@
+
+<ol class="breadcrumb callout">
+  <li class="breadcrumb-item" *ngFor="let path of routeArray; let i = index;">
+    <a *ngIf="i < routeArray.length - 1" [routerLink]="getRouterLink(i, path)">{{pathName(i, path)}}</a>
+    <a *ngIf="i === routeArray.length - 1 || routeArray.length === 1" [routerLink]="">{{pathName(i, path)}}</a>
+  </li>
+</ol>

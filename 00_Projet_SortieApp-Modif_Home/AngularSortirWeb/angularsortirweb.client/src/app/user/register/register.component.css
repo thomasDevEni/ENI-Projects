@@ -1,0 +1,23 @@
+#register-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.register-card{
+  min-width: 22vw;
+  max-width: 22vw;
+  height: auto;
+  padding: 2vw;
+}
+
+.register-card-content{
+  border-radius: 0.5rem;
+  border: solid 1px #999999;
+  padding: 1vw;
+}
+
+.title-register-card{
+  margin-bottom: .2vw;
+}

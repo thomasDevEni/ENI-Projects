@@ -1,0 +1,37 @@
+/**Barre d'affichage du path**/
+.path-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  border-radius: 5px;
+  margin-left: 0;
+  padding-left: 0.5vw;
+  min-width: 75vw;
+  max-width: 75vw;
+  min-height: 3.4vw;
+  max-height: 3.4vw;
+  background-color: #E9ECEF;
+}
+
+/**Onglet de navigation du path**/
+.path-bar-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #6C757D;
+}
+
+
+.path-bar-item a::first-letter{
+  text-transform: capitalize;
+}
+
+/**boutton d'ajout dans la barre de navigation du path**/
+.path-button{
+  margin: 0.4vw;
+  min-height: 2.6vw;
+  max-height: 2.6vw;
+  display: flex;
+  align-items: center;
+}

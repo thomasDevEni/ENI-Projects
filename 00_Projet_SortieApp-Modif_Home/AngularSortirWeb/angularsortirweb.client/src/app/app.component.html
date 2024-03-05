@@ -1,24 +1,27 @@
-<h1 id="tableLabel">Liste des Participants</h1>
+<div *ngIf="!initiated && isLoggedIn" class="d-flex justify-content-center align-items-center vh-100">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
 
-<p>Ce composant affiche la liste des Participants.</p>
+<div *ngIf="initiated || !isLoggedIn">
+  <div *ngIf="router.url === '/' || router.url === '/login' || router.url === '/register'; then userpage else fullpage">
+  </div>
 
-<p *ngIf="!participants"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+  <ng-template #fullpage>
+    <div *ngIf="initiated">
+      <app-navbar></app-navbar>
+      <div class="container-fluid d-flex justify-content-start">
+        <!--<app-sidebar class="sidebar" [role]="role"></app-sidebar>-->
+        <div class="container-fluid align-content-start flex-grow-1 pe-0 mb-0">
+          <app-path *ngIf="showPath()" class="container-fluid p-0"></app-path>
+          <div class="mt-2"><router-outlet></router-outlet></div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 
-<table *ngIf="participants">
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Mail</th>
-            <th>RoleId</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let participant of participants">
-            <td>{{ participant.nom }}</td>
-            <td>{{ participant.prenom }}</td>
-            <td>{{ participant.mail }}</td>
-            <td>{{ participant.roleId }}</td>
-        </tr>
-    </tbody>
-</table>
+  <ng-template #userpage>
+    <router-outlet></router-outlet>
+  </ng-template>
+</div>

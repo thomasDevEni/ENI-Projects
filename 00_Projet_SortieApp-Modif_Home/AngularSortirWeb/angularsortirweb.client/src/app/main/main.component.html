@@ -1,0 +1,102 @@
+<div [routerLink]="['/main']" class="page-link card"
+     style="cursor:pointer; color: #2d2d2d; padding: 0; margin: .5rem 0;">
+</div>
+
+<div class="crucial">
+  <!--Vignette prévue pour afficher le contenu d'une thématique, d'un test, d'un bug, d'une fonctionnalité ...-->
+  <div *ngIf="role == 1; then devBlock else userBlock"></div>
+
+  <ng-template #devBlock>
+    <div class="crucial-card">
+      <h6 class="crucial-card-title">Logiciel élève</h6>
+      <div class="crucial-card-content">
+        <div class="crucial-card-content-item">
+          <div class="crucial-card-content-item-left">
+            Thématiques : 10
+          </div>
+          <div class="crucial-card-content-item-right">
+            Bugs actuels: 32 (<span class="text-danger">dont 5 critiques</span>) (<a href="#" class="text-primary">Voir</a>)
+          </div>
+        </div>
+
+        <div class="crucial-card-content-item">
+          <div class="crucial-card-content-item-left">
+            Dernière version : x.x.x (<a href="#" class="text-primary">Voir toutes</a>)
+          </div>
+          <div class="crucial-card-content-item-right">
+            Bugs résolus: 1337 (<a href="#" class="text-primary">Voir</a>)
+          </div>
+        </div>
+
+        <div class="crucial-card-content-item">
+          <div class="crucial-card-content-item-left">
+            Dernière mise à jour le 09/03/2022 à 09:41
+          </div>
+          <div class="crucial-card-content-item-right">
+            Scénarios de tests périmés (<a href="#" class="text-primary">Voir</a>)
+          </div>
+        </div>
+
+        <div class="crucial-card-buttons">
+          <button class="btn btn-primary fw-bolder m-1">Modifier</button>
+          <button class="btn btn-danger fw-bolder m-1">Supprimer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="crucial-card">
+      <h6 class="crucial-card-title">Logiciel enseignant</h6>
+      <div class="crucial-card-content">
+        <div class="crucial-card-content-item">
+          <div class="crucial-card-content-item-left">
+            Thématiques : 10
+          </div>
+          <div class="crucial-card-content-item-right">
+            Bugs actuels: 22 (<span class="text-danger">dont 8 critiques</span>) (<a href="#"  class="text-primary">Voir</a>)
+          </div>
+        </div>
+
+        <div class="crucial-card-content-item">
+          <div class="crucial-card-content-item-left">
+            Dernière version : x.x.x (<a href="#" class="text-primary">Voir toutes</a>)
+          </div>
+          <div class="crucial-card-content-item-right">
+            Bugs résolus: 56 (<a href="#" class="text-primary">Voir</a>)
+          </div>
+        </div>
+
+        <div class="crucial-card-content-item">
+          <div class="crucial-card-content-item-left">
+            Dernière mise à jour le 19/03/2022 à 15:15
+          </div>
+          <div class="crucial-card-content-item-right">
+            Scénarios de tests périmés (<a href="#" class="text-primary">Voir</a>)
+          </div>
+        </div>
+
+        <div class="crucial-card-buttons">
+          <button class="btn btn-primary fw-bolder m-1">Modifier</button>
+          <button class="btn btn-danger fw-bolder m-1">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #userBlock>
+    <div class="crucial-card">
+      <h6 class="crucial-card-title">Logiciel élève</h6>
+      <div class="crucial-card-content">
+        <div class="crucial-card-content-item">Thématiques : 10</div>
+        <div class="crucial-card-content-item">Dernière mise à jour le 09/03/2022 à 09:41</div>
+      </div>
+    </div>
+    <div class="crucial-card">
+      <h6 class="crucial-card-title">Logiciel enseignant</h6>
+      <div class="crucial-card-content">
+        <div class="crucial-card-content-item">Plans de tests : 10</div>
+        <div class="crucial-card-content-item">Dernière mise à jour le 09/03/2022 à 09:41</div>
+      </div>
+    </div>
+  </ng-template>
+
+</div>
