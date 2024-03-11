@@ -17,11 +17,11 @@ namespace Application.Services
     public class JwtService:IJwtService
     {
         private readonly IMapper _mapper;
-        private readonly IUserRepository _userRepository;
-        private readonly IValidator<LoginDto> _userValidator;
+        private readonly IUtilisateurRepository _userRepository;
+        private readonly IValidator<AuthentificationDto> _userValidator;
         private readonly IConfiguration _configuration;
 
-        public JwtService(IConfiguration configuration, IUserRepository userRepository)
+        public JwtService(IConfiguration configuration, IUtilisateurRepository userRepository)
         {
             _configuration = configuration;
             _userRepository = userRepository;

@@ -6,6 +6,7 @@ using AutoMapper;
 using Application;
 using FluentValidation;
 using Application.Validators;
+using Microsoft.AspNetCore.Builder;
 
 namespace SortieApp.Application
 {
@@ -23,7 +24,8 @@ namespace SortieApp.Application
                                       .AllowAnyHeader());
             });
             services.AddAutoMapper(typeof(MappingProfile));
-            services.AddScoped<ILoginService, LoginService>();
+            services.AddScoped<IAuthentificationService, AuthentificationService>();
+            services.AddScoped<IUtilisateurService, UtilisateurService>();
             services.AddScoped<IEtatService, EtatService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IParticipantService, ParticipantService>();
@@ -32,7 +34,8 @@ namespace SortieApp.Application
             services.AddScoped<ISortieService,SortieService> ();
             services.AddScoped<IJwtService, JwtService>();
             // Register validators
-            services.AddTransient<IValidator<LoginDto>, UserValidator>();
+            services.AddTransient<IValidator<UtilisateurDto>, UtilisateurValidator>();
+            services.AddTransient<IValidator<AuthentificationDto>, AuthentificationValidator>();
             services.AddTransient<IValidator<RoleDto>, RoleValidator>();
             services.AddTransient<IValidator<EtatDto>, EtatValidator>();
             services.AddTransient<IValidator<ParticipantDto>, ParticipantValidator>();

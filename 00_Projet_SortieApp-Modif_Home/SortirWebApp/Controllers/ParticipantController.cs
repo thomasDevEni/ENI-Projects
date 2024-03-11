@@ -8,7 +8,7 @@ namespace SortieWebApp.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
-    [ApiController]
+    //[ApiController]
     public class ParticipantController : ControllerBase
     {
         public IParticipantService _participantService { get; set; }
@@ -21,7 +21,7 @@ namespace SortieWebApp.Controllers
         }
 
         // GET: api/Product
-        [HttpGet("GetAll")]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<ParticipantDto>>> GetParticipants()
         {
             var participant = await _participantService.GetAllParticipantAsync();
@@ -43,7 +43,7 @@ namespace SortieWebApp.Controllers
         }
 
         // POST: api/Participant
-        [HttpPost(Name ="AddParticipant")]
+        [HttpPost("AddParticipant")]
         public async Task<IActionResult> AddParticipantAsync(ParticipantDto participantDto)
         {
             try
@@ -65,7 +65,7 @@ namespace SortieWebApp.Controllers
         }
 
         // PUT: api/Participant/5
-        [HttpPut(Name ="UpdateParticipant")]
+        [HttpPut("UpdateParticipant")]
         public async Task<IActionResult> UpdateParticipant(ParticipantDto participantDto)
         {
             if (participantDto?.Id <= 0)

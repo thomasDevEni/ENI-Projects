@@ -26,8 +26,10 @@ namespace Application
             CreateMap<Role,RoleDto>();
             CreateMap<Sortie,SortieDto>();
             CreateMap<SortieDto,Sortie>();
-            CreateMap<Login, LoginDto>();
-            CreateMap<LoginDto, Login>();
+            CreateMap<Utilisateur, AuthentificationDto>();
+            CreateMap<AuthentificationDto, Utilisateur>();
+            CreateMap<Utilisateur, UtilisateurDto>();
+            CreateMap<UtilisateurDto, Utilisateur>();
 
         }
     }
