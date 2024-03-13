@@ -8,7 +8,7 @@ namespace SortieWebApp.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
-    //[ApiController]
+    [ApiController]
     public class ParticipantController : ControllerBase
     {
         public IParticipantService _participantService { get; set; }

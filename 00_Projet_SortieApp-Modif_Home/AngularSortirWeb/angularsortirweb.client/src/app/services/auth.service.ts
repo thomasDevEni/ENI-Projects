@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environements/environement';
-const AUTH_API = environment.apiUrl + '/api/auth/';
+const AUTH_API = environment.apiUrl + '/api/Authentification/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -12,34 +12,34 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<any> {
+  login(Username: string, Password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
-      username,
-      password
+      Username,
+      Password
     }, httpOptions);
   }
 
-  register(lastname: string, firstname: string,username: string, email: string, password: string): Observable<any> {
+  register(Username: string, Password: string,LastName: string, FirstName: string, Mail: string): Observable<any> {
     return this.http.post(AUTH_API + 'signup', {
-      lastname,
-      firstname,
-      username,
-      email,
-      password
+      Username,
+      Password,
+      LastName,
+      FirstName,
+      Mail
     }, httpOptions);
   }
 
-  changePassword(id: number, password: string): Observable<any> {
+  changePassword(Id: number, Password: string): Observable<any> {
     return this.http.post(AUTH_API + 'changepw', {
-      id,
-      password
+      Id,
+      Password
     }, httpOptions);
   }
 
-  changeRole(id: number, roleId: number): Observable<any> {
+  changeRole(Id: number, RoleId: number): Observable<any> {
     return this.http.post(AUTH_API + 'changerole', {
-      id,
-      roleId
+      Id,
+      RoleId
     }, httpOptions);
   }
 }

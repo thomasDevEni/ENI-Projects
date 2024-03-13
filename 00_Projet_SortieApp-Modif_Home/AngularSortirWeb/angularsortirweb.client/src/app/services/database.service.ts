@@ -9,7 +9,7 @@ import {
   Participants,
 } from "../interface/object.arrays";
 import {TokenStorageService} from "./token-storage.service";
-import {User} from "../interface/user";
+import {Utilisateur} from "../interface/utilisateur";
 import { Role } from "../interface/role";
 import { Participant } from "../interface/participant"
 
@@ -31,7 +31,7 @@ export class DatabaseService {
             // if only 1 user was found, set his role to Superadmin
             if (Users.length === 1) {
               const user = Users[0];
-              user.role = Roles[3];
+              user.Role = Roles[0];
               const sub = this.userService.updateUser(user).subscribe({complete:() => {
                   sub.unsubscribe();
                 }});
@@ -83,9 +83,9 @@ export class DatabaseService {
     });
   }
 
-  async updateUser(user: User){
+  async updateUser(user: Utilisateur){
     return new Promise(resolve => {
-      Users[Users.findIndex(r => r.id === user.id)] = user;
+      Users[Users.findIndex(r => r.Id === user.Id)] = user;
       const sub = this.userService.updateUser(user).subscribe({complete:()=>{
         sub.unsubscribe();
           resolve('done');
@@ -94,7 +94,7 @@ export class DatabaseService {
   }
   async updateRole(role: Role){
     return new Promise(resolve => {
-      Roles[Roles.findIndex(r => r.id === role.id)] = role;
+      Roles[Roles.findIndex(r => r.Id === role.Id)] = role;
       const sub = this.roleService.updateRole(role).subscribe({complete:()=>{
         sub.unsubscribe();
         resolve('done');
@@ -103,7 +103,7 @@ export class DatabaseService {
   }
   async updateParticipant(participant: Participant) {
     return new Promise(resolve => {
-      Participants[Participants.findIndex(r => r.id === participant.id)] = participant;
+      Participants[Participants.findIndex(r => r.Id === participant.Id)] = participant;
       const sub = this.participantService.updateParticipant(participant).subscribe({
         complete: () => {
           sub.unsubscribe();

@@ -27,7 +27,7 @@ namespace Application.Validators
             RuleFor(x => x.LastName).NotEmpty().WithMessage("Le Nom est obligatoire");
             RuleFor(x => x.FirstName).NotEmpty().WithMessage("Le Prénom est obligatoire");
             RuleFor(x => x.Mail).Must(BeAValidAdress).NotEmpty().WithMessage("L'adresse mail doit être valide");
-            RuleFor(x => x.RoleId).NotEmpty().WithMessage("Le libéllé de l'état est recquis");
+           // RuleFor(x => x.RoleId).NotEmpty().WithMessage("Le libéllé de l'état est recquis");
         }
 
         private static bool BeAValidAdress(string emailAddress)

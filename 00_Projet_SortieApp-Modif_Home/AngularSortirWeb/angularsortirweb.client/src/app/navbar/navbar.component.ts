@@ -2,7 +2,7 @@ import {Component, OnInit, TemplateRef} from '@angular/core';
 import {TokenStorageService} from "../services/token-storage.service";
 import {Roles, Users} from "../interface/object.arrays";
 import {Role} from "../interface/role";
-import {User} from "../interface/user";
+import {Utilisateur} from "../interface/utilisateur";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 
 @Component({
@@ -12,8 +12,8 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 })
 export class NavbarComponent implements OnInit {
 
-  title = 'suivitests';
-  public user!: User;
+  title = 'angularsortirweb.client';
+  public utilisateur!: Utilisateur;
   public role!: Role;
   modalRef?: BsModalRef;
   isLoggedIn = false;
@@ -27,10 +27,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn){
-      const _user = Users.find(user => user.id === this.tokenStorageService.getUser().id);
+      const _user = Users.find(user => user.Id === this.tokenStorageService.getUser().Id);
       if (_user){
-        this.user = _user;
-        this.role = _user.role || Roles[0];
+        this.utilisateur = _user;
+        this.role = _user.Role || Roles[0];
       }
     }
   }

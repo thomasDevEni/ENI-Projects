@@ -15,7 +15,7 @@ using Domain.Entities;
 namespace SortieWebApp.Controllers
 {
     [Route("api/[controller]")]
-    //[ApiController]
+    [ApiController]
 
     public class AuthentificationController : ControllerBase
     {

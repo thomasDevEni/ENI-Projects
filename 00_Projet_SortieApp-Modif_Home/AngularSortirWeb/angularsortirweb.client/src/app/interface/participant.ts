@@ -11,11 +11,11 @@
 import {Role} from "./role";
 
 export interface Participant {
-  id: number | null;
-  nom: string;
-  prenom: string;
-  mail: string;
-  roleId: number;
+  Id: number | null;
+  Nom: string;
+  Prenom: string;
+  Mail: string;
+  RoleId: number;
   
   role: Role;
 }

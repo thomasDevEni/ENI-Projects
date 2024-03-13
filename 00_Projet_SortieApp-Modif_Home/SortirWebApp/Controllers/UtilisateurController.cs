@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SortieWebApp.Controllers
 {
-    [Authorize]
+   // [Authorize]
     [Route("api/[controller]")]
-    //[ApiController]
+    [ApiController]
     public class UtilisateurController : ControllerBase
     {
         public IUtilisateurService _utilisateurService { get; set; }
@@ -44,7 +44,7 @@ namespace SortieWebApp.Controllers
 
         
         // PUT: api/Utilisateur/5
-        [HttpPut("UpdateUtilisateur")]
+        [HttpPut("Update")]
         public async Task<IActionResult> UpdateUtilisateur(UtilisateurDto utilisateurDto)
         {
             if (utilisateurDto?.Id <= 0)

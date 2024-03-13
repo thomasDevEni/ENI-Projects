@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SortieWebApp.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class RoleController : ControllerBase

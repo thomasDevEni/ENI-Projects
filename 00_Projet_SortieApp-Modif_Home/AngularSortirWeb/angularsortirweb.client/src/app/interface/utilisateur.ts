@@ -10,12 +10,12 @@
  */
 import {Role} from "./role";
 
-export interface User {
-  id: number | null;
-  username: string;
-  role: Role;
-  email: string;
-  lastname: string;
-  firstname: string;
-  password: string;
+export interface Utilisateur {
+  Id: number | null;
+  Username: string;
+  Password: string;
+  LastName: string;
+  FirstName: string;
+  Mail: string;
+  Role: Role;
 }

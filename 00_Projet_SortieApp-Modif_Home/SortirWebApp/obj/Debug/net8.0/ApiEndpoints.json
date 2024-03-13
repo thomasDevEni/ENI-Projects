@@ -8,14 +8,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Username",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "loginDto",
+        "Type": "Application.Dto.AuthentificationDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -29,39 +24,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Username",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Mail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "RoleId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "userDto",
+        "Type": "Application.Dto.UtilisateurDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -404,29 +369,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Nom",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Prenom",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Mail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "RoleId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "participantDto",
+        "Type": "Application.Dto.ParticipantDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -460,29 +405,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Nom",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Prenom",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Mail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "RoleId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "participantDto",
+        "Type": "Application.Dto.ParticipantDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -740,45 +665,15 @@
   {
     "ContainingType": "SortieWebApp.Controllers.UtilisateurController",
     "Method": "UpdateUtilisateur",
-    "RelativePath": "api/Utilisateur/UpdateUtilisateur",
+    "RelativePath": "api/Utilisateur/Update",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Username",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Mail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "RoleId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "utilisateurDto",
+        "Type": "Application.Dto.UtilisateurDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

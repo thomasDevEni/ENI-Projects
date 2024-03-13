@@ -39,17 +39,15 @@ export class TokenStorageService {
     const _user = this.getUser();
     if (this.getToken()) {
       if (_user) {
-        if (_user.roles[0] === "DEV")
-          return 2;
-        else if (_user.roles[0] === "ADMIN")
-          return 3;
-        else if (_user.roles[0] === "SUPERADMIN")
-          return 4;
-        else
+        if (_user.roles[0] === "Admin")
           return 1;
+        else if (_user.roles[0] === "Utilisateur")
+          return 2;
+        else
+          return 3;
       }
     }
-    return 1;
+    return 3;
   }
 
   public setUserRole(i: number) {
@@ -58,16 +56,13 @@ export class TokenStorageService {
       if (_user){
         switch (i) {
           case 1:
-            _user.roles = ["USER"];
+            _user.roles = ["Admin"];
             break;
           case 2:
-            _user.roles = ["DEV"];
+            _user.roles = ["Utilisateur"];
             break;
           case 3:
-            _user.roles = ["ADMIN"];
-            break;
-          case 4:
-            _user.roles = ["SUPERADMIN"];
+            _user.roles = ["Visiteur"];
             break;
         }
         this.saveUser(_user);

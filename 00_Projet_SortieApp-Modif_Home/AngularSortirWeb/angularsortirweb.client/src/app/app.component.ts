@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
     // show app-path component only if url is not in this list
     let bool = true;
     // exact url list
-    const exactList = ["/projects", "/dashboard", "/adminParams"];
+    const exactList = ["/lieux", "/dashboard", "/adminParams"];
     if (exactList.includes(this.router.url))
       bool = false;
     // part of url list

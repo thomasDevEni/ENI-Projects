@@ -9,11 +9,12 @@ import {TokenStorageService} from "../../services/token-storage.service";
 })
 export class RegisterComponent implements OnInit {
   form: any = {
-    lastname: null,
-    firstname: null,
-    username: null,
-    email: null,
-    password: null
+    Username: null,
+    Password: null,
+    LastName: null,
+    FirstName: null,    
+    Mail: null,
+    
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -29,8 +30,8 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { lastname,firstname,username, email, password } = this.form;
-    this.authService.register(lastname,firstname,username, email, password).subscribe({
+    const { username, password, lastname, firstname, email } = this.form;
+    this.authService.register(username, password, lastname, firstname, email).subscribe({
       next: () => {
         this.isSuccessful = true;
         this.isSignUpFailed = false;

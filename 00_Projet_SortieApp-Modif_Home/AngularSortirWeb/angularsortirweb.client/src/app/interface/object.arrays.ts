@@ -1,9 +1,9 @@
 import {Role} from "./role";
-import { User } from "./user";
+import { Utilisateur } from "./utilisateur";
 import { Participant } from "./participant";
 
 
 
 export const Roles: Array<Role> = new Array<Role>();
-export const Users: Array<User> = new Array<User>();
+export const Users: Array<Utilisateur> = new Array<Utilisateur>();
 export const Participants: Array<Participant> = new Array<Participant>();

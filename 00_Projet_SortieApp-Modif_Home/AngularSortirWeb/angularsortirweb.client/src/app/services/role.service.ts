@@ -10,7 +10,7 @@ import {Roles} from "../interface/object.arrays";
 })
 
 export class RoleService {
-  private apiServerUrl = environment.apiUrl;
+  private apiServerUrl = environment.apiUrl + '/api';
 
   constructor(private  http: HttpClient) {}
 
@@ -28,23 +28,23 @@ export class RoleService {
   }
 
   public getRoles(): Observable<Role[]> {
-    return this.http.get<Role[]>(`${this.apiServerUrl}/role/all`);
+    return this.http.get<Role[]>(`${this.apiServerUrl}/Role/All`);
   }
 
   public getRole(id: number): Observable<Role> {
-    return this.http.get<Role>(`${this.apiServerUrl}/role/${id}`);
+    return this.http.get<Role>(`${this.apiServerUrl}/Role/${id}`);
   }
 
   public addRole(role: Role): Observable<Role> {
-    return this.http.post<Role>(`${this.apiServerUrl}/role/add`, role);
+    return this.http.post<Role>(`${this.apiServerUrl}/Role/AddRole`, role);
   }
 
   public updateRole(role: Role): Observable<Role> {
-    return this.http.put<Role>(`${this.apiServerUrl}/role/update`, role);
+    return this.http.put<Role>(`${this.apiServerUrl}/Role/UpdateRole`, role);
   }
 
   public deleteRole(roleId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/role/delete/${roleId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/Role/${roleId}`);
   }
 
 }

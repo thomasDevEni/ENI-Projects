@@ -1,6 +1,6 @@
   import {Observable} from "rxjs";
   import {Injectable} from "@angular/core";
-  import {User} from "../interface/user";
+  import {Utilisateur} from "../interface/utilisateur";
 import { environment } from '../../environements/environement';
   import {HttpClient, HttpHeaders} from "@angular/common/http";
   import {Users} from "../interface/object.arrays";
@@ -13,7 +13,7 @@ import { environment } from '../../environements/environement';
 
   export class UserService {
     header!: HttpHeaders;
-    private apiServerUrl = environment.apiUrl;
+    private apiServerUrl = environment.apiUrl + '/api';
 
     constructor(private http: HttpClient) {
     }
@@ -34,20 +34,20 @@ import { environment } from '../../environements/environement';
       }));
     }
 
-    public getUsers(): Observable<User[]> {
-      return this.http.get<User[]>(`${this.apiServerUrl}/user/all`);//, {headers:this.header});
+    public getUsers(): Observable<Utilisateur[]> {
+      return this.http.get<Utilisateur[]>(`${this.apiServerUrl}/Utilisateur/All`);//, {headers:this.header});
     }
 
-    public addUser(user: User): Observable<User> {
-      return this.http.post<User>(`${this.apiServerUrl}/user/add`, user);//, {headers:this.header});
-    }
+   /* public addUser(user: Utilisateur): Observable<Utilisateur> {
+      return this.http.post<Utilisateur>(`${this.apiServerUrl}/Utilisateur/add`, user);//, {headers:this.header});
+    }*/
 
-    public updateUser(user: User): Observable<User> {
-      return this.http.put<User>(`${this.apiServerUrl}/user/update`, user);//, {headers:this.header});
+    public updateUser(user: Utilisateur): Observable<Utilisateur> {
+      return this.http.put<Utilisateur>(`${this.apiServerUrl}/Utilisateur/Update`, user);//, {headers:this.header});
     }
 
     public deleteUser(userId: number): Observable<void> {
-      return this.http.delete<void>(`${this.apiServerUrl}/user/${userId}`);//, {headers:this.header});
+      return this.http.delete<void>(`${this.apiServerUrl}/Utilisateur/${userId}`);//, {headers:this.header});
     }
 
     getPublicContent(): Observable<any> {

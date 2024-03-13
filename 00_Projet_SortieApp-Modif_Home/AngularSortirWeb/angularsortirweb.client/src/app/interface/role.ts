@@ -1,9 +1,9 @@
 /**
  * <b><code>Role</code></b>
  * @param id number | null
- * @param name string
+ * @param libelle string
  */
 export interface Role {
-  id: number;
-  name: string;
+  Id: number;
+  Libelle: string;
 }

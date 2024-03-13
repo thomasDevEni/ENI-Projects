@@ -2,26 +2,26 @@
   <div class="container-fluid">
     <div class="d-flex flex-row w-100">
       <ul class="navbar-nav flex-row me-auto mb-auto mt-auto">
-        <li class="nav-item" [ngSwitch]="role.id">
-          <a *ngSwitchCase="4"
+        <li class="nav-item" [ngSwitch]="role.Id">
+          <a *ngSwitchCase="1"
              class="btn btn-info text-light me-2 navbar-userRole-button"
-             routerLink="/dashboard" title="Mode {{role?.name | titlecase}}">
-            <strong>{{user?.username | titlecase }}</strong>
-          </a>
-          <a *ngSwitchCase="3"
-             class="btn btn-secondary text-light me-2 navbar-userRole-button"
-             routerLink="/dashboard" title="Mode {{role?.name | titlecase}}">
-            <strong>{{user?.username | titlecase }}</strong>
+             routerLink="/dashboard" title="Mode {{role?.Libelle | titlecase}}">
+            <strong>{{utilisateur?.Username | titlecase }}</strong>
           </a>
           <a *ngSwitchCase="2"
+             class="btn btn-secondary text-light me-2 navbar-userRole-button"
+             routerLink="/dashboard" title="Mode {{role?.Libelle | titlecase}}">
+            <strong>{{utilisateur?.Username | titlecase }}</strong>
+          </a>
+          <a *ngSwitchCase="3"
              class="btn btn-warning text-light me-2 navbar-userRole-button"
-             routerLink="/dashboard" title="Mode {{role?.name | titlecase}}">
-            <strong>{{user?.username | titlecase }}</strong>
+             routerLink="/dashboard" title="Mode {{role?.Libelle | titlecase}}">
+            <strong>{{utilisateur?.Username | titlecase }}</strong>
           </a>
           <a *ngSwitchDefault
              class="btn btn-success text-light me-2 navbar-userRole-button"
-             routerLink="/dashboard" title="Mode {{role?.name | titlecase}}">
-            <strong>{{user?.username | titlecase }}</strong>
+             routerLink="/dashboard" title="Mode {{role?.Libelle | titlecase}}">
+            <strong>{{utilisateur?.Username | titlecase }}</strong>
           </a>
         </li>
       </ul>
@@ -39,11 +39,11 @@
         <li class="nav-item mt-auto mb-auto">
           <a href class="nav-link" (click)="logout()">Déconnexion</a>
         </li>
-        <li *ngIf="role.id >= 3" class="nav-item mt-auto mb-auto">
+        <li *ngIf="role.Id >= 3" class="nav-item mt-auto mb-auto">
           <a class="nav-link" routerLink="/adminParams">Paramètres</a>
         </li>
         <button type="button" class="btn btn-primary" id="navbar-user-details" (click)="openModal(template)">
-          {{user.firstname[0]}}{{user.lastname[0]}}
+          {{utilisateur.FirstName[0]}}{{utilisateur.LastName[0]}}
         </button>
       </ul>
     </div>
@@ -59,11 +59,11 @@
   </div>
   <div class="modal-body">
     <div class="container-fluid m-0 p-0 d-flex flex-wrap flex-row justify-content-between">
-      <div class="col-3 user-select-none" id="big-user-avatar">{{user.firstname[0]}}{{user.lastname[0]}}</div>
+      <div class="col-3 user-select-none" id="big-user-avatar">{{utilisateur.FirstName[0]}}{{utilisateur.LastName[0]}}</div>
       <div class="col-9 d-flex flex-wrap align-content-between">
         <div class="col-12">
-          <div>{{user.firstname}} {{user.lastname}}</div>
-          <div>{{user.email}}</div>
+          <div>{{utilisateur.FirstName}} {{utilisateur.LastName}}</div>
+          <div>{{utilisateur.Mail}}</div>
           <div><a routerLink="/userParams" (click)="closeModal()">Paramètres</a></div>
         </div>
         <div class="ms-auto text-end" (click)="logout()" ><a routerLink="/login">Déconnexion</a></div>

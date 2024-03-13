@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenStorageService} from "../../services/token-storage.service";
-import {User} from "../../interface/user";
+import {Utilisateur} from "../../interface/utilisateur";
 import {Users} from "../../interface/object.arrays";
 import {UserService} from "../../services/user.service";
 import {AuthService} from "../../services/auth.service";
@@ -13,7 +13,7 @@ import {FormControl, Validators} from "@angular/forms";
   styleUrls: ['./user-params.component.css']
 })
 export class UserParamsComponent implements OnInit {
-  user!: User;
+  user!: Utilisateur;
   lastname!: FormControl;
   firstname!: FormControl;
   email!: FormControl;
@@ -27,41 +27,41 @@ export class UserParamsComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.findUser();
-    this.lastname = new FormControl(this.user.lastname, [Validators.minLength(3), Validators.required]);
-    this.firstname = new FormControl(this.user.firstname, [Validators.minLength(3), Validators.required]);
-    this.email = new FormControl(this.user.email, [Validators.email, Validators.required]);
+    this.lastname = new FormControl(this.user.LastName, [Validators.minLength(3), Validators.required]);
+    this.firstname = new FormControl(this.user.FirstName, [Validators.minLength(3), Validators.required]);
+    this.email = new FormControl(this.user.Mail, [Validators.email, Validators.required]);
     this.password = new FormControl("", [Validators.minLength(6), Validators.required]);
   }
 
-  findUser(): User{
-    return <User>Users.find(user => user.id === this.tokenService.getUser().id);
+  findUser(): Utilisateur{
+    return <Utilisateur>Users.find(user => user.Id === this.tokenService.getUser().Id);
   }
 
   updateLastname() {
     if (this.lastname.valid) {
-      this.user.lastname = this.lastname.value;
+      this.user.LastName = this.lastname.value;
       this.updateUser();
     }
   }
 
   updateFirstname() {
     if (this.firstname.valid) {
-      this.user.firstname = this.firstname.value;
+      this.user.FirstName = this.firstname.value;
       this.updateUser();
     }
   }
 
   updateEmail() {
     if (this.email.valid && !this.mailInUse()) {
-      this.user.email = this.email.value;
+      this.user.Mail = this.email.value;
       this.updateUser();
     }
   }
 
   updatePassword() {
     if (this.password.valid) {
-      this.user.password = this.password.value;
-      const sub = this.authService.changePassword(<number>this.user.id, this.password.value).subscribe({
+      this.user.Password = this.password.value;
+      const sub = this.authService.changePassword(<number>this.user.Id, this.password.value).subscribe({
         complete: () => {
           this.tokenService.signOut();
           this.router.navigateByUrl("/").then();
@@ -76,6 +76,6 @@ export class UserParamsComponent implements OnInit {
   }
 
   mailInUse():boolean {
-    return Users.filter(user => user.id != this.user.id && user.email === this.email.value).length > 0;
+    return Users.filter(user => user.Id != this.user.Id && user.Mail === this.email.value).length > 0;
   }
 }

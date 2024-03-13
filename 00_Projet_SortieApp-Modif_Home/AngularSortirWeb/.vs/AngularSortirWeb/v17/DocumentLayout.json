@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\user\\login\\login.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\user\\login\\login.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\services\\user.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\services\\user.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\user\\profile\\profile.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\user\\profile\\profile.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\user\\register\\register.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\user\\register\\register.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\user\\register\\register.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\user\\register\\register.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\services\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\services\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\main\\main.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\main\\main.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\home\\home.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\home\\home.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|c:\\users\\thoma\\source\\repos\\eni-projects\\00_projet_sortieapp-modif_home\\angularsortirweb\\angularsortirweb.client\\src\\app\\services\\role.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{969385E7-E855-47A8-94D2-97CC8002457E}|angularsortirweb.client\\angularsortirweb.client.esproj|solutionrelative:angularsortirweb.client\\src\\app\\services\\role.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,92 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "login.component.ts",
-              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\login\\login.component.ts",
-              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\user\\login\\login.component.ts",
-              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\login\\login.component.ts",
-              "RelativeToolTip": "angularsortirweb.client\\src\\app\\user\\login\\login.component.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "user.service.ts",
+              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\services\\user.service.ts",
+              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\services\\user.service.ts",
+              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\services\\user.service.ts",
+              "RelativeToolTip": "angularsortirweb.client\\src\\app\\services\\user.service.ts",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAADMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-06T14:18:36.596Z",
+              "WhenOpened": "2024-03-13T15:53:21.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "profile.component.ts",
-              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\profile\\profile.component.ts",
-              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\user\\profile\\profile.component.ts",
-              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\profile\\profile.component.ts",
-              "RelativeToolTip": "angularsortirweb.client\\src\\app\\user\\profile\\profile.component.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "role.service.ts",
+              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\services\\role.service.ts",
+              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\services\\role.service.ts",
+              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\services\\role.service.ts",
+              "RelativeToolTip": "angularsortirweb.client\\src\\app\\services\\role.service.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-06T14:18:25.473Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "register.component.ts",
-              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\register\\register.component.ts",
-              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\user\\register\\register.component.ts",
-              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\register\\register.component.ts",
-              "RelativeToolTip": "angularsortirweb.client\\src\\app\\user\\register\\register.component.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-06T14:16:51.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "register.component.spec.ts",
-              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\register\\register.component.spec.ts",
-              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\user\\register\\register.component.spec.ts",
-              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\user\\register\\register.component.spec.ts",
-              "RelativeToolTip": "angularsortirweb.client\\src\\app\\user\\register\\register.component.spec.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-06T14:16:45.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "auth.service.ts",
-              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\services\\auth.service.ts",
-              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\services\\auth.service.ts",
-              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\services\\auth.service.ts",
-              "RelativeToolTip": "angularsortirweb.client\\src\\app\\services\\auth.service.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-06T10:25:12.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "main.component.html",
-              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\main\\main.component.html",
-              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\main\\main.component.html",
-              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\main\\main.component.html",
-              "RelativeToolTip": "angularsortirweb.client\\src\\app\\main\\main.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-03-06T10:13:12.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "home.component.html",
-              "DocumentMoniker": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\home\\home.component.html",
-              "RelativeDocumentMoniker": "angularsortirweb.client\\src\\app\\home\\home.component.html",
-              "ToolTip": "C:\\Users\\thoma\\source\\repos\\ENI-Projects\\00_Projet_SortieApp-Modif_Home\\AngularSortirWeb\\angularsortirweb.client\\src\\app\\home\\home.component.html",
-              "RelativeToolTip": "angularsortirweb.client\\src\\app\\home\\home.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-03-06T10:13:03.411Z",
+              "WhenOpened": "2024-03-13T15:53:10.34Z",
               "EditorCaption": ""
             }
           ]
